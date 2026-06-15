@@ -1,5 +1,5 @@
 AI Manual Test Cases:- 
-Member 1:-Saswata Das 
+Member 1:-Saswata Chattopadhyay 
 Prompt 1:-Write test cases for (https://v0-e-commerce-lunchbox-site.vercel.app/) 
 Suppose, you are a manual Tester 
 

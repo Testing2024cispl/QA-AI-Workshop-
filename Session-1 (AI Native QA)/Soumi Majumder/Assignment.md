@@ -158,16 +158,21 @@ Provide all test cases in the EXACT same format as shown above with proper numbe
 AI Manual Test Cases 
 
 TC_POS_01 Search for an existing product -
+
 Navigate to the GreenKart page.
 Type "Brocolli" into the search field.
 Press Enter.
 Only products containing "Brocolli" are displayed.
+
 TC_POS_02 Search using partial product name -
+
 Navigate to the page.
 Type "Tom" into the search field.
 Press Enter.
 Products containing "Tom" in their name are displayed.
+
 TC_POS_03 Clear search and view all products -
+
 Navigate to the page.
 Type "Carrot" in the search field.
 Clear the search field.
@@ -177,101 +182,121 @@ Navigate to the page.
 Click "ADD TO CART" for "Brocolli".
 Observe the cart icon.
 Product is added to cart and cart count increases.
+
 TC_POS_05 Add multiple different products to cart -
 Navigate to the page.
 Add "Brocolli" and "Tomato" to the cart.
 Click on the cart icon.
 Both products are listed in the cart.
+
 TC_POS_06 Increase product quantity before adding to cart -
 Navigate to the page.
 Click the "+" button for "Brocolli".
 Click "ADD TO CART".
 Selected quantity is added to the cart.
+
 TC_POS_07 Decrease product quantity before adding to cart -
 Navigate to the page.
 Increase the quantity and then click the "-" button.
 Click "ADD TO CART".
 Updated reduced quantity is added to the cart.
+
 TC_POS_08 View cart items -
 Add items to cart.
 Click on the cart icon.
 Click "PROCEED TO CHECKOUT".
 The cart page displays added items correctly.
+
 TC_POS_09 Remove item from cart -
 Add product to cart.
 Go to the cart page.
 Click "Remove".
 Product is removed from cart.
+
 TC_POS_10 Apply valid promo code -
 Add items to cart and proceed to checkout.
 Enter valid promo code.
 Click "Apply".
 Discount is applied successfully.
+
 TC_POS_11 Place order successfully -
 Add items to cart.
 Proceed to checkout.
 Click "Place Order".
 Order placement page is displayed.
+
 TC_POS_12 Select country and proceed -
 Click "Place Order".
 Select a country from the dropdown.
 Agree to terms and click "Proceed".
 Order is placed successfully.
+
 TC_NEG_01 Search for a non-existing product -
 Navigate to the page.
 Type "Pizza" into the search field.
 Press Enter.
 No products are displayed.
+
 TC_NEG_02 Search with special characters -
 Navigate to the page.
 Type "@#$%" in the search field.
 Press Enter.
 No products are displayed.
+
 TC_NEG_03 Add to cart without selecting quantity (default 0 scenario check) -
 Navigate to the page.
 Decrease quantity to minimum if possible.
 Click "ADD TO CART".
 Product is not added or minimum quantity validation is enforced.
+
 TC_NEG_04 Decrease quantity below 1 -
 Navigate to the page.
 Click "-" multiple times.
 Observe quantity value.
 Quantity does not go below 1.
+
 TC_NEG_05 Proceed to checkout with empty cart -
 Navigate to the page.
 Click the cart icon without adding items.
 Click "PROCEED TO CHECKOUT".
 Checkout is not allowed or the cart remains empty.
+
 TC_NEG_06 Apply invalid promo code -
 Add items to cart.
 Proceed to checkout.
 Enter invalid promo code.
 An error message is displayed and no discount applied.
+
 TC_NEG_07 Place order without selecting country -
 Add items to cart.
 Click "Place Order".
 Click "Proceed" without selecting the country.
 Order is not placed and validation message is shown.
+
 TC_NEG_08 Place order without agreeing to terms -
 Add items to cart.
 Click "Place Order".
 Select country but do not check terms checkbox.
 Order is not placed and validation message is shown.
+
 TC_NEG_09 Add same product multiple times incorrectly -
 Navigate to the page.
 Click "ADD TO CART" multiple times for the same product.
 Open cart.
 Quantity should increment correctly without duplicate entries.
+
 TC_NEG_10 Remove product not present in cart -
 Navigate to the page.
 Open cart without adding items.
 Try to remove items.
 No action occurs or proper handling of empty cart.
+
 TC_NEG_11 Apply promo code multiple times -
 Add items to cart.
 Apply valid promo code once.
 Try applying again.
 Promo code is not applied again or appropriate message is shown.
+
 TC_NEG_12 Checkout with zero quantity items -
 Navigate to the page.
 Attempt to add an item with invalid quantity.
@@ -300,6 +325,7 @@ Enter "tom" in the search input field
 Press Enter
 Verify that products containing "tom" (e.g., Tomato) are displayed
 Classification: Positive
+
 TC_03 Clear search and display all products -
 Navigate to the homepage
 Enter "Carrot" in the search field
@@ -313,6 +339,7 @@ Enter "Pizza" in the search field
 Press Enter
 Verify that no products are displayed and no errors occur
 Classification: Negative
+
 TC_05 Search with special characters -
 Navigate to the homepage
 Enter "@#$%" in the search field

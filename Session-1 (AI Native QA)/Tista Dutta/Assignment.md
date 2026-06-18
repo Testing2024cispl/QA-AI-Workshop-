@@ -1,12 +1,12 @@
-QA Manual Test Cases:- 
+QA Manual Test Cases:-   
 
-Member:- Tista Dutta.
-Query/Test cases:- Write test cases based on the given website  https://eventhub.rahulshettyacademy.com/ 
+Member:- Tista Dutta.  
+Query/Test cases:- Write test cases based on the given website  https://eventhub.rahulshettyacademy.com/   
 
-Human Thinking Test Cases
+Human Thinking Test Cases  
 
-TestCase_001 – New User Registration with Valid Data
-Open EventHub website.
+TestCase_001 – New User Registration with Valid Data  
+Open EventHub website.  
 Click on "Register".
 Enter a valid email address.
 Enter a password satisfying all requirements.

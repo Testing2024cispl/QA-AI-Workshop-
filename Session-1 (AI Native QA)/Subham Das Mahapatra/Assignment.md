@@ -155,8 +155,10 @@ Verify user can complete multiple bookings consecutively without issues.
 
 
 
+
 Your thoughts:- 
-● What you felt Suitable:- My thought that many functionalities is not present it gives test case for it like transaction page etc i have taken only 
+● What you felt Suitable:- My thought that many functionalities is not present it gives test case for it like transaction page etc
+and i have taken only 
 Verify "Choose your departure city" dropdown is displayed.
 Verify "Choose your destination city" dropdown is displayed.
  ● What you felt Not suitable:-Ui test case,Booking Confirmation Test Cases,Navigation test case not needed 
@@ -189,7 +191,7 @@ TestCases_002:- register
 17. Click on continue
 
 
-TestCases_002:- Login 
+TestCases_003:- Login 
 18. Go to https://blazedemo.com/
 19. Click on home button 
 20.Click on log in
@@ -197,7 +199,6 @@ TestCases_002:- Login
 22. Login would not successful
 23. Gave correct Credentials
 24. Login Successfully
-
 
 
 

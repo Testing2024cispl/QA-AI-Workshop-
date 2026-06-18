@@ -1,7 +1,8 @@
 # QA Manual Test Cases:-   
 
-Member:- Tista Dutta.  
+## Member:- Tista Dutta.  
 Query/Test cases:- Write test cases based on the given website  https://eventhub.rahulshettyacademy.com/   
+---
 
 ## Human Thinking Test Cases  
 
@@ -134,9 +135,12 @@ Query/Test cases:- Write test cases based on the given website  https://eventhub
 2. Click the Logout button on the EventHub menu.  
 3. Verify the user is logged out.  
 4. Verify the login page is displayed.  
+---
 
 # AI Manual Test Cases:-   
 Member:- Tista Dutta.  
+---
+
 # Prompt:-  
 ### Role:  
 Act as a Senior QA Engineer with expertise in Manual Testing, Functional Testing, Regression Testing, and Web Application Testing.  
@@ -175,6 +179,7 @@ Step 1
 Step 2  
 Step 3  
 
+---
 
 ### TestCase_AI_001 – Register New User with Valid Data  
 1. Open EventHub website.
@@ -336,32 +341,34 @@ Step 3
 1. Click the browser Back button.  
 1. Verify protected pages are inaccessible.  
 1. Verify Login page is displayed.  
+---
 
 # My thoughts:-  
 ## ● What I felt Suitable:-    
--- AI generated a large number of test cases within seconds, significantly reducing test design effort.    
--- AI covered all major modules including Registration, Login, Event Search, Event Booking, Booking Cancellation, Session Management, and Logout.   
--- AI provided both positive and negative test scenarios.  
--- AI helped identify commonly missed scenarios such as Forgot Password, Session Persistence, and Browser Back Button validation.  
--- AI-generated test cases followed a structured and easy-to-understand format.  
--- AI was useful for obtaining initial test coverage before starting detailed manual testing.  
--- AI suggested validation-related scenarios that improved overall coverage.  
--- AI can be a valuable productivity tool during test planning activities.  
+- AI generated a large number of test cases within seconds, significantly reducing test design effort.    
+- AI covered all major modules including Registration, Login, Event Search, Event Booking, Booking Cancellation, Session Management, and Logout.   
+- AI provided both positive and negative test scenarios.  
+- AI helped identify commonly missed scenarios such as Forgot Password, Session Persistence, and Browser Back Button validation.  
+- AI-generated test cases followed a structured and easy-to-understand format.  
+- AI was useful for obtaining initial test coverage before starting detailed manual testing.  
+- AI suggested validation-related scenarios that improved overall coverage.  
+- AI can be a valuable productivity tool during test planning activities.  
 
 ## ● What I felt Not suitable:-    
--- AI generated generic test cases and lacked understanding of actual business requirements.  
--- Some scenarios were repetitive and overlapped with one another.  
--- AI did not identify application-specific validations through exploration of the website.  
--- AI missed important business-rule scenarios such as duplicate booking prevention and edge cases related to ticket limits.  
--- Several test cases lacked detailed expected results, making them less suitable for direct automation.  
--- AI did not prioritize test cases based on business impact or risk.  
--- Boundary value analysis and exploratory testing scenarios were limited.  
--- AI could not verify whether certain functionalities actually exist on the website before generating test cases.  
--- Human review was still necessary to remove irrelevant scenarios and improve test quality.  
--- AI-generated test cases alone were not sufficient to create an automation-ready test suite; manual refinement was required.  
+- AI generated generic test cases and lacked understanding of actual business requirements.  
+- Some scenarios were repetitive and overlapped with one another.  
+- AI did not identify application-specific validations through exploration of the website.  
+- AI missed important business-rule scenarios such as duplicate booking prevention and edge cases related to ticket limits.  
+- Several test cases lacked detailed expected results, making them less suitable for direct automation.  
+- AI did not prioritize test cases based on business impact or risk.  
+- Boundary value analysis and exploratory testing scenarios were limited.  
+- AI could not verify whether certain functionalities actually exist on the website before generating test cases.  
+- Human review was still necessary to remove irrelevant scenarios and improve test quality.  
+- AI-generated test cases alone were not sufficient to create an automation-ready test suite; manual refinement was required.  
+---
 
 # Final Test Cases (AI + Manual Combined) – Automation Ready  
-Member:- Tista Dutta.  
+## Member:- Tista Dutta.  
 Application Under Test (AUT):  
 https://eventhub.rahulshettyacademy.com/  
 Application Name:  

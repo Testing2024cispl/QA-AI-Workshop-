@@ -7,88 +7,87 @@ Human Thinking Test Cases
 
 TestCase_001 – New User Registration with Valid Data  
 Open EventHub website.  
-Click on "Register".
-Enter a valid email address.
-Enter a password satisfying all requirements.
-Enter the same password in the Confirm Password field.
-Click Create Account.
-Verify that account is created successfully.
-Verify that the user is redirected to the login page. 
+Click on "Register".  
+Enter a valid email address.  
+Enter a password satisfying all requirements.  
+Enter the same password in the Confirm Password field.  
+Click Create Account.  
+Verify that account is created successfully.  
+Verify that the user is redirected to the login page.   
 
-TestCase_002 – Registration with Empty Fields
-Open EventHub website.
-Click on Register.
-Leave all fields blank.
-Click Create Account.
-Verify mandatory field validation messages are displayed.
+TestCase_002 – Registration with Empty Fields  
+Open EventHub website.  
+Click on Register.  
+Leave all fields blank.  
+Click Create Account.  
+Verify mandatory field validation messages are displayed.  
+TestCase_003 – Registration with Existing Email.  
+Open EventHub website.  
+Click Register.  
+Enter an email already registered.  
+Enter valid password.  
+Click Create Account.  
+Verify appropriate error messages are displayed.  
 
-TestCase_003 – Registration with Existing Email
-Open EventHub website.
-Click Register.
-Enter an email already registered.
-Enter valid password.
-Click Create Account.
-Verify appropriate error messages are displayed.
 
+TestCase_004 – Registration with Invalid Email   
+Open EventHub website.  
+Click on "Register".  
+Enter invalid email format.  
+Enter valid password.  
+Enter confirm password.  
+Click Create Account.  
+Verify validation message is displayed.  
 
-TestCase_004 – Registration with Invalid Email 
-Open EventHub website.
-Click on "Register".
-Enter invalid email format.
-Enter valid password.
-Enter confirm password.
-Click Create Account.
-Verify validation message is displayed.
+TestCase_005 – Registration with Password Mismatch  
+Open EventHub website.  
+Enter valid email.  
+Enter password.  
+Enter a different confirm password.  
+Click Create Account.  
+Verify password mismatch message.  
 
-TestCase_005 – Registration with Password Mismatch
-Open EventHub website.
-Enter valid email.
-Enter password.
-Enter a different confirm password.
-Click Create Account.
-Verify password mismatch message.
+TestCase_006 – Login with Valid Credentials  
+Open EventHub website.  
+Enter a registered email.  
+Enter valid password.  
+Click Sign In.  
+Verify successful login.  
+Verify the dashboard is displayed.  
+TestCase_007 – Login with Invalid Password  
+Open EventHub website.  
+Enter a registered email.  
+Enter the wrong password.  
+Click Sign In.  
+Verify error message.  
 
-TestCase_006 – Login with Valid Credentials
-Open EventHub website.
-Enter a registered email.
-Enter valid password.
-Click Sign In.
-Verify successful login.
-Verify the dashboard is displayed.
+TestCase_008 – Session Persistence after Refresh  
+Login with valid credentials.  
+Refresh browser.  
+Verify the user remains logged in. 
 
-TestCase_007 – Login with Invalid Password
-Open EventHub website.
-Enter a registered email.
-Enter the wrong password.
-Click Sign In.
-Verify error message.
+TestCase_009 – Access Protected Page Without Login  
+Copy a protected URL.  
+Open it in a new browser without login.  
+Verify the user is redirected to the Login page.  
 
-TestCase_008 – Session Persistence after Refresh
-Login with valid credentials.
-Refresh browser.
-Verify the user remains logged in.
-
-TestCase_009 – Access Protected Page Without Login
-Copy a protected URL.
-Open it in a new browser without login.
-Verify the user is redirected to the Login page.
-
-TestCase_010 – Browse Available Events
-Login with valid credentials.
+TestCase_010 – Browse Available Events  
+Login with valid credentials.  
 Click Browse Events.
 Verify the event list is displayed.
 
-TestCase_011 – Search Event
+TestCase_011 – Search Event  
 Login with valid credentials.
 Navigate to Browse Events.
 Search event by keyword.
 Verify relevant events appear.
 
-TestCase_012 – Search Non-Existing Event
+TestCase_012 – Search Non-Existing Event  
 Login with valid credentials.
 Navigate to Browse Events.
 Search with invalid keywords.
 Verify "No events found" message.
+
 
 TestCase_013 – Event Booking
 Login with valid credentials.
@@ -99,7 +98,6 @@ Enter Full Name, Email, Phone Number and Select number of tickets.
 Click the button ‘Confirm booking’.
 Verify the success message.
 Verify booking appears in the My Bookings section.
-
 TestCase_014 – Duplicate Event Booking
 Login with valid credentials.
 Click on the ‘Browse Events’ button.
@@ -109,7 +107,6 @@ Enter Full Name, Email, Phone Number and Select number of tickets.
 Click the button ‘Confirm booking’.
 Attempt to book the same event again.
 Verify duplicate booking is prevented.
-
 TestCase_015 – Booking with Invalid Phone Number
 Login with valid credentials.
 Click on the ‘Browse Events’ button.
@@ -127,7 +124,6 @@ Click Cancel Booking.
 Confirm cancellation.
 Verify booking is removed.
 Verify the success message.
-
 TestCase_017 – Logout
 Login with valid credentials.
 Click the Logout button on the EventHub menu.
@@ -181,160 +177,130 @@ Enter valid email and password.
 Confirm password.
 Click Create Account.
 Verify registration is successful.
-
 TestCase_AI_002 – Register with Invalid Email
 Open Registration page.
 Enter invalid email format.
 Enter valid password.
 Submit form.
 Verify validation message.
-
 TestCase_AI_003 – Register with Existing Email
 Open Registration page.
 Enter an already registered email.
 Enter valid password.
 Submit form.
 Verify duplicate account error.
-
 TestCase_AI_004 – Register with Weak Password
 Enter a weak password.
 Submit registration.
 Verify password policy message.
-
 TestCase_AI_005 – Register with Empty Fields
 Leave all fields blank.
 Submit registration form.
 Verify mandatory field validations.
-
 TestCase_AI_006 – Register with Password Mismatch
 Enter a different password and confirm the password.
 Submit form.
 Verify mismatch error.
-
 TestCase_AI_007 – Login with Valid Credentials
 Enter valid email and password.
 Click Login.
 Verify successful login.
-
 TestCase_AI_008 – Login with Invalid Password
 Enter valid email.
 Enter incorrect password.
 Click Login.
 Verify error message.
-
 TestCase_AI_009 – Login with Invalid Email
 Enter invalid email.
 Enter password.
 Click Login.
 Verify login failure.
-
 TestCase_AI_010 – Login with Empty Credentials
 Leave email and password blank.
 Click Login.
 Verify validation messages.
-
 TestCase_AI_011 – Verify Forgot Password Link
 Open Login page.
 Click Forgot Password.
 Verify navigation to reset page.
-
 TestCase_AI_012 – Verify Session Persistence
 Login successfully.
 Refresh browser.
 Verify the user remains logged in.
-
 TestCase_AI_013 – Access Protected Page Without Login
 Copy protected URL.
 Open in a new browser session.
 Verify redirect to Login page.
-
 TestCase_AI_014 – Browse Available Events
 Login successfully.
 Click Browse Events.
 Verify event list appears.
-
 TestCase_AI_015 – View Event Details
 Open an event.
 Verify event title, description, and date are displayed.
-
 TestCase_AI_016 – Search Event by Valid Keyword
 Search using a valid event name.
 Verify matching results appear.
-
 TestCase_AI_017 – Search Event by Invalid Keyword
 Search using random keywords.
 Verify no matching results.
-
 TestCase_AI_018 – Search Event with Empty Input
 Leave the search box empty.
 Click Search.
 Verify all events are displayed.
-
 TestCase_AI_019 – Book Event Successfully
 Select an event.
 Click Book Now.
 Enter valid booking details.
 Confirm booking.
 Verify booking success.
-
 TestCase_AI_020 – Book Event with Empty Fields
 Open booking form.
 Leave mandatory fields blank.
 Submit booking.
 Verify validation messages.
-
 TestCase_AI_021 – Book Event with Invalid Phone Number
 Enter invalid phone number.
 Submit booking.
 Verify validation message.
-
 TestCase_AI_022 – Book Event with Invalid Email Address
 Enter invalid email.
 Submit booking.
 Verify validation message.
-
 TestCase_AI_023 – Book Multiple Tickets
 Select event.
 Choose multiple tickets.
 Confirm booking.
 Verify successful booking.
-
 TestCase_AI_024 – Verify Booking Appears in My Bookings
 Complete booking.
 Open My Bookings.
 Verify booking record exists.
-
 TestCase_AI_025 – Verify Booking Details Accuracy
 Open My Bookings.
 Verify event name, date and ticket count are correct.
-
 TestCase_AI_026 – Cancel Existing Booking
 Open My Bookings.
 Select booking.
 Click Cancel Booking.
 Verify successful cancellation.
-
 TestCase_AI_027 – Verify Cancelled Booking Removal
 Cancel booking.
 Refresh page.
 Verify booking is removed.
-
 TestCase_AI_028 – Cancel Booking Multiple Times
 Cancel booking.
 Attempt cancellation again.
 Verify appropriate error handling.
-
 TestCase_AI_029 – Logout Functionality
 Click Logout.
 Verify the user is logged out.
 Verify Login page is displayed.
-
 TestCase_AI_030 – Browser Back Button After Logout
 Logout successfully.
 Click the browser Back button.
 Verify protected pages are inaccessible.
 Verify Login page is displayed.
-
 My thoughts:-
  ● What I felt Suitable:-
 AI generated a large number of test cases within seconds, significantly reducing test design effort.
@@ -743,4 +709,3 @@ Cancel booking.
 Logout.
 Expected Result:
 The entire user journey should complete successfully without any functional issues.
-

@@ -1,4 +1,13 @@
-# QA Manual Test Cases:-   
+# Table of Contents
+
+- [QA Manual Test Cases](#qa-manual-test-cases)
+- [Human Thinking Test Cases](#human-thinking-test-cases)
+- [AI Manual Test Cases](#ai-manual-test-cases)
+- [Prompt](#prompt)
+- [My Thoughts](#my-thoughts)
+- [Final Test Cases (AI + Manual Combined) – Automation Ready](#final-test-cases-ai--manual-combined--automation-ready)
+
+# QA Manual Test Cases   
 
 ## Member:- Tista Dutta.  
 Query/Test cases:- Write test cases based on the given website  https://eventhub.rahulshettyacademy.com/   
@@ -137,11 +146,11 @@ Query/Test cases:- Write test cases based on the given website  https://eventhub
 4. Verify the login page is displayed.  
 ---
 
-# AI Manual Test Cases:-   
+# AI Manual Test Cases   
 Member:- Tista Dutta.  
 ---
 
-# Prompt:- 
+# Prompt 
 
 ### Role:  
 Act as a Senior QA Engineer with expertise in Manual Testing, Functional Testing, Regression Testing, and Web Application Testing.  
@@ -344,7 +353,7 @@ Step 3
 1. Verify Login page is displayed.  
 ---
 
-# My thoughts:-  
+# My thoughts  
 ## ● What I felt Suitable:-    
 - AI generated a large number of test cases within seconds, significantly reducing test design effort.    
 - AI covered all major modules including Registration, Login, Event Search, Event Booking, Booking Cancellation, Session Management, and Logout.   

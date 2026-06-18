@@ -162,61 +162,45 @@ I need you to prepare all positive and negative functional test cases for the fo
 
 # AI Generated Test Cases
 
-## TC_POS_01 Sort products A-Z
+## Positive Test Scenarios
 
-1. Navigate to inventory page.
-2. Select Name (A to Z) from dropdown.
-3. Observe product order.
-4. Products should be sorted alphabetically.
+| Test Case ID | Scenario | Steps | Expected Result |
+|---|---|---|---|
+| TC_POS_01 | Sort products by Name (A to Z) | 1. Navigate to inventory page.<br>2. Click sort dropdown.<br>3. Select **Name (A to Z)**. | Products should be sorted alphabetically. |
+| TC_POS_02 | Sort products by Name (Z to A) | 1. Navigate to inventory page.<br>2. Click sort dropdown.<br>3. Select **Name (Z to A)**. | Products should be sorted in descending alphabetical order. |
+| TC_POS_03 | Sort products by Price (Low to High) | 1. Navigate to inventory page.<br>2. Select **Price (low to high)**.<br>3. Observe product prices. | Products should be sorted by ascending price. |
+| TC_POS_04 | Sort products by Price (High to Low) | 1. Navigate to inventory page.<br>2. Select **Price (high to low)**.<br>3. Observe prices. | Products should be sorted by descending price. |
+| TC_POS_05 | Add product to cart | 1. Navigate to inventory page.<br>2. Click **Add to Cart** for a product.<br>3. Observe cart badge. | Cart count should increase. |
+| TC_POS_06 | Add multiple products to cart | 1. Add multiple products.<br>2. Open cart page.<br>3. Observe cart items. | All selected products should appear. |
+| TC_POS_07 | Remove product from inventory page | 1. Add product to cart.<br>2. Click **Remove** from inventory page.<br>3. Observe cart badge. | Product should be removed. |
+| TC_POS_08 | View cart items | 1. Add products to cart.<br>2. Click cart icon.<br>3. Observe cart page. | Items, quantity, and price should display correctly. |
+| TC_POS_09 | Checkout with valid information | 1. Add products to cart.<br>2. Click **Checkout**.<br>3. Enter valid details. | User should reach overview page. |
+| TC_POS_10 | View order overview | 1. Complete checkout information.<br>2. Click **Continue**.<br>3. Observe overview page. | Payment, shipping, and total price should display. |
+| TC_POS_11 | Complete order successfully | 1. Reach overview page.<br>2. Click **Finish**.<br>3. Observe confirmation page. | Success message should display. |
+| TC_POS_12 | Return to home page | 1. Complete order.<br>2. Click **Back Home**.<br>3. Observe page. | User should return to inventory page. |
 
-## TC_POS_02 Sort products by price low-high
+---
 
-1. Navigate to inventory page.
-2. Select Price Low to High.
-3. Observe prices.
-4. Products should be sorted in ascending order.
+## Negative Test Scenarios
 
-## TC_POS_03 Add same product to cart
+| Test Case ID | Scenario | Steps | Expected Result |
+|---|---|---|---|
+| TC_NEG_01 | Open cart without adding products | 1. Login to application.<br>2. Click cart icon.<br>3. Observe cart. | Cart should be empty. |
+| TC_NEG_02 | Remove item from empty cart | 1. Open empty cart.<br>2. Attempt remove action.<br>3. Observe response. | No crash should occur. |
+| TC_NEG_03 | Checkout with empty cart | 1. Keep cart empty.<br>2. Click **Checkout**.<br>3. Observe behavior. | Checkout should be blocked or handled gracefully. |
+| TC_NEG_04 | Submit checkout with empty fields | 1. Open checkout page.<br>2. Leave all fields blank.<br>3. Click **Continue**. | Validation message should display. |
+| TC_NEG_05 | Missing First Name | 1. Leave First Name empty.<br>2. Fill other fields.<br>3. Click **Continue**. | Error should display. |
+| TC_NEG_06 | Missing Last Name | 1. Leave Last Name empty.<br>2. Fill remaining fields.<br>3. Click **Continue**. | Validation should display. |
+| TC_NEG_07 | Missing Zip Code | 1. Leave Zip Code empty.<br>2. Click **Continue**.<br>3. Observe response. | Error message should display. |
+| TC_NEG_08 | Invalid Zip Code format | 1. Enter alphabetic zip code.<br>2. Click **Continue**.<br>3. Observe validation. | Invalid zip code should be rejected. |
+| TC_NEG_09 | Rapid multiple clicks on Add to Cart | 1. Click **Add to Cart** rapidly multiple times.<br>2. Open cart.<br>3. Observe cart items. | Duplicate invalid entries should not occur. |
+| TC_NEG_10 | Rapid multiple clicks on Finish | 1. Reach overview page.<br>2. Click **Finish** repeatedly.<br>3. Observe result. | Only one order should be processed. |
+| TC_NEG_11 | Refresh browser during checkout | 1. Add products to cart.<br>2. Reach checkout page.<br>3. Refresh browser. | Cart state should remain consistent. |
+| TC_NEG_12 | Browser Back during checkout | 1. Reach overview page.<br>2. Click browser back.<br>3. Observe workflow. | Application should handle navigation properly. |
+| TC_NEG_13 | Checkout after removing all items | 1. Add products to cart.<br>2. Remove all products.<br>3. Attempt checkout. | Checkout should not proceed. |
+| TC_NEG_14 | Finish order without completing checkout | 1. Attempt to bypass checkout steps.<br>2. Try accessing finish flow directly.<br>3. Observe response. | Order should not complete without required steps. |
 
-1. Navigate to inventory page.
-2. Add product to cart.
-3. Open cart.
-4. Product should appear correctly.
-
-## TC_POS_04 View checkout overview
-
-1. Add products to cart.
-2. Complete checkout info.
-3. Click Continue.
-4. Order summary should display.
-
-## TC_POS_05 Back home after order
-
-1. Complete order.
-2. Click Back Home.
-3. Observe page.
-4. User should return to home page.
-
-## TC_NEG_01 Remove item from empty cart
-
-1. Open empty cart.
-2. Attempt remove action.
-3. Observe system.
-4. No crash should occur.
-
-## TC_NEG_02 Add same product multiple times rapidly
-
-1. Navigate to inventory page.
-2. Click Add to Cart multiple times rapidly.
-3. Open cart.
-4. Duplicate invalid entries should not occur.
-
-## TC_NEG_03 Refresh browser during checkout
-
-1. Add items to cart.
-2. Reach checkout page.
-3. Refresh browser.
-4. Data should remain consistent.
+---
 
 # My Thoughts
 

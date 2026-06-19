@@ -487,7 +487,7 @@ Best for:
 Strong in domain understanding, weak in structure & edge coverage.
 
 
-# Final Test Case (Automation Ready):- 
+# Final Test Cases (AI + Manual Combined) – Automation Ready:- 
 TC_REG_001: New User Registration & Account Deletion Lifecycle
 * Pre-conditions: Test data utility must supply a dynamically generated email string to prevent collision loops.
 * Test Steps:

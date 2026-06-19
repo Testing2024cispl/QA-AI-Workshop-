@@ -2,7 +2,7 @@ QA Manual Test Cases:-
 Member 1:-Sougato Basu 
 Query/Test cases:- https://v0-e-commerce-lunchbox-site.vercel.app/ 
 Human Thinking Test Cases 
-Check the page opening or not
+Check the page loads properly or not
 Check all the menus are displaying or not  
 Check the logo and cart icon showing or not
 Check the menu headings are clickable or not  

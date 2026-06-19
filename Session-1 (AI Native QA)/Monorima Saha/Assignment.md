@@ -108,19 +108,111 @@ Test Cases_004:- (Place order after registration)
 16. Input an optional description in the comment text box and click 'Place Order'.
 17. Enter the payment details (Name on Card, Card Number, CVC, and Expiration Date) and click 'Pay and Confirm Order'. 
 18. Verify the success message 'Your order has been placed successfully!' 
+
 ## AI Manual Test Cases:- 
-*User login* 
+
 
 
 # Prompt:
-Act as an expert Manual QA . I need you to generate a comprehensive suite of test cases for the login functionality of the website "Automation Exercise".
+# Test Case Generation Prompt
+
+## Application Under Test (AUT)
+
+**Website:**
+Automation Exercise
+
+**URL:**
+https://automationexercise.com/
+
+Automation Exercise is an e-commerce platform that allows users to:
+
+* Register a new account
+* Log in using registered credentials
+* Browse available products
+* Search for products
+* Purchase products
+
+---
+
+## Objective
+
+The goal is to validate the complete end-to-end user journey of the application and identify any functional, validation, usability, and security-related issues.
+
+---
+
+## Test Coverage Requirements
+
+Generate comprehensive test cases covering the following areas:
+
+* User Registration
+* User Login
+* Product Browsing
+* Product Search
+* Cart Management
+* Checkout & Payment Flow
+
+---
+
+## Limitations 
+
+* Include both **Positive** and **Negative** test scenarios.
+
+* Include **Validation** and **Error Handling** scenarios.
+
+* Include **Session Management** scenarios:
+
+  * Login / Logout
+  * Session timeout
+  * Unauthorized access
+
+* Include **Security-related** scenarios:
+
+  * SQL Injection
+  * Authentication bypass
+  * Invalid payment attempts
+
+* Consider **real-world user behavior** and edge cases.
+
+* Avoid duplicate or redundant test cases.
+
+* Write test cases in a clear, step-by-step format.
+
+* Ensure all test cases are suitable for future automation.
+
+* Cover mandatory field validations wherever applicable.
+
+### Business-Critical Scenarios
+
+Include scenarios such as:
+
+* Invalid or fraudulent card payments
+* Duplicate transactions
+* Payment failure handling
+
+---
+
+## Output Format
+
+Generate test cases using the following structure:
+
+```md
+TestCase_ID: TC_LOG_xx
+Pre-conditions: 
+Test Steps:
+Step 1
+Step 2
+
+
+Expected Result:
+Expected system behavior after executing the test steps.
+```
 
 
 
 
 
 
-Reference URL: https://automationexercise.com/login  
+*User login*   
 
 *TC_LOG_001: Successful Login with Valid Credentials (Positive)*
 * Pre-conditions: The user must have a previously registered and active account on the platform.

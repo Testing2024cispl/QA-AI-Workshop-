@@ -1,6 +1,6 @@
 ## **📝 QA Manual Test Cases for Swag Labs**
 
-**Member 1:-Antara Roy Ghosh**
+**Member :-Antara Roy Ghosh**
 
 **Query/Test cases:- [https://www.saucedemo.com/](https://www.saucedemo.com/)**  
 

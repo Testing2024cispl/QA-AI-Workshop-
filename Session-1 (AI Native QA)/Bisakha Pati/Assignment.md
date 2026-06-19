@@ -3,168 +3,65 @@ Project: DemoBlaze Testing Application: https://www.demoblaze.com/
 Tester: Bisakha Pati**
 
 **Human Thinking Test Cases**
-**TestCases_001:-** (Valid login)
-1. Go to https://www.demoblaze.com/
-2. Click on "Log in"
-3. Enter a valid registered Username and correct Password
-4. Click on "Log in"
-5. Verify the modal closes and the navbar shows "Welcome <username>" with "Log out" visible
 
+## MODULE 1 — HOME
+=====================================================================
 
-**TestCases_002:-** (Wrong password)
-1. Go to https://www.demoblaze.com/
-2. Click on "Log in"
-3. Enter a valid Username with an incorrect Password
-4. Click on "Log in"
-5. Verify the alert "Wrong password." is displayed
+TestCases_001:- Home page
+1.Open https://www.demoblaze.com/
+2.Verify by default it lands on the "Home" page.
+3.Verify all the menus are there — Home, Contact, About us, Cart, Log in, 4.Sign up — and each one is clickable.
+5.Verify the category filters — Phones, Laptops, Monitors — and after 6.clicking any filter it shows only that type of product.
+7.Verify the carousel slides and Next/Previous work and images load fine.
+8.Pick any product, open it, and verify the details page shows the correct image, price and description with an "Add to cart" button.
+9.Add it to cart, verify the "Product added." message, and check it actually shows up in the Cart.
+10.Click the logo and verify it brings you back to Home.
 
+=====================================================================
+## MODULE 2 — LOGIN
+=====================================================================
 
-**TestCases_003:-** (Unknown user)
-1. Go to https://www.demoblaze.com/
-2. Click on "Log in"
-3. Enter a Username that does not exist
-4. Click on "Log in"
-5. Verify the alert "User does not exist." is displayed
+TestCases_002:- Login
+1.Click on Log in.
+2.Verify login with valid credentials — should close the popup and show "Welcome <username>" with Log out.
+3.Verify wrong password shows "Wrong password." and unknown user shows "User does not exist."
+4.Verify blank fields shows "Please fill out Username and Password."
+5.After logging in, refresh and move between pages — verify the session stays logged in.
+6.Click Log out and verify it goes back to the logged-out state.
 
+=====================================================================
+## MODULE 3 — SIGN UP
+=====================================================================
 
-**TestCases_004:-** (Session persists + log out)
-1. Go to https://www.demoblaze.com/
-2. Log in with valid credentials
-3. Refresh the page and navigate Home → Cart → Home
-4. Verify the user stays logged in throughout
-5. Click "Log out" and verify the logged-out state is restored
+TestCases_003:- Sign up
+1.Click on Sign up.
+2.Verify a new unique username + password shows "Sign up successful."
+3.Verify a duplicate username shows "This user already exist."
+4.Verify blank fields shows "Please fill out Username and Password."
+5.Verify that after signing up it does NOT auto-login (still shows Log in / Sign up).
+6.Take the new credentials and log in with them — verify the account actually works.
 
-
-**TestCases_005:-** (Switch users — no state bleed)
-1. Go to https://www.demoblaze.com/
-2. Log in as User A, then click "Log out"
-3. Log in as User B
-4. Verify the navbar reflects only User B and no User-A session/cart data remains
-
-
-==================================================================
-## MODULE 2 — SIGN UP
-=================================================================
-
-
-**TestCases_006:-** (New user registration)
-1. Go to https://www.demoblaze.com/
-2. Click on "Sign up"
-3. Enter a unique Username and a Password
-4. Click on "Sign up"
-5. Verify the alert "Sign up successful." is displayed
-
-
-**TestCases_007:-** (Duplicate username)
-1. Go to https://www.demoblaze.com/
-2. Click on "Sign up"
-3. Enter a Username that already exists
-4. Click on "Sign up"
-5. Verify the alert "This user already exist." is displayed
-
-
-**TestCases_008:-** (Register then log in — end to end)
-1. Go to https://www.demoblaze.com/
-2. Register a new unique user
-3. Click on "Log in" and enter the same credentials
-4. Verify the login succeeds (account persisted correctly)
-
-
-**TestCases_009:-** (No auto-login after signup)
-1. Go to https://www.demoblaze.com/
-2. Register a new user successfully
-3. Verify the user is still logged OUT (navbar still shows "Log in" / "Sign up")
-
-
-=================================================================
-## MODULE 3 — HOME
-==================================================================
-
-
-**TestCases_010:-** (Default product load)
-1. Go to https://www.demoblaze.com/
-2. Wait for the homepage to load
-3. Verify the product grid shows products with image, title, price, and description
-
-
-**TestCases_011:-** (Category filtering)
-1. Go to https://www.demoblaze.com/
-2. Click "Phones", then "Laptops", then "Monitors"
-3. Verify the grid shows only items of the selected category each time
-
-
-**TestCases_012:-** (Open product detail)
-1. Go to https://www.demoblaze.com/
-2. Click on a product title/image
-3. Verify the detail page opens with the correct name, price, description, image, and "Add to cart"
-
-
-**TestCases_013:-** (Add to cart)
-1. Go to https://www.demoblaze.com/
-2. Open a product and click "Add to cart"
-3. Verify the alert "Product added." is displayed
-4. Open Cart and verify the product is listed
-
-
-**TestCases_014:-** (Logo returns home)
-1. Go to https://www.demoblaze.com/
-2. Open any product detail page
-3. Click the "PRODUCT STORE" logo
-4. Verify it returns to the homepage with the full product list
-
-
-==================================================================
+=====================================================================
 ## MODULE 4 — CONTACT
-=================================================================
+=====================================================================
 
+TestCases_004:- Contact
+1.Click on Contact.
+2.Verify sending a message with valid Email, Name and Message shows "Thanks for the message!!"
+3.Verify what happens when all fields are blank and you hit Send — currently it still says "Thanks for the message!!" with no validation (raise as a bug).
+4.Verify an invalid email format like "abc" is still accepted (raise as a bug/limitation).
+5.Verify Close and the × dismiss the popup without sending.
 
-**TestCases_015:-** (Valid message send)
-1. Go to https://www.demoblaze.com/
-2. Click on "Contact"
-3. Enter a valid Contact Email, Contact Name, and Message
-4. Click on "Send message"
-5. Verify the alert "Thanks for the message!!" is displayed and the modal closes
-
-
-**TestCases_016:-** (Empty form submit — defect hunt)
-1. Go to https://www.demoblaze.com/
-2. Click on "Contact"
-3. Leave Email, Name, and Message blank
-4. Click on "Send message"
-5. Verify the behavior (observed: "Thanks for the message!!" still fires — log as a defect: no validation)
-
-
-**TestCases_017:-** (Dismiss without sending)
-1. Go to https://www.demoblaze.com/
-2. Click on "Contact"
-3. Dismiss using "Close" and the ×
-4. Verify the modal closes and nothing is sent
-
-
-==================================================================
+=====================================================================
 ## MODULE 5 — ABOUT US
-==================================================================
+=====================================================================
 
-
-**TestCases_018:-** (Modal opens and video plays)
-1. Go to https://www.demoblaze.com/
-2. Click on "About us"
-3. Verify the modal opens with the video player and click play
-4. Verify the video plays and play/pause controls work
-
-
-**TestCases_019:-** (Video stops on close — defect hunt)
-1. Go to https://www.demoblaze.com/
-2. Click on "About us" and start the video
-3. Click "Close" or the ×
-4. Verify the video stops (log a defect if audio continues after close)
-
-
-**TestCases_020:-** (Reopen resets video)
-1. Go to https://www.demoblaze.com/
-2. Open About us, close it, then reopen it
-3. Verify the video reloads/resets correctly with no double-audio
-
+TestCases_005:- About us
+1.Click on About us.
+2.Verify the popup opens with the video player.
+3.Verify the video plays and play/pause controls work.
+4.Verify clicking Close / × stops the video — check the audio doesn't keep playing in the background (raise as a bug if it does).
+5.Verify reopening About us loads the video fresh with no double audio.
 
 **AI Manual Test Cases**
 

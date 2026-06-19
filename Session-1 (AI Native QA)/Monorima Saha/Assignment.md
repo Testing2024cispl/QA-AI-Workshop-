@@ -3,7 +3,7 @@
 - [QA Manual Test Cases](#QA_manual_test_cases)
 - [Human Thinking Test Cases](#human-thinking-test-cases)
 - [AI Manual Test Cases](#ai-manual-test-cases)
-- [Prompt](#prompt)
+- [Prompt ](#prompt)
 - [My Thoughts](#my-thoughts)
 - [Final Test Cases (AI + Manual Combined) – Automation Ready](#final-test-cases-ai--manual-combined--automation-ready)
 
@@ -109,7 +109,7 @@ Test Cases_004:- (Place order after registration)
 16. Input an optional description in the comment text box and click 'Place Order'.
 17. Enter the payment details (Name on Card, Card Number, CVC, and Expiration Date) and click 'Pay and Confirm Order'. 
 18. Verify the success message 'Your order has been placed successfully!' 
-AI Manual Test Cases:- 
+# AI Manual Test Cases:- 
 User login 
 
 

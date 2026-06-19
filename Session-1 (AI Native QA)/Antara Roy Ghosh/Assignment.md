@@ -524,13 +524,6 @@ User should successfully complete the purchase and view the order confirmation p
 Severity: Critical  
 Priority: High
 
-***Your thoughts:-***   
-***● What you felt Suitable:-***    
-***● What you felt Not suitable:-***   
-***Final Test Case:-***   
-***AI+Manual, Combine them and make a proper test case***   
-***for Automation ready.*** 
-
 **My thoughts:-** 
 
 ### ***What I felt Suitable:***

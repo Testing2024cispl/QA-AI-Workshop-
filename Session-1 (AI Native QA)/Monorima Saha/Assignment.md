@@ -471,7 +471,7 @@ Execution Steps:
 The AI provided clean metadata outlines including explicit Pre-conditions, distinct Test Data, and isolated Expected Results, which keeps a testing repository organized. 
 
 
-AI Test Cases
+*AI Test Cases*
 Best for:
 * Structured documentation
 * Negative testing
@@ -483,7 +483,7 @@ Strong in coverage & structure, weak in practical prioritization.
 Generates a massive volume of individual scenarios, which can quickly lead to document clutter and duplicate steps. 
 
 
-Manual Test Cases
+*Manual Test Cases*
 Best for:
 * Business flow validation
 * Functional understanding
@@ -492,7 +492,8 @@ Strong in domain understanding, weak in structure & edge coverage.
 
 
 # Final Test Cases (AI + Manual Combined) – Automation Ready:- 
-TC_REG_001: New User Registration & Account Deletion Lifecycle
+
+*TC_REG_001: New User Registration & Account Deletion Lifecycle*
 * Pre-conditions: Test data utility must supply a dynamically generated email string to prevent collision loops.
 * Test Steps:
    1. Navigate to [https://automationexercise.com/]
@@ -514,7 +515,8 @@ TC_REG_001: New User Registration & Account Deletion Lifecycle
    17. Click anchor element link a[href="/delete_account"].
    18. Assert current URL matches /delete_account. Assert text "ACCOUNT DELETED!" is visible.
    19. Click anchor element [data-qa="continue-button"].
-TC_REG_002: Re-registration Block via Existing Email Validation
+
+*TC_REG_002: Re-registration Block via Existing Email Validation*
 * Pre-conditions: A baseline user profile with email existing_qa_2026@example.com must exist in the system.
 * Test Steps:
    1. Navigate to [https://automationexercise.com/login](https://automationexercise.com/login)
@@ -522,13 +524,16 @@ TC_REG_002: Re-registration Block via Existing Email Validation
    3. Input text existing_qa_2026@example.com into the signup email text field.
    4. Click button selector button[data-qa="signup-button"].
    5. Assert form submission is halted. Assert text content of selector .signup-form p matches precisely: "Email Address already exist!".
-TC_REG_003: Step-2 Read-Only Data Attribute Verification
+
+*TC_REG_003: Step-2 Read-Only Data Attribute Verification*
 * Test Steps:
    1. Initiate registration with a unique identity and advance to the /signup configuration view.
    2. Locate input selector #email.
    3. Assert that the DOM element selector #email possesses the functional property parameter attribute value disabled or readonly.
-Suite 2: Session & Identity (authentication.spec.js)
-TC_AUTH_001: Successful Account Login with Valid Credentials
+
+*Suite 2: Session & Identity (authentication.spec.js)* 
+
+*TC_AUTH_001: Successful Account Login with Valid Credentials*
 * Test Steps:
    1. Navigate to [https://automationexercise.com/login]
    2. Assert element .login-form containing text "Login to your account" is visible.
@@ -537,7 +542,8 @@ TC_AUTH_001: Successful Account Login with Valid Credentials
    5. Click button selector button[data-qa="login-button"].
    6. Assert current URL matches base landing path.
    7. Assert text locator containing "Logged in as [Username]" is verified active on the page layout.
-TC_AUTH_002: Login Rejection Handling via Mismatched Credentials
+
+*TC_AUTH_002: Login Rejection Handling via Mismatched Credentials*
 * Test Steps:
    1. Navigate to [https://automationexercise.com/login]
    2. Input text valid_user@example.com into email field.
@@ -545,12 +551,14 @@ TC_AUTH_002: Login Rejection Handling via Mismatched Credentials
    4. Click button selector button[data-qa="login-button"].
    5. Assert system state does not redirect.
    6. Assert text content of selector .login-form p matches precisely: "Your email or password is incorrect!".
-TC_AUTH_003: Client-Side Input Masking & Security Property Verification
+
+*TC_AUTH_003: Client-Side Input Masking & Security Property Verification*
 * Test Steps:
    1. Navigate to [https://automationexercise.com/login](https://automationexercise.com/login)
    2. Locate target element selector #login-form input[data-qa="login-password"].
    3. Assert that the element's attribute property value type is strictly equal to "password".
-TC_AUTH_004: Post-Logout Session & Back-Buffer Termination
+
+*TC_AUTH_004: Post-Logout Session & Back-Buffer Termination*
 * Test Steps:
    1. Log into the system using the steps mapped in TC_AUTH_001.
    2. Click the navbar anchor link a[href="/logout"].
@@ -558,7 +566,8 @@ TC_AUTH_004: Post-Logout Session & Back-Buffer Termination
    4. Trigger browser driver navigation commands to execute a sequential path Page.back().
    5. Assert that the session does not restore, and the application safely routes or forces the browser view back to the unauthenticated login landing page state.
 Suite 3: E2E Checkout Flows (checkout.spec.js)
-TC_E2E_001: Place Order - Post-Registration Workflow Path
+
+*TC_E2E_001: Place Order - Post-Registration Workflow Path* 
 * Test Steps:
    1. Complete user setup via execution paths defined in TC_REG_001, stopping right after asserting the header text "Logged in as [Username]".
    2. Navigate to [https://automationexercise.com/products].
@@ -574,7 +583,9 @@ TC_E2E_001: Place Order - Post-Registration Workflow Path
    12. Click action button selector #submit.
    13. Assert system safely transitions to URL path /payment_done. Assert container success elements reveal text message: "Your order has been placed successfully!".
    14. Execute cleanup: Click a[href="/delete_account"] to reset DB footprint state.
-TC_E2E_002: Place Order - Mid-Checkout Gateway Registration Path
+
+*TC_E2E_002: Place Order - Mid-Checkout Gateway Registration Path* 
+
 * Test Steps:
    1. Navigate directly as an unauthenticated guest to [https://automationexercise.com/products]
    2. Add selected item structures to the active shopping session cart, then click through to open /view_cart.

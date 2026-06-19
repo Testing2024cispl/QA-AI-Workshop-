@@ -115,6 +115,11 @@ Test Cases_004:- (Place order after registration)
 
 # Prompt:
 # Test Case Generation Prompt
+Act as an expert Manual QA . I need you to generate a comprehensive suite of test cases for the login functionality of the website "Automation Exercise". Cover the following functionalities:
+1. User Login
+2. User Registration
+3. Place order after registration
+4. Place order: Register while Checkout 
 
 ## Application Under Test (AUT)
 

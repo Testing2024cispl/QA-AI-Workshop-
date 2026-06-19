@@ -1,8 +1,9 @@
 AI Manual Test Cases:- 
 Member:-Saswata Chattopadhyay 
-Prompt 1:-Write test cases for (https://v0-e-commerce-lunchbox-site.vercel.app/) 
 
-Suppose, you are a manual Tester 
+Prompt 1:- Write test cases for (https://v0-e-commerce-lunchbox-site.vercel.app/) 
+
+Suppose, you are a manual Tester,
 
 This is a ecommerce website where currently users have to add products to cart , go to checkout, and they can add promocode LUNCH20  which will apply 20% discount on listing price and then proceed to checkout . Now generate only the testcases for this particular flow. Make a table of three columns as testcase number, positive and negative testcases
 

@@ -44,7 +44,8 @@ Check the validation text are showing in orders or not correctly
 Check all the footer links are correctly navigating to respective sections 
 Check without filling the details fields user cannot be able to place an order
 Check the cart or checkout page should not open separately with adding a product first
-Check user can go to thank you page successfully after placing the order
+Check user can go to thank you page successfully after placing the order 
+check the success messsage are showing or not.
 Check the thank you page details are correctly showing or not
 Check both the homepage and checkout page does not show any console error 
 

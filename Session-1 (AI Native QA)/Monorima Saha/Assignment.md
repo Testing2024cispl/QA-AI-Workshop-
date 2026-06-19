@@ -17,7 +17,7 @@ Query/Test cases:- https://automationexercise.com/
 # Human Thinking Test Cases 
 
 
-Test Cases_001:- (User registration) 
+*Test Cases_001:- (User registration)* 
 
 
 1. Open the browse
@@ -47,9 +47,6 @@ Test Cases_001:- (User registration)
 
 
 *Test Cases_002:- (User login with correct email address and password)* 
-
-
-
 
 1. Open the browse
 2. Navigate to url 'http://automationexercise.com' 

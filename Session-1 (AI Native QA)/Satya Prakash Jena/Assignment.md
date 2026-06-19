@@ -1,5 +1,7 @@
 QA Manual Test Cases:------------------------------------------------------------------------------------
 
+Module - Filter And Sorting functionality.
+
 TC_CAT_001	Verify the category page loads successfully	
 1. Open the Grocery Store website.
 2. Navigate to Chocolates & Candies category.

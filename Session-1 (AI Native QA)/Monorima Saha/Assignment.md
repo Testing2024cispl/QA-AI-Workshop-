@@ -113,7 +113,8 @@ Test Cases_004:- (Place order after registration)
 *User login* 
 
 
-## Prompt: Act as an expert Manual QA . I need you to generate a comprehensive suite of test cases for the login functionality of the website "Automation Exercise".
+# Prompt:
+Act as an expert Manual QA . I need you to generate a comprehensive suite of test cases for the login functionality of the website "Automation Exercise".
 
 
 

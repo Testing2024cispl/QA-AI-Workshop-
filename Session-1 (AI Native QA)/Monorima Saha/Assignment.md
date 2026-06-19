@@ -225,7 +225,8 @@ TC_LOG_009: Post-Logout Session Restriction (Functional)
 
 
 User registration 
-# Prompt: Act as a Senior Manual QA Engineer. I need you to generate a robust suite of test cases for the Signup functionality of the website "Automation Exercise".
+# Prompt: 
+Act as a Senior Manual QA Engineer. I need you to generate a robust suite of test cases for the Signup functionality of the website "Automation Exercise".
 
 
 
@@ -312,7 +313,8 @@ TC_SIGN_004: Step-2 Mandatory Field Validation (Negative)
 Place order after registration
 
 
-# Prompt: Act as a Senior QA Automation Engineer. Generate a comprehensive suite of test cases for the End-to-End (E2E) "Register and Place Order" workflow on Automation Exercise.
+# Prompt: 
+Act as a Senior QA Automation Engineer. Generate a comprehensive suite of test cases for the End-to-End (E2E) "Register and Place Order" workflow on Automation Exercise.
 
 
 Reference URL: https://automationexercise.com/   
@@ -386,7 +388,8 @@ Execution Steps:
 Place order: Register while Checkout 
 
 
-# Prompt: Act as a Senior Manual QA Engineer. Generate a detailed test suite for the End-to-End (E2E) workflow: "Place Order: Register while Checkout" on Automation Exercise.
+# Prompt: 
+Act as a Senior Manual QA Engineer. Generate a detailed test suite for the End-to-End (E2E) workflow: "Place Order: Register while Checkout" on Automation Exercise.
 
 
 

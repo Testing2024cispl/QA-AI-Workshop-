@@ -534,7 +534,7 @@ Output Format:
 2. Step
 3. Verify ...
 
-# Final TestCase (Ai + Manual) 
+# AI-Generated Test Cases 
 ## Module Name - Registration
 ### TestCase 001 - Register with valid details
 1. Navigate to https://advantageonlineshopping.com/#/
@@ -781,23 +781,25 @@ Verify no duplicate order is created
 
 
 # My thoughts:-
-What you felt Suitable:-
-AI-generated test cases very quickly, which helped reduce the overall test design effort.
-AI covered the major functional modules and core user workflows of the application.
-AI included both positive and negative test scenarios.
-The test cases were structured, readable, and easy to understand.
-AI helped establish a good baseline test suite for initial testing activities.
-Common validation and error-handling scenarios were included.
-AI-assisted test generation improved productivity during the test planning phase.
-What you felt Not suitable:-
-AI-generated generic test cases without a complete understanding of application-specific business requirements.
-Some test cases were broad and lacked detailed validation steps.
-AI did not fully explore business rules, workflows, and application behavior before generating test cases.
-Edge cases, boundary value scenarios, and real-world user behaviors were limited.
-Application-specific validations and exceptional user journeys were not adequately covered.
-Manual review and refinement were still required to improve coverage, remove irrelevant scenarios, and create a production-ready test suite.
-Certain scenarios appeared repetitive or overlapping in nature.
-# Final Test Case:-
+**What you felt Suitable:-**
+1. AI-generated test cases very quickly, which helped reduce the overall test design effort.
+2. AI covered the major functional modules and core user workflows of the application.
+3. AI included both positive and negative test scenarios.
+4. The test cases were structured, readable, and easy to understand.
+5. AI helped establish a good baseline test suite for initial testing activities.
+6. Common validation and error-handling scenarios were included.
+7. AI-assisted test generation improved productivity during the test planning phase.
+   
+**What you felt Not suitable:-**
+1. AI-generated generic test cases without a complete understanding of application-specific business requirements.
+2. Some test cases were broad and lacked detailed validation steps.
+3. AI did not fully explore business rules, workflows, and application behavior before generating test cases.
+4. Edge cases, boundary value scenarios, and real-world user behaviors were limited.
+5. Application-specific validations and exceptional user journeys were not adequately covered.
+6. Manual review and refinement were still required to improve coverage, remove irrelevant scenarios, and create a production-ready test suite.
+7. Certain scenarios appeared repetitive or overlapping in nature.
+   
+# Final Test Case (AI + Manual):-
 ## Module Name - Registration
 **Source: AI TC001, TC002, TC003, TC004, TC005, TC006, TC007, TC008 | Human TC001, TC002, TC003, TC004, TC005, TC006, TC007, TC008, TC009, TC010, TC011, TC012, TC013, TC014, TC016, TC019**
 ### TestCase 001 (Verify Registration Page Navigation)

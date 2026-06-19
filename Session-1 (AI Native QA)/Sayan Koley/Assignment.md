@@ -1,4 +1,6 @@
+
 ---
+
 **Member - Sayan Koley**
 
 ## Section 1: Human Thinking — Manual Test Cases
@@ -318,41 +320,41 @@
 
 ---
 
-## Section 4: Final Test Cases (AI + Manual Combined)
+## Section 4: Final Test Cases (AI + Manual Combined — Automation Ready)
 
-| Test Case ID | Classification | Scenario |
-|---|---|---|
-| TC_01 | Positive | View product listing on homepage |
-| TC_02 | Positive | Navigate to category page via banner |
-| TC_03 | Positive | View product detail page |
-| TC_04 | Positive | Sort products by Price Low to High |
-| TC_05 | Positive | Sort products by Price High to Low |
-| TC_06 | Positive | Sort products by Discount |
-| TC_07 | Positive | Add single product to cart from homepage |
-| TC_08 | Positive | Add multiple products to cart |
-| TC_09 | Positive | Increase product quantity in cart |
-| TC_10 | Positive | Decrease product quantity in cart |
-| TC_11 | Positive | Remove product from cart |
-| TC_12 | Positive | Verify cart total calculation |
-| TC_13 | Positive | Search for product by keyword |
-| TC_14 | Positive | View all products in a category |
-| TC_15 | Positive | Add product to wishlist |
-| TC_16 | Positive | Sign-in via OTP |
-| TC_17 | Positive | Cart badge reflects correct count |
-| TC_18 | Positive | Breadcrumb navigation |
-| TC_19 | Positive | Store locator page loads |
-| TC_20 | Positive | Remove all items from cart |
-| TC_21 | Negative | Open cart without adding any product |
-| TC_22 | Negative | Checkout blocked when store not accepting orders |
-| TC_23 | Negative | Sign-in with fewer than 10 digits |
-| TC_24 | Negative | Sign-in with empty mobile number |
-| TC_25 | Negative | Sign-in with alphabets in mobile field |
-| TC_26 | Negative | Wrong OTP submission |
-| TC_27 | Negative | Decrease quantity below 1 in cart |
-| TC_28 | Negative | Search with special characters |
-| TC_29 | Negative | Search with only whitespace |
-| TC_30 | Negative | Access non-existent product URL |
-| TC_31 | Negative | Rapid multiple ADD clicks |
-| TC_32 | Negative | Access wishlist without logging in |
+| Test Case ID | Classification | Scenario | Steps to Reproduce | Priority | Severity |
+|---|---|---|---|---|---|
+| TC_01 | Positive | View product listing on homepage | Navigate to https://grocerystoredemo.pcubeweb.com/, Wait for all category sections to load, Verify product name and price are visible on each card | High | Critical |
+| TC_02 | Positive | Navigate to category page via banner | Click a category banner on homepage, Observe URL and product listing | High | Critical |
+| TC_03 | Positive | View product detail page | Click on any product card, Observe product detail page | High | Critical |
+| TC_04 | Positive | Sort products by Price Low to High | Click Sort By dropdown, Select 'Price low to high', Observe product order | Medium | Major |
+| TC_05 | Positive | Sort products by Price High to Low | Click Sort By dropdown, Select 'Price high to low', Observe product order | Medium | Major |
+| TC_06 | Positive | Sort products by Discount | Click Sort By dropdown, Select 'Discount', Observe product order | Medium | Major |
+| TC_07 | Positive | Add single product to cart from homepage | Click ADD next to any product, Observe cart badge count | High | Critical |
+| TC_08 | Positive | Add multiple products to cart | Click ADD for 3 different products, Open cart page, Observe items | High | Critical |
+| TC_09 | Positive | Increase product quantity in cart | Add a product to cart, Open cart, Click + to increase quantity | High | Major |
+| TC_10 | Positive | Decrease product quantity in cart | Add a product with qty > 1, Open cart, Click − in cart | High | Major |
+| TC_11 | Positive | Remove product from cart | Add 2 products, Remove one via the remove option, Observe cart | High | Critical |
+| TC_12 | Positive | Verify cart total calculation | Add multiple products, Open cart, Check displayed subtotal | High | Critical |
+| TC_13 | Positive | Search for product by keyword | Click search bar, Type 'Cadbury', Observe results | High | Critical |
+| TC_14 | Positive | View all products in a category | Click 'View all' on any category section, Observe category page | Medium | Major |
+| TC_15 | Positive | Add product to wishlist | Open product detail page, Click wishlist/heart icon, Navigate to /wishlist | Medium | Minor |
+| TC_16 | Positive | Sign-in via OTP — happy path | Click Account, Enter valid 10-digit mobile, Click Send OTP, Enter OTP, Click Verify | High | Critical |
+| TC_17 | Positive | Cart badge reflects correct count after multiple adds | Add 4 products one by one, Observe cart badge after each add | Medium | Major |
+| TC_18 | Positive | Breadcrumb navigation on product detail page | Open a product via category, Click category name in breadcrumb | Medium | Minor |
+| TC_19 | Positive | Store locator page loads | Click Store locator in navigation | Low | Minor |
+| TC_20 | Positive | Remove all items from cart — empty state | Add 2 products, Remove all items, Observe cart | Medium | Major |
+| TC_21 | Negative | Open cart without adding any product | Navigate to site, Click cart icon without adding items | Medium | Minor |
+| TC_22 | Negative | Checkout blocked when store not accepting orders | Add product to cart, Proceed to checkout, Observe store not accepting orders state | High | Critical |
+| TC_23 | Negative | Sign-in with fewer than 10 digits | Click Account, Enter a 5-digit number, Click Send OTP | High | Major |
+| TC_24 | Negative | Sign-in with empty mobile number | Open sign-in modal, Leave field blank, Click Send OTP | High | Major |
+| TC_25 | Negative | Sign-in with alphabets in mobile field | Enter alphabets in mobile number field, Click Send OTP | High | Major |
+| TC_26 | Negative | Wrong OTP submission | Enter valid number, request OTP, Enter wrong OTP, Click Verify | High | Major |
+| TC_27 | Negative | Decrease quantity below 1 in cart | Add product to cart, Click − when quantity is already 1 | Medium | Major |
+| TC_28 | Negative | Search with special characters | Click search bar, Type '!@#$%', Observe results | Medium | Minor |
+| TC_29 | Negative | Search with only whitespace | Click search bar, Type only spaces, Observe results | Medium | Minor |
+| TC_30 | Negative | Access non-existent product URL directly | Navigate to /products/fake-product-xyz | Low | Minor |
+| TC_31 | Negative | Rapid multiple ADD clicks on same product | Click ADD for same product 5+ times rapidly, Open cart | Medium | Major |
+| TC_32 | Negative | Access wishlist without logging in | Navigate to /wishlist without authentication | Low | Minor |
 
 ---

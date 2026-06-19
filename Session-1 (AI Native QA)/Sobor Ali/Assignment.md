@@ -630,3 +630,155 @@ Generate at least 100 detailed and realistic test cases based on this business l
 
 AI Generated Cases:
 
+TC_POS_001: Successful End-to-End Happy Path Checkout Flow
+
+Priority
+
+High
+
+Severity
+
+Critical
+
+Type
+
+Functional
+
+Precondition
+
+Application is open on the product listing page.
+
+Steps
+
+1. Select a product ($150).
+2. Click "Add to Cart".
+3. Click the Cart icon.
+4. Fill in valid contact, shipping, and payment information.
+5. Enter coupon code "LUNCH20" and apply it.
+6. Click "Pay".
+
+Expected Result
+
+- Payment is processed successfully.
+- Order Success message is displayed.
+
+---
+
+TC_POS_002: Successful Coupon Application
+
+Priority
+
+High
+
+Severity
+
+Major
+
+Type
+
+Functional
+
+Precondition
+
+Product is added to the cart, and the user is on the checkout page.
+
+Steps
+
+1. Enter coupon code "LUNCH20" in the coupon field.
+2. Click "Apply".
+
+Expected Result
+
+- System applies a 20% discount.
+- Product price changes from $150 to $120.
+- Discount amount displayed is $30.
+
+---
+
+TC_POS_003: Successful Product Quantity Increment
+
+Priority
+
+High
+
+Severity
+
+Major
+
+Type
+
+Functional
+
+Precondition
+
+User is on the checkout page with 1 item in the cart.
+
+Steps
+
+1. Click the "+" button next to the product quantity.
+
+Expected Result
+
+- Quantity updates to 2.
+- Subtotal updates to $300.
+
+---
+
+TC_POS_004: Successful Product Quantity Decrement
+
+Priority
+
+High
+
+Severity
+
+Major
+
+Type
+
+Functional
+
+Precondition
+
+User is on the checkout page with 2 items in the cart.
+
+Steps
+
+1. Click the "-" button next to the product quantity.
+
+Expected Result
+
+- Quantity updates to 1.
+- Subtotal updates to $150.
+
+---
+
+TC_POS_005: Order Confirmation Rendering
+
+Priority
+
+High
+
+Severity
+
+Major
+
+Type
+
+Functional
+
+Precondition
+
+Valid data is filled out on the checkout page.
+
+Steps
+
+1. Click the "Pay" button.
+2. Wait for transaction processing.
+
+Expected Result
+
+- Order success screen is displayed.
+- Success message is displayed.
+- Unique order ID is displayed.
+- Order summary is displayed.

@@ -4,8 +4,8 @@
 - [Human Thinking Test Cases](#human-thinking-test-cases)
 - [AI Manual Test Cases](#ai-manual-test-cases-)
 - [Prompt ](#prompt)
-- [My Thoughts](#my-thoughts)
-- [Final Test Cases (AI + Manual Combined) – Automation Ready](#final-test-cases-ai--manual-combined--automation-ready)
+- [My Thoughts](#my-thoughts-)
+- [Final Test Cases (AI + Manual Combined) – Automation Ready](#final-test-cases-ai--manual-combined--automation-ready-)
 
 
 # QA Manual Test Cases:- 

@@ -109,11 +109,11 @@ Test Cases_004:- (Place order after registration)
 16. Input an optional description in the comment text box and click 'Place Order'.
 17. Enter the payment details (Name on Card, Card Number, CVC, and Expiration Date) and click 'Pay and Confirm Order'. 
 18. Verify the success message 'Your order has been placed successfully!' 
-# AI Manual Test Cases:- 
-User login 
+## AI Manual Test Cases:- 
+*User login* 
 
 
-# Prompt : Act as an expert Manual QA . I need you to generate a comprehensive suite of test cases for the login functionality of the website "Automation Exercise".
+## Prompt: Act as an expert Manual QA . I need you to generate a comprehensive suite of test cases for the login functionality of the website "Automation Exercise".
 
 
 

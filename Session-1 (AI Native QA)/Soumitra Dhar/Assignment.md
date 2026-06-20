@@ -6,16 +6,16 @@
 ## Human Thinking Test Cases
 
 ### TC-001 (Verify user can register successfully)
-Preconditions: User is on the homepage
-Steps to execute: Click Register → Enter valid details → Submit
+#### Preconditions: User is on the homepage
+#### Steps to execute: Click Register → Enter valid details → Submit
 
 ### TC-002 (Verify mandatory fields validation in registration)
-Preconditions: User is on the registration page
-Steps to execute: Click Register without data
+#### Preconditions: User is on the registration page
+#### Steps to execute: Click Register without data
 
 ### TC-003 (Verify valid login functionality)
-Preconditions: User must be registered
-Steps to execute: Enter valid credentials → Login
+#### Preconditions: User must be registered
+#### Steps to execute: Enter valid credentials → Login
 
 ### TC-004 (Verify invalid login error message)
 Preconditions: User is on the login page

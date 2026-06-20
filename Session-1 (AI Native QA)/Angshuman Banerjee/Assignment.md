@@ -507,7 +507,9 @@ SECTION 2 : AI CREATED MANUAL TEST CASES
 PROMPT GIVEN: 
 ------------------------------------------
 Act as a senior test engineer specialized with functional testing and UI/UX testing for web applications.
+
 URL TO BE TESTED: https://eventhub.rahulshettyacademy.com/.
+
 APPLICATION CONTEXT:
 a. EventHub is an event booking platform with the following core functionality:
 b. Users can register/create a profile and log in.
@@ -515,7 +517,8 @@ c. Logged-in users can browse listed events and book them.
 d. A "My Bookings" section lets users view events they have booked.
 e. An Admin section allows authorized users to create and manage new events.
 
-SCENARIO TO BE COVERED (END-TO-END FLOW) Write test cases covering this user journey, broken down into its individual stages:
+SCENARIO TO BE COVERED (END-TO-END FLOW): Write test cases covering this user journey, broken down into its individual stages-
+
 a. New user registration/account creation.
 b. Admin login and navigation to the event management section.
 c. Admin creates a new event (with all required event details).
@@ -524,6 +527,7 @@ e. Manage Event in Admin Section.
 f. Old User Login.
 
 TASK: Generate a complete manual test suite for the above scenarios on the Eventhub website. Do not duplicate the same test cases.
+
 NOTE: Show the result in the below format-
 TESTCASE_ID:
 Test Scenario:

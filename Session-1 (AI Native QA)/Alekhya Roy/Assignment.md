@@ -1,72 +1,72 @@
-QA MANUAL TEST CASES
+# QA MANUAL TEST CASES
 Member : Alekhya Roy
 Target Application : https://eventhub.rahulshettyacademy.com/login
  
-SECTION 1 : HUMAN THINKING TEST CASES
+## SECTION 1 : HUMAN THINKING TEST CASES
  
-TC_001 : New user creation with valid data
+### TC_001 : New user creation with valid data
  
-Test Steps :
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter valid email address
 Enter valid password which is matching the password rule
 Enter same password in confirm password section
 Click on create account
-Expected Result : Account should be created and redirected to dashboard page
-TC_002 : New user creation with invalid email format
-Test Steps :
+**Expected Result : Account should be created and redirected to dashboard page**
+### TC_002 : New user creation with invalid email format
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter invalid email format
 Enter valid password which is matching the password rule
 Enter same password in confirm password section
 Click on create account
-Expected Result : Account should not be created and validation error should appear
-TC_003 : Verify that user creation fails when the entered password does not comply with the required password format
-Test Steps :
+**Expected Result : Account should not be created and validation error should appear**
+### TC_003 : Verify that user creation fails when the entered password does not comply with the required password format
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter valid email address
 Enter a password that does not match the required format
 Enter same password in confirm password section
 Click on create account
-Expected Result : “Password does not meet the requirements below” error should be displayed
-TC_004 : Verify that user creation fails when the Confirm Password field does not match the Password field
-Test Steps :
+**Expected Result : “Password does not meet the requirements below” error should be displayed**
+### TC_004 : Verify that user creation fails when the Confirm Password field does not match the Password field
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter valid email address
 Enter valid password which is matching the password rule
 Enter different password in confirm password section
 Click on create account
-Expected Result : “Password does not match “ error message should appear
-TC_005 : Verify that user creation fails when mandatory fields are left blank
-Test Steps :
+**Expected Result : “Password does not match “ error message should appear**
+### TC_005 : Verify that user creation fails when mandatory fields are left blank
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Leave all mandatory fields blank
-Expected Result : Mandatory fields should not be blanked message should appear
-TC_006 : Verify that copy-paste functionality is disabled for the Password and Confirm Password fields
-Test Steps :
+**Expected Result : Mandatory fields should not be blanked message should appear**
+### TC_006 : Verify that copy-paste functionality is disabled for the Password and Confirm Password fields
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter valid email address
 Enter valid password which is matching the password rule
 Attempt to copy the entered password
 Try to paste it into the Confirm Password field
-Expected Result : Copy and paste actions should be blocked for both Password and Confirm Password fields
-TC_OO7 : Verify user registration with already registered email address
-Test Steps :
+**Expected Result : Copy and paste actions should be blocked for both Password and Confirm Password fields**
+### TC_OO7 : Verify user registration with already registered email address
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter already registered email address
 Enter valid password which is matching the password rule
 Enter same password in confirm password section
 Click on create account
-Expected Result : Email address already registered message should appear
-TC_008 : Verify that after successful user registration, the system redirects to the dashboard and the Admin section is visible.
-Test Steps :
+**Expected Result : Email address already registered message should appear**
+### TC_008 : Verify that after successful user registration, the system redirects to the dashboard and the Admin section is visible.
+**Test Steps:**
 Open https://eventhub.rahulshettyacademy.com/login website on a browser
 Click on register link under Sign in option
 Enter valid email address
@@ -74,26 +74,26 @@ Enter valid password which is matching the password rule
 Enter same password in confirm password section
 Click on create account
 After redirection to dashboard observe admin section is visible or not
-Expected Result : Admin drop down should be visible with “Manage Events “ and “Manage Bookings “ options.
-TC_009 : Verify that “Manage Events “ are clickable and redirected to new event form
-Test Steps :
+**Expected Result : Admin drop down should be visible with “Manage Events “ and “Manage Bookings “ options.**
+### TC_009 : Verify that “Manage Events “ are clickable and redirected to new event form
+**Test Steps:**
 Click on Admin drop down in navigation bar
 Click on Manage Event option
-Expected Result : New event creation page should appear
-TC_010 : Verify that after filling up all required fields in new event form and submit new event entry is creating and showing in events list
-Test Steps :
+**Expected Result : New event creation page should appear**
+### TC_010 : Verify that after filling up all required fields in new event form and submit new event entry is creating and showing in events list
+**Test Steps:**
 Fill in all required fields in the New Event form
 Click on the Submit button.
-Expected Result : A new event entry should be created successfully.The newly created event should appear in the Events List with the correct details.
-TC_011 : Verify that newly created event is visible in the event list of another user
-Test Steps :
+**Expected Result : A new event entry should be created successfully.The newly created event should appear in the Events List with the correct details.**
+### TC_011 : Verify that newly created event is visible in the event list of another user
+**Test Steps:**
 Log in as User B.
 Navigate to the Events List page.
 Search or scroll through the list to locate the event created by User A.
 Expected Results :The newly created event by User A should be visible in the Events List of User B.
-SECTION 2 : AI CREATED MANUAL TEST CASES
+## SECTION 2 : AI CREATED MANUAL TEST CASES
  
-Prompt :
+### Prompt :
 ROLE
 Act as a Senior Test Engineer with 5+ years of experience specializing in
 manual testing, functional testing, regression testing, and UI/UX testing
@@ -146,12 +146,12 @@ relevant category.
 TEST CASE FORMAT
 Write each test case strictly in the following format:
  
-TC_001 : <Short descriptive title of the test case>
-Test Steps :
+### TC_001 : <Short descriptive title of the test case>
+**Test Steps:**
 Step 1 : <action>
 Step 2 : <action>
 Step 3 : <action>
-Expected Result : <expected outcome after executing the steps>
+**Expected Result : <expected outcome after executing the steps>**
  
 Continue numbering sequentially (TC_002, TC_003, ...) across the entire
 suite, grouped under their respective category headings (Positive,
@@ -723,7 +723,7 @@ Step 2 : Log in as a regular user and open the event's detail page.
 Step 3 : Compare each displayed field against the values entered by admin in Step 1.
 **Expected Result :** Every displayed field (name, date, time, venue, price, description, seats) matches exactly what the admin entered, with no truncation, formatting corruption, or data mismatch.
  
-MY THOUGHTS :
+## MY THOUGHTS :
 ✅ Pros
 Speed & Coverage: AI can instantly generate dozens of test cases, covering positive, negative, boundary, and security scenarios that would take a human tester hours.
 Format Flexibility: It can output in Gherkin/BDD style, which integrates smoothly with automation frameworks like Cucumber or Karate.
@@ -732,92 +732,92 @@ Effort Reduction: Saves manual effort in writing repetitive test cases, freeing 
 Scenario Drift: AI sometimes generates test cases beyond the scope of the given functionality, which dilutes focus and creates confusion.
 Missing Business Context: While technically correct, AI lacks domain knowledge and business intelligence, so it struggles to design cases that reflect real‑world workflows or customer priorities.
 Objective Misalignment: It may cover “all possible inputs” but miss the main objective of the scenario, leading to gaps in validation.
-FINAL TEST CASES (AI+HUMAN) COMBINED - AUTOMATION READY
-FTC_001 : Verify successful new user registration with valid details
-Test Steps:
+## FINAL TEST CASES (AI+HUMAN) COMBINED - AUTOMATION READY
+### FTC_001 : Verify successful new user registration with valid details
+**Test Steps:**
 Step 1: Open https://eventhub.rahulshettyacademy.com/login.
 Step 2: Click on the Register link.
 Step 3: Enter a valid and unique email address.
 Step 4: Enter a valid password that satisfies password policy requirements.
 Step 5: Enter the same password in the Confirm Password field.
 Step 6: Click on Create Account.
-Expected Result:
+**Expected Result:**
 User account should be created successfully.
 User should be redirected to the Dashboard page.
  
-FTC_002 : Verify user registration fails with invalid email format
-Test Steps:
+### FTC_002 : Verify user registration fails with invalid email format
+**Test Steps:**
 Step 1: Open the Registration page.
 Step 2: Enter an invalid email address.
 Step 3: Enter a valid password.
 Step 4: Enter matching Confirm Password.
 Step 5: Click on Create Account.
-Expected Result:
+**Expected Result:**
 Registration should fail.
 Appropriate email validation message should be displayed.
  
-FTC_003 : Verify user registration fails when password does not meet password policy requirements
-Test Steps:
+### FTC_003 : Verify user registration fails when password does not meet password policy requirements
+**Test Steps:**
 Step 1: Open the Registration page.
 Step 2: Enter a valid email address.
 Step 3: Enter an invalid password that does not satisfy password requirements.
 Step 4: Enter the same password in Confirm Password.
 Step 5: Click on Create Account.
-Expected Result:
+**Expected Result:**
 Registration should fail.
 Password validation message should be displayed.
  
-FTC_004 : Verify user registration fails when Password and Confirm Password do not match
-Test Steps:
+### FTC_004 : Verify user registration fails when Password and Confirm Password do not match
+**Test Steps:**
 Step 1: Open the Registration page.
 Step 2: Enter a valid email address.
 Step 3: Enter a valid password.
 Step 4: Enter a different password in Confirm Password.
 Step 5: Click on Create Account.
-Expected Result:
+**Expected Result:**
 Registration should fail.
 Password mismatch validation message should be displayed.
  
-FTC_005 : Verify user registration fails with an already registered email address
-Test Steps:
+### FTC_005 : Verify user registration fails with an already registered email address
+**Test Steps:**
 Step 1: Open the Registration page.
 Step 2: Enter an already registered email address.
 Step 3: Enter a valid password.
 Step 4: Enter matching Confirm Password.
 Step 5: Click on Create Account.
-Expected Result:
+**Expected Result:**
 Registration should fail.
 "Email already registered" message should be displayed.
  
-FTC_006 : Verify Admin menu is visible after successful user registration
-Test Steps:
+### FTC_006 : Verify Admin menu is visible after successful user registration
+**Test Steps:**
 Step 1: Register a new user successfully.
 Step 2: Observe the Dashboard page.
 Step 3: Verify the Admin dropdown menu.
-Expected Result:
+**Expected Result:**
 Admin dropdown should be visible.
 Manage Events option should be displayed.
 Manage Bookings option should be displayed.
  
-FTC_007 : Verify navigation to Manage Events page from Admin menu
-Test Steps:
+### FTC_007 : Verify navigation to Manage Events page from Admin menu
+**Test Steps:**
 Step 1: Click on Admin menu.
 Step 2: Click on Manage Events.
-Expected Result:
+**Expected Result:**
 User should be redirected to the Event Management page.
 Event creation form should be displayed.
  
-FTC_008 : Verify event creation fails when mandatory fields are left blank
-Test Steps:
+### FTC_008 : Verify event creation fails when mandatory fields are left blank
+**Test Steps:**
 Step 1: Navigate to Manage Events page.
 Step 2: Leave mandatory fields blank.
 Step 3: Click on Submit.
-Expected Result:
+**Expected Result:**
 Event should not be created.
 Validation messages should be displayed for mandatory fields.
  
-FTC_009 : Verify successful creation of a new event with valid details
-Test Steps:
+### FTC_009 : Verify successful creation of a new event with valid details
+**Test Steps:**
 Step 1: Navigate to Manage Events page.
 Step 2: Enter valid Event Name.
 Step 3: Enter valid Event Description.
@@ -827,64 +827,64 @@ Step 6: Enter valid Venue.
 Step 7: Enter valid Available Seats.
 Step 8: Upload a valid event image if applicable.
 Step 9: Click on Submit.
-Expected Result:
+**Expected Result:**
 Event should be created successfully.
 Success confirmation message should be displayed.
  
-FTC_010 : Verify newly created event is displayed in Events List
-Test Steps:
+### FTC_010 : Verify newly created event is displayed in Events List
+**Test Steps:**
 Step 1: Create a new event.
 Step 2: Navigate to Events List.
 Step 3: Search for the newly created event.
-Expected Result:
+**Expected Result:**
 Newly created event should be visible in the Events List.
 Event details should match the entered values.
  
-FTC_011 : Verify event creation fails when a past date is selected
-Test Steps:
+### FTC_011 : Verify event creation fails when a past date is selected
+**Test Steps:**
 Step 1: Navigate to Manage Events page.
 Step 2: Enter valid event details.
 Step 3: Select a past date.
 Step 4: Click on Submit.
-Expected Result:
+**Expected Result:**
 Event should not be created.
 Appropriate date validation message should be displayed.
  
-FTC_012 : Verify event creation fails when an unsupported file type is uploaded
-Test Steps:
+### FTC_012 : Verify event creation fails when an unsupported file type is uploaded
+**Test Steps:**
 Step 1: Navigate to Manage Events page.
 Step 2: Fill all mandatory fields.
 Step 3: Upload an unsupported file format.
 Step 4: Click on Submit.
-Expected Result:
+**Expected Result:**
 File upload should be rejected.
 Appropriate validation message should be displayed.
  
-FTC_013 : Verify another registered user can successfully log in
-Test Steps:
+### FTC_013 : Verify another registered user can successfully log in
+**Test Steps:**
 Step 1: Logout from the current account.
 Step 2: Navigate to Login page.
 Step 3: Enter valid credentials of another registered user.
 Step 4: Click on Login.
-Expected Result:
+**Expected Result:**
 User should be logged in successfully.
 Event Listing page should be displayed.
  
-FTC_014 : Verify newly created event is visible to another user
-Test Steps:
+### FTC_014 : Verify newly created event is visible to another user
+**Test Steps:**
 Step 1: Login using another registered user account.
 Step 2: Navigate to Events Listing page.
 Step 3: Search for the event created earlier.
-Expected Result:
+**Expected Result:**
 Newly created event should be visible in the Events List.
 Event details should be displayed correctly.
  
-FTC_015 : Verify event details displayed to another user match the details entered during event creation
-Test Steps:
+### FTC_015 : Verify event details displayed to another user match the details entered during event creation
+**Test Steps:**
 Step 1: Login using another registered user account.
 Step 2: Open the newly created event.
 Step 3: Verify Event Name, Description, Date, Time, Venue and Available Seats.
-Expected Result:
+**Expected Result:**
 All event details should match the values entered during event creation.
 
 

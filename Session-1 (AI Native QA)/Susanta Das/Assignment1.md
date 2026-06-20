@@ -1,10 +1,10 @@
 Table of Contents
-QA Manual Test Cases
-Human Thinking Test Cases
-AI Manual Test Cases
-Prompt
-My Thoughts
-Final Test Cases (AI + Manual Combined) – Automation Ready
+##QA Manual Test Cases
+##Human Thinking Test Cases
+##AI Manual Test Cases
+##Prompt
+##My Thoughts
+##Final Test Cases (AI + Manual Combined) – Automation Ready
 -------------------------------------------------
 QA Manual Test Cases:- 
 -------------------------------------------------

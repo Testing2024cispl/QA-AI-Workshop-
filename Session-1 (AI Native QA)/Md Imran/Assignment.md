@@ -106,7 +106,8 @@ Prompt:- Write test cases for OpenCart end-to-end flow (Register → Login → A
 8. Verify the product price is displayed.  
 9. Verify the product description is displayed.  
 10. Verify the product image is displayed.  
-11. Verify the Add to Cart button is available.  
+11. Verify the Add to Cart button is available.
+
     ---
 
     ### **TestCases\_006:-**
@@ -124,7 +125,8 @@ Prompt:- Write test cases for OpenCart end-to-end flow (Register → Login → A
 9. Click Continue.  
 10. Verify account update success message.  
 11. Open Account Information page.  
-12. Verify updated details are displayed correctly.  
+12. Verify updated details are displayed correctly.
+     
     ---
 
     ### **TestCases\_002:-**
@@ -142,7 +144,8 @@ Prompt:- Write test cases for OpenCart end-to-end flow (Register → Login → A
 9. Verify the correct quantity for each product.  
 10. Verify individual product prices.  
 11. Verify the cart subtotal is calculated correctly.  
-12. Verify the total amount is displayed correctly.  
+12. Verify the total amount is displayed correctly.
+    
     ---
 
     ### **TestCases\_003:-**
@@ -158,7 +161,8 @@ Prompt:- Write test cases for OpenCart end-to-end flow (Register → Login → A
 7. Navigate to the Wish List page.  
 8. Verify the selected product appears in the Wish List.  
 9. Verify the product name is displayed correctly.  
-10. Verify the product price is displayed correctly.  
+10. Verify the product price is displayed correctly.
+    
     ---
 
     ### **TestCases\_004:-**
@@ -226,7 +230,8 @@ Verify that a new user can successfully register an account, log in using the re
 9. Logout from the application  
 10. Go to login page and enter same Email ID and Password  
 11. Click Login  
-12. Verify user is logged in successfully  
+12. Verify user is logged in successfully
+
     ---
 
     ## **TestCases\_002:-**
@@ -245,7 +250,8 @@ Verify that the system displays appropriate validation messages for invalid emai
 10. Go to login page  
 11. Enter wrong password  
 12. Click Login  
-13. Verify error message is displayed  
+13. Verify error message is displayed
+
     ---
 
     ## **TestCases\_003:-**
@@ -262,7 +268,8 @@ Verify that products can be added to the cart successfully and that product name
 8. Verify total price calculation is correct  
 9. Increase quantity to 2  
 10. Click Update  
-11. Verify total price updates correctly  
+11. Verify total price updates correctly
+
     ---
 
     ## **TestCases\_004:-**
@@ -278,7 +285,8 @@ Verify that users can remove products from the cart, that checkout is prevented 
 7. Verify error/validation message is displayed  
 8. Navigate back to store page  
 9. Attempt to add out-of-stock product (if available)  
-10. Verify system blocks addition of out-of-stock item  
+10. Verify system blocks addition of out-of-stock item
+
     ---
 
     ## **TestCases\_005:-**
@@ -294,7 +302,8 @@ Verify that a registered user can search for a product, view product details, an
 7. Verify product name is displayed correctly  
 8. Verify product price is displayed  
 9. Verify product description is visible  
-10. Verify Add to Cart button is available  
+10. Verify Add to Cart button is available
+
     ---
 
     ## **TestCases\_006:-**
@@ -315,7 +324,8 @@ Verify that a logged-in user can successfully complete checkout and place an ord
 12. Click Confirm Order  
 13. Verify order confirmation message is displayed  
 14. Verify Order ID is generated  
-15. Verify order appears in Order History  
+15. Verify order appears in Order History
+
     ---
 
     ## **TestCases\_007:-**

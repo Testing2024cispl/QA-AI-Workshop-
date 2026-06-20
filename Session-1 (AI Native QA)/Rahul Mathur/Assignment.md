@@ -1,4 +1,4 @@
-Manual Test Cases - Rahul Mathur  [ Manual Cognitive Validation Test Cases]
+<img width="537" height="133" alt="image" src="https://github.com/user-attachments/assets/d02bdac4-1462-44ad-ba0f-2ed160c3cf12" /><img width="296" height="133" alt="image" src="https://github.com/user-attachments/assets/ad4a3d90-bf10-400a-afb2-2f48763afec1" /><img width="296" height="133" alt="image" src="https://github.com/user-attachments/assets/9da4762c-9d8b-4f81-bc0a-2973340711f3" /><img width="93" height="133" alt="image" src="https://github.com/user-attachments/assets/8a462e07-63d3-44dc-b92c-dd1cae16cf53" /><img width="93" height="133" alt="image" src="https://github.com/user-attachments/assets/75c5dfce-ffd9-4ac4-b86b-9b17534d955f" />Manual Test Cases - Rahul Mathur  [ Manual Cognitive Validation Test Cases]
 
 Module: Authentication & Login  
 
@@ -262,6 +262,30 @@ Click the User Profile Menu in the header, select My Orders, and locate the Orde
 Expected Result:
 The user is redirected to the My Orders history page listing all past purchases.
 The newly placed order is present in the list, with the Order Date, Product Name, Quantity, and Total Price exactly matching the details from the completed purchase.
+
+EDGE CASES 
+EC_01  **Title : Browser back after order confirmation!**
+
+Pre-conditions : 
+Order placed , on confirmation page.
+Steps : 
+1. Click browser back button.
+2. Observe resulting page and cart state.
+
+EC_02 : 
+title : Cart sync across two browser tabs.
+steps : 
+1. Add item to cart in Tab 1.
+2. Switch to Tab 2.
+3. Click the cart icon.
+
+EC_03 :
+title : Rapid repeated clicks on Add to Cart!
+Pre-conditions : Product detail page open.
+steps : 
+1. Click "Add to Cart" 5 times rapidly.
+
+
 
 ==================================================================================================================================================================
 

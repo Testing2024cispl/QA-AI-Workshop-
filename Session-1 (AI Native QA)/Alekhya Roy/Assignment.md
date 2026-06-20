@@ -1,6 +1,6 @@
 # QA MANUAL TEST CASES
-Member : Alekhya Roy
-Target Application : https://eventhub.rahulshettyacademy.com/login
+## Member : Alekhya Roy
+## Target Application : https://eventhub.rahulshettyacademy.com/login
  
 ## SECTION 1 : HUMAN THINKING TEST CASES
  

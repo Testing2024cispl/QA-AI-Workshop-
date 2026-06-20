@@ -1,6 +1,7 @@
 Manual Test Cases - Rahul Mathur  [ Manual Cognitive Validation Test Cases]
 
 Module: Authentication & Login  
+
 **TC_AUTH_001: Verify successful opening and UI layout of the Login Functionality**
 Precondition: User is on the homepage and is not logged in.
 Test Steps:
@@ -15,7 +16,7 @@ Sign In with “Facebook” - social functionality
 “Sign In” button
 “Forgot Your Password?” hyperlink
 
-**TC_AUTH_002 : Title: Verify "Sign In with Facebook" Button Redirects to Facebook Login.******
+**TC_AUTH_002 : Title: Verify "Sign In with Facebook" Button Redirects to Facebook Login.**
 Steps:
 Navigate to advantageonlineshopping.com.
 Click the User icon.
@@ -24,8 +25,7 @@ Expected Result:
 User should be redirected to the Facebook authentication/login page.
 
 
-TC_AUTH_003 : 
-**Title: Verify "Forgot Your Password?" Link Navigates to Password Recovery Page.**
+**TC_AUTH_003 : Title: Verify "Forgot Your Password?" Link Navigates to Password Recovery Page.**
 Steps:
 Navigate to advantageonlineshopping.com.
 Click the User icon.
@@ -33,8 +33,7 @@ Click the Forgot Your Password? link.
 Expected Result:
 The Password Recovery page should be displayed successfully.
 
-TC_AUTH_004 : 
-**Title: Verify Create New Account Button Navigates to Registration Page**
+**TC_AUTH_004 : Title: Verify Create New Account Button Navigates to Registration Page**
 Steps:
 Navigate to advantageonlineshopping.com.
 Click the User icon.
@@ -48,8 +47,8 @@ Account Details
 Personal Details
 Address
 
-TC_AUTH_005 :  
-**Title: Verify Successful User Registration with Valid Information**
+**TC_AUTH_005 :  Title: Verify Successful User Registration with Valid Information**
+
 Precondition: User is on the Registration page at advantageonlineshopping.com/#/register.
 Steps:
 Fill in account credentials — enter a unique Username, valid Email Address, Password, and re-enter the same password in the Confirm Password field.
@@ -104,7 +103,7 @@ Expected Result:
 The account is created successfully.
 The promotional subscription preference is saved to the user profile, confirming the opt-in was recorded.
 
-**TC_REG_005: Verify Country Dropdown Population and Selection Behavior functionality **
+**TC_REG_005: Verify Country Dropdown Population and Selection Behavior functionality.**
 Precondition: User is on the registration page (register).
 Steps:
 Click on the Country dropdown and select any country from the list.
@@ -138,9 +137,9 @@ Registration fails and the form is not submitted.
 An inline or banner validation error message is displayed, indicating that the Username is already taken.
 
 **TC_REG_009: Verify Validation Error When Registering with a Duplicate Email Address.**
-Precondition: User is on the registration page. An existing account with the email test@demo.com is already registered.
+Precondition: User is on the registration page. An existing account with the email test01@mailinator.com is already registered.
 Steps:
-Enter a unique Username, enter test@demo.com in the Email field, complete all remaining mandatory fields with valid data, and click Register.
+Enter a unique Username, enter test01@mailinator.com in the Email field, complete all remaining mandatory fields with valid data, and click Register.
 Expected Result:
 Registration fails and the form is not submitted.
 A validation error message is displayed, indicating that the email address is already associated with an existing account.

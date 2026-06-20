@@ -119,11 +119,11 @@
 
 # AI Manual Test Cases:-
 **Member Name: Soumitra Dhar**
-System Under Test: Tricentis Demo Web Shop
-URL: https://demowebshop.tricentis.com/
-Prepared By: Senior QA Engineer	Testing Types: Functional, BVA, Negative, Exploratory
-Document Version: 1.0	Total Test Cases: 57
-Modules Covered: Registration, Login, Search, Product, Cart, Checkout, Account, Wishlist, Navigation
+## System Under Test: Tricentis Demo Web Shop
+## URL: https://demowebshop.tricentis.com/
+## Prepared By:  QA Engineer	Testing Types: Functional, BVA, Negative, Exploratory
+## Document Version: 1.0	Total Test Cases: 57
+## Modules Covered: Registration, Login, Search, Product, Cart, Checkout, Account, Wishlist, Navigation
 
 ## Test Summary
 

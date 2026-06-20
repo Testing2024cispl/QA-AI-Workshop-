@@ -8,7 +8,7 @@
 - [Final Test Cases (AI + Manual Combined) – Automation Ready](#final-test-cases-ai--manual-combined--automation-ready)
 
 -------------------------------------------------
-QA Manual Test Cases:- 
+##QA Manual Test Cases:- 
 -------------------------------------------------
 Member 1:- Susanta Das 
 
@@ -18,7 +18,7 @@ Query/Test cases :-
 Scenario 2 : Old user login , event booking, booking cancel , logout 
 ----------
 
-Human Thinking Test Cases 
+##Human Thinking Test Cases 
 ------------------------------------------
 TestCases_001:-  Old Existing user login with invalid email or password
 ---
@@ -88,10 +88,10 @@ Users can fill invalid phone numbers in the phone number input field and click o
 Users can directly click on  “Confirm Booking” CTA without filling any values in all input fields and validate whether the error validation  message appears on the bottom of all input fields or not. 
 
 -------------------------------------------------------------------
-AI Manual Test Cases:- 
+##AI Manual Test Cases:- 
 -------------------------------------------------------------------
 Member 1:- Susanta Das
-Prompt :- 
+##Prompt :- 
 -----
 Write test cases for https://eventhub.rahulshettyacademy.com/ site with existing valid email "susantadas7044554389@gmail.com" and password "Test@1234" to validate the scenario Old existing user login , event booking, booking cancel and logout . 
 Sample Format: TestCases_001: Old Existing User Login with Invalid Email or Password Precondition: User accounts already exist in the system. Test Steps:
@@ -360,7 +360,7 @@ Logout should terminate the session successfully.
 Users should be redirected to the public/home page after logout.
 
 ---------------------------
-My  thoughts:- 
+##My  thoughts:- 
 ---------------------------
 ● What I  felt Suitable:-  
     The test cases cover the complete end-to-end user journey, including login, event booking, booking cancellation, booking status verification, and logout. Both positive and negative login scenarios are included. Test steps are written in a logical sequence that closely follows actual user behavior. Important system messages such as booking confirmation, cancellation success, and login validation are verified. 
@@ -369,7 +369,7 @@ My  thoughts:-
     Boundary value validations (minimum and maximum character limits, special characters, blank spaces, etc.) are not covered for booking form fields. Session validation after logout (e.g., using browser Back button or direct URL access) is not covered. Test cases are not currently automation-ready because reusable preconditions, test data, and clear assertions are not defined separately. 
 
 ------------------------
-Final Test Cases (AI + Manual Combined) – Automation Ready
+##Final Test Cases (AI + Manual Combined) – Automation Ready
 ------------------------
 
 # EventHub Test Coverage Matrix

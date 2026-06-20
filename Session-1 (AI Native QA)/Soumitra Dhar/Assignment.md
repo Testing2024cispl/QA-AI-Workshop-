@@ -145,7 +145,8 @@
 ### TC-REG-001  Successful user registration with valid data
 #### Module	Registration     Type: Positive     Priority: P1
 #### Preconditions	User is not registered. Browser open at homepage.
-#### Test Steps	1. Navigate to demowebshop.tricentis.com
+#### Test Steps
+1. Navigate to demowebshop.tricentis.com
 2. Click 'Register' link in header
 3. Select gender (Male/Female)
 4. Enter first name: John
@@ -159,7 +160,8 @@
 ### TC-REG-002  Registration with already existing email
 #### Module	Registration     Type: Negative     Priority: P1
 #### Preconditions	User 'john.smith.test@qa.com' already registered.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps
+1. Navigate to Register page
 2. Fill all fields with same email as existing account
 3. Click 'Register' button
 
@@ -167,7 +169,8 @@
 ### TC-REG-003  Registration with blank mandatory fields
 #### Module	Registration     Type: Negative     Priority: P1
 #### Preconditions	User is on the registration page.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps
+1. Navigate to Register page
 2. Leave all fields blank
 3. Click 'Register' button
 
@@ -175,7 +178,8 @@
 ### TC-REG-004  Registration with invalid email format
 #### Module	Registration     Type: Negative     Priority: P2
 #### Preconditions	User is on the registration page.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps	
+1. Navigate to Register page
 2. Enter first name, last name
 3. Enter invalid email: 'notanemail'
 4. Enter valid password and confirm
@@ -185,7 +189,8 @@
 ### TC-REG-005  Registration with mismatched passwords
 #### Module	Registration     Type: Negative     Priority: P1
 #### Preconditions	User is on the registration page.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps	
+1. Navigate to Register page
 2. Fill all fields with valid data
 3. Enter password: Test@1234
 4. Enter confirm password: Different123
@@ -195,7 +200,8 @@
 ### TC-REG-006  Registration with password at minimum boundary (6 chars)
 #### Module	Registration     Type: BVA     Priority: P2
 #### Preconditions	User is on the registration page.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps	
+1. Navigate to Register page
 2. Fill name and email fields
 3. Enter password: 'Ab1234' (exactly 6 chars)
 4. Enter confirm password: 'Ab1234'
@@ -205,7 +211,8 @@
 ### TC-REG-007  Registration with password below minimum (5 chars)
 #### Module	Registration     Type: BVA     Priority: P2
 #### Preconditions	User is on the registration page.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps	
+1. Navigate to Register page
 2. Fill name and email fields
 3. Enter password: 'Ab123' (5 chars)
 4. Enter confirm password: 'Ab123'
@@ -215,7 +222,8 @@
 ### TC-REG-008  Registration with special characters in name fields
 #### Module	Registration     Type: Exploratory     Priority: P3
 #### Preconditions	User is on the registration page.
-#### Test Steps	1. Navigate to Register page
+#### Test Steps	
+1. Navigate to Register page
 2. Enter first name: "O'Brien"
 3. Enter last name: 'St. Claire-Jones'
 4. Enter valid email and password
@@ -227,7 +235,8 @@
 ### TC-LOG-001  Successful login with valid credentials
 #### Module	Login     Type: Positive     Priority: P1
 #### Preconditions	Registered user account exists.
-#### Test Steps	1. Navigate to demowebshop.tricentis.com
+#### Test Steps
+1. Navigate to demowebshop.tricentis.com
 2. Click 'Log in' in header
 3. Enter valid email address
 4. Enter valid password

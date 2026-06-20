@@ -724,11 +724,11 @@ Step 3 : Compare each displayed field against the values entered by admin in Ste
 **Expected Result :** Every displayed field (name, date, time, venue, price, description, seats) matches exactly what the admin entered, with no truncation, formatting corruption, or data mismatch.
  
 ## MY THOUGHTS :
-✅ Pros
+### ✅ Pros
 Speed & Coverage: AI can instantly generate dozens of test cases, covering positive, negative, boundary, and security scenarios that would take a human tester hours.
 Format Flexibility: It can output in Gherkin/BDD style, which integrates smoothly with automation frameworks like Cucumber or Karate.
 Effort Reduction: Saves manual effort in writing repetitive test cases, freeing testers to focus on exploratory and business‑critical testing.
-⚠️ Cons
+### ⚠️ Cons
 Scenario Drift: AI sometimes generates test cases beyond the scope of the given functionality, which dilutes focus and creates confusion.
 Missing Business Context: While technically correct, AI lacks domain knowledge and business intelligence, so it struggles to design cases that reflect real‑world workflows or customer priorities.
 Objective Misalignment: It may cover “all possible inputs” but miss the main objective of the scenario, leading to gaps in validation.

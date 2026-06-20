@@ -1,14 +1,18 @@
 ## Table of Contents
+## QA Manual Test Cases
 
-- [QA Manual Test Cases](#qa-manual-test-cases)
-- [Human Thinking Test Cases](#human-thinking-test-cases)
-- [AI Manual Test Cases](#ai-manual-test-cases)
-- [Prompt](#prompt)
-- [My Thoughts](#my-thoughts)
-- [Final Test Cases (AI + Manual Combined) – Automation Ready](#final-test-cases-ai--manual-combined--automation-ready)
+## Human Thinking Test Cases
+
+## AI Manual Test Cases
+
+## Prompt
+
+## My Thoughts
+
+## Final Test Cases (AI + Manual Combined) – Automation Ready
 
 -------------------------------------------------
-## QA Manual Test Cases:- 
+## QA Manual Test Cases 
 -------------------------------------------------
 Member 1:- Susanta Das 
 
@@ -88,7 +92,7 @@ Users can fill invalid phone numbers in the phone number input field and click o
 Users can directly click on  “Confirm Booking” CTA without filling any values in all input fields and validate whether the error validation  message appears on the bottom of all input fields or not. 
 
 -------------------------------------------------------------------
-## AI Manual Test Cases:- 
+## AI Manual Test Cases
 -------------------------------------------------------------------
 Member 1:- Susanta Das
 ## Prompt :- 
@@ -360,7 +364,7 @@ Logout should terminate the session successfully.
 Users should be redirected to the public/home page after logout.
 
 ---------------------------
-## My  thoughts:- 
+## My  thoughts
 ---------------------------
 ● What I  felt Suitable:-  
     The test cases cover the complete end-to-end user journey, including login, event booking, booking cancellation, booking status verification, and logout. Both positive and negative login scenarios are included. Test steps are written in a logical sequence that closely follows actual user behavior. Important system messages such as booking confirmation, cancellation success, and login validation are verified. 

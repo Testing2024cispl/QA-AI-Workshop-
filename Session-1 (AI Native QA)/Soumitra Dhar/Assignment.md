@@ -143,9 +143,9 @@
 
 ## Module: Registration
 ### TC-REG-001  Successful user registration with valid data
-Module	Registration     Type: Positive     Priority: P1
-Preconditions	User is not registered. Browser open at homepage.
-Test Steps	1. Navigate to demowebshop.tricentis.com
+#### Module	Registration     Type: Positive     Priority: P1
+#### Preconditions	User is not registered. Browser open at homepage.
+#### Test Steps	1. Navigate to demowebshop.tricentis.com
 2. Click 'Register' link in header
 3. Select gender (Male/Female)
 4. Enter first name: John
@@ -154,8 +154,7 @@ Test Steps	1. Navigate to demowebshop.tricentis.com
 7. Enter password: Test@1234
 8. Enter confirm password: Test@1234
 9. Click 'Register' button
-Expected Result	User is successfully registered and redirected to home page. Success message 'Your registration completed' is displayed. User name appears in header.
-Test Data / Notes	Use unique email each run. Password minimum 6 characters.
+
 
 ### TC-REG-002  Registration with already existing email
 Module	Registration     Type: Negative     Priority: P1

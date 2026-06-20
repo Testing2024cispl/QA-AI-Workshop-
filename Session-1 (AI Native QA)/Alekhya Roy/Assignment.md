@@ -7,90 +7,90 @@
 ### TC_001 : New user creation with valid data
  
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter valid email address
---Enter valid password which is matching the password rule
---Enter same password in confirm password section
---Click on create account
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter valid email address
+-Enter valid password which is matching the password rule
+-Enter same password in confirm password section
+-Click on create account
 **Expected Result : Account should be created and redirected to dashboard page**
 ### TC_002 : New user creation with invalid email format
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter invalid email format
---Enter valid password which is matching the password rule
---Enter same password in confirm password section
---Click on create account
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter invalid email format
+-Enter valid password which is matching the password rule
+-Enter same password in confirm password section
+-Click on create account
 **Expected Result : Account should not be created and validation error should appear**
 ### TC_003 : Verify that user creation fails when the entered password does not comply with the required password format
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter valid email address
---Enter a password that does not match the required format
---Enter same password in confirm password section
---Click on create account
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter valid email address
+-Enter a password that does not match the required format
+-Enter same password in confirm password section
+-Click on create account
 **Expected Result : “Password does not meet the requirements below” error should be displayed**
 ### TC_004 : Verify that user creation fails when the Confirm Password field does not match the Password field
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter valid email address
---Enter valid password which is matching the password rule
---Enter different password in confirm password section
---Click on create account
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter valid email address
+-Enter valid password which is matching the password rule
+-Enter different password in confirm password section
+-Click on create account
 **Expected Result : “Password does not match “ error message should appear**
 ### TC_005 : Verify that user creation fails when mandatory fields are left blank
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Leave all mandatory fields blank
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Leave all mandatory fields blank
 **Expected Result : Mandatory fields should not be blanked message should appear**
 ### TC_006 : Verify that copy-paste functionality is disabled for the Password and Confirm Password fields
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter valid email address
---Enter valid password which is matching the password rule
---Attempt to copy the entered password
---Try to paste it into the Confirm Password field
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter valid email address
+-Enter valid password which is matching the password rule
+-Attempt to copy the entered password
+-Try to paste it into the Confirm Password field
 **Expected Result : Copy and paste actions should be blocked for both Password and Confirm Password fields**
 ### TC_OO7 : Verify user registration with already registered email address
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter already registered email address
---Enter valid password which is matching the password rule
---Enter same password in confirm password section
---Click on create account
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter already registered email address
+-Enter valid password which is matching the password rule
+-Enter same password in confirm password section
+-Click on create account
 **Expected Result : Email address already registered message should appear**
 ### TC_008 : Verify that after successful user registration, the system redirects to the dashboard and the Admin section is visible.
 **Test Steps:**
---Open https://eventhub.rahulshettyacademy.com/login website on a browser
---Click on register link under Sign in option
---Enter valid email address
---Enter valid password which is matching the password rule
---Enter same password in confirm password section
---Click on create account
---After redirection to dashboard observe admin section is visible or not
+-Open https://eventhub.rahulshettyacademy.com/login website on a browser
+-Click on register link under Sign in option
+-Enter valid email address
+-Enter valid password which is matching the password rule
+-Enter same password in confirm password section
+-Click on create account
+-After redirection to dashboard observe admin section is visible or not
 **Expected Result : Admin drop down should be visible with “Manage Events “ and “Manage Bookings “ options.**
 ### TC_009 : Verify that “Manage Events “ are clickable and redirected to new event form
 **Test Steps:**
---Click on Admin drop down in navigation bar
---Click on Manage Event option
+-Click on Admin drop down in navigation bar
+-Click on Manage Event option
 **Expected Result : New event creation page should appear**
 ### TC_010 : Verify that after filling up all required fields in new event form and submit new event entry is creating and showing in events list
 **Test Steps:**
---Fill in all required fields in the New Event form
---Click on the Submit button.
+-Fill in all required fields in the New Event form
+-Click on the Submit button.
 **Expected Result : A new event entry should be created successfully.The newly created event should appear in the Events List with the correct details.**
 ### TC_011 : Verify that newly created event is visible in the event list of another user
 **Test Steps:**
---Log in as User B.
---Navigate to the Events List page.
---Search or scroll through the list to locate the event created by User A.
---Expected Results :The newly created event by User A should be visible in the Events List of User B.
+-Log in as User B.
+-Navigate to the Events List page.
+-Search or scroll through the list to locate the event created by User A.
+-Expected Results :The newly created event by User A should be visible in the Events List of User B.
 ## SECTION 2 : AI CREATED MANUAL TEST CASES
  
 ### Prompt :
@@ -725,13 +725,13 @@ Step 3 : Compare each displayed field against the values entered by admin in Ste
  
 ## MY THOUGHTS :
 ### ✅ Pros
-Speed & Coverage: AI can instantly generate dozens of test cases, covering positive, negative, boundary, and security scenarios that would take a human tester hours.
-Format Flexibility: It can output in Gherkin/BDD style, which integrates smoothly with automation frameworks like Cucumber or Karate.
-Effort Reduction: Saves manual effort in writing repetitive test cases, freeing testers to focus on exploratory and business‑critical testing.
+-Speed & Coverage: AI can instantly generate dozens of test cases, covering positive, negative, boundary, and security scenarios that would take a human tester hours.
+-Format Flexibility: It can output in Gherkin/BDD style, which integrates smoothly with automation frameworks like Cucumber or Karate.
+-Effort Reduction: Saves manual effort in writing repetitive test cases, freeing testers to focus on exploratory and business‑critical testing.
 ### ⚠️ Cons
-Scenario Drift: AI sometimes generates test cases beyond the scope of the given functionality, which dilutes focus and creates confusion.
-Missing Business Context: While technically correct, AI lacks domain knowledge and business intelligence, so it struggles to design cases that reflect real‑world workflows or customer priorities.
-Objective Misalignment: It may cover “all possible inputs” but miss the main objective of the scenario, leading to gaps in validation.
+-Scenario Drift: AI sometimes generates test cases beyond the scope of the given functionality, which dilutes focus and creates confusion.
+-Missing Business Context: While technically correct, AI lacks domain knowledge and business intelligence, so it struggles to design cases that reflect real‑world -workflows or customer priorities.
+-Objective Misalignment: It may cover “all possible inputs” but miss the main objective of the scenario, leading to gaps in validation.
 ## FINAL TEST CASES (AI+HUMAN) COMBINED - AUTOMATION READY
 ### FTC_001 : Verify successful new user registration with valid details
 **Test Steps:**

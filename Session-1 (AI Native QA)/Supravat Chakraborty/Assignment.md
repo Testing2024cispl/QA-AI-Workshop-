@@ -6,8 +6,8 @@ URL - https://automationexercise.com/
 
 Manual Test Scenarios
 
-To check whether a user is able to login if they don’t have account
-To check if user is able to register themselves
+1. To check whether a user is able to login if they don’t have account
+2. To check if user is able to register themselves
 Verify mandatory field validations
 Very email validation
 Verify password validation

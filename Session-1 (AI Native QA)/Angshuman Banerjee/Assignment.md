@@ -1,7 +1,10 @@
-QA MANUAL TEST CASES
-Member : Angshuman Banerjee
-Target Application : https://eventhub.rahulshettyacademy.com/login
-------------------------------------------------
+**QA MANUAL TEST CASES**
+
+**Member** : Angshuman Banerjee
+
+**Application Under Test** : https://eventhub.rahulshettyacademy.com/login
+
+-------------------------------------------------
 SECTION 1 : TEST CASES MADE BY HUMAN THINKING -
 =================================================
 ### Scenario 1: Old User Login

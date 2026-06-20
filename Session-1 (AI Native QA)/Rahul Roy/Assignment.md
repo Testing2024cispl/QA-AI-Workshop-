@@ -3,6 +3,7 @@
 # QA Manual Test Cases
 
 **Website:** https://automationexercise.com/
+
 **Sections Covered:** Home | Products | Cart | Signup/Login | Contact Us
 
 ---

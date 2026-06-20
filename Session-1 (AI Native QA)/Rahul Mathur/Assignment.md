@@ -264,4 +264,4 @@ The user is redirected to the My Orders history page listing all past purchases.
 The newly placed order is present in the list, with the Order Date, Product Name, Quantity, and Total Price exactly matching the details from the completed purchase.
 
 ==================================================================================================================================================================
-AI GENERATED TESTCASES 
+

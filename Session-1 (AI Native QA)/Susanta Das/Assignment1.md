@@ -1,3 +1,10 @@
+Table of Contents
+QA Manual Test Cases
+Human Thinking Test Cases
+AI Manual Test Cases
+Prompt
+My Thoughts
+Final Test Cases (AI + Manual Combined) – Automation Ready
 -------------------------------------------------
 QA Manual Test Cases:- 
 -------------------------------------------------
@@ -360,9 +367,8 @@ My  thoughts:-
     Boundary value validations (minimum and maximum character limits, special characters, blank spaces, etc.) are not covered for booking form fields. Session validation after logout (e.g., using browser Back button or direct URL access) is not covered. Test cases are not currently automation-ready because reusable preconditions, test data, and clear assertions are not defined separately. 
 
 ------------------------
-Final Test Case:- 
+Final Test Cases (AI + Manual Combined) – Automation Ready
 ------------------------
-AI+Manual, Combined them and made a proper test case for Automation ready.
 
 # EventHub Test Coverage Matrix
 

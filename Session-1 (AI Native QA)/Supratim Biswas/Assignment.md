@@ -273,7 +273,7 @@ Verify that the page sub-label is ${Products}.
 Verify that the list of products is visible in grid format.
 Store the first product name in a variable as ${firstProductName}. 
 Store the first product price as ${firstProductPrice}. 
- Hover on the ${firstProductName}
+Hover on the ${firstProductName}
  Verify that the ${firstProductName} is highlighted with green color. 
  Click on the ${firstProductName}. 
  Verify that the “Back to products” link is enabled in the upper left corner. 
@@ -282,16 +282,172 @@ Store the first product price as ${firstProductPrice}.
  Store the cart count in a variable as ${initialCartCount}  
  Click on the “Add to cart” button. 
  Verify that the cart count is ${initialCartCount+1}. 
- Verify that the “Remove” button is enabled for the ${firstProductName}.
+Verify that the “Remove” button is enabled for the ${firstProductName}.
  Click on the cart icon. 
  Verify that the page header is equal to “Your Cart”. 
  Verify that the product name is equal to ${firstProductName}. 
  Verify that the product price is equal to ${firstProductPrice}.
  Verify that the “Remove” button is enabled for the ${firstProductName}.
 
+**AI-generated test cases:** 
+TC ID
+Scenario
+Test Steps
+Test Data
+Expected Result
+TC_001
+Verify login with valid user
+Open site, enter username and password, click Login
+standard_user / secret_sauce
+User should land on Products page
+TC_002
+Verify login with locked user
+Enter locked user credentials, click Login
+locked_out_user / secret_sauce
+Error message should display
+TC_003
+Verify login with invalid username
+Enter invalid username and valid password
+invalid_user / secret_sauce
+Login should fail with error message
+TC_004
+Verify login with invalid password
+Enter valid username and invalid password
+standard_user / wrong_pass
+Login should fail with error message
+TC_005
+Verify login with blank fields
+Click Login without entering credentials
+Blank
+Username required error should display
+TC_006
+Verify product list loads
+Login with valid user
+standard_user
+Product page should show inventory items
+TC_007
+Verify product details page
+Click any product name/image
+Any product
+Product details page should open with name, price, description, and image
+TC_008
+Verify Add to Cart button
+Click Add to Cart for a product
+Any product
+Cart badge should increase by 1 and button changes to Remove
+TC_009
+Verify Remove button
+Add product, then click Remove
+Any product
+Product should be removed and cart badge should update
+TC_010
+Verify cart page
+Add product and click cart icon
+Any product
+Cart page should display selected product
+TC_011
+Verify checkout with valid details
+Go to cart, checkout, enter details, continue
+First name, last name, postal code
+Checkout overview page should display
+TC_012
+Verify checkout with missing first name
+Leave first name empty and continue
+Blank first name
+Error message should display
+TC_013
+Verify checkout with missing last name
+Leave last name empty and continue
+Blank last name
+Error message should display
+TC_014
+Verify checkout with missing postal code
+Leave postal code empty and continue
+Blank postal code
+Error message should display
+TC_015
+Verify order completion
+Complete checkout flow and click Finish
+Valid checkout data
+Confirmation page should show successful order message
+TC_016
+Verify Cancel on checkout page
+Start checkout and click Cancel
+Valid cart item
+User should return to cart/products page depending on checkout stage
+TC_017
+Verify product sorting A-Z
+Select Name A to Z
+Sort dropdown
+Products should sort alphabetically ascending
+TC_018
+Verify product sorting Z-A
+Select Name Z to A
+Sort dropdown
+Products should sort alphabetically descending
+TC_019
+Verify price sorting low-high
+Select Price low to high
+Sort dropdown
+Products should sort by price ascending
+TC_020
+Verify price sorting high-low
+Select Price high to low
+Sort dropdown
+Products should sort by price descending
+TC_021
+Verify hamburger menu opens
+Click menu icon
+Logged in user
+Sidebar menu should open
+TC_022
+Verify logout
+Open menu and click Logout
+Logged in user
+User should return to login page
+TC_023
+Verify reset app state
+Add product, open menu, click Reset App State
+Any product
+Cart should reset and product buttons should return to Add to Cart
+TC_024
+Verify About link
+Open menu and click About
+Logged in user
+User should navigate to Sauce Labs website
+TC_025
+Verify cart persists during navigation
+Add item, open product page, return to products
+Any product
+Cart badge should still show selected item
+TC_026
+Verify Remove from cart page
+Add product, open cart, click Remove
+Any product
+Product should be removed from cart
+TC_027
+Verify Continue Shopping button
+Open cart and click Continue Shopping
+Logged in user
+User should return to Products page
+TC_028
+Verify social links
+Click Twitter/X, Facebook, LinkedIn icons
+Footer links
+Correct external social pages should open
+TC_029
+Verify responsive layout
+Open app on mobile/tablet/desktop sizes
+Different viewports
+UI should remain usable without overlap
+TC_030
+Verify session behavior after refresh
+Login, refresh browser
+standard_user
+User should remain on or return appropriately to authenticated product page
 
 
-
+Please refer to this document :[https://docs.google.com/document/d/1USQdOjR0CKYEnXt8xZX7ZYDW4yuxlsGdWeTAkKIO_to/edit?tab=t.0](url)
 
 
 

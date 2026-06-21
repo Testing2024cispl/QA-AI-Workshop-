@@ -329,6 +329,27 @@ You are an Software QA engineer, please give me the positive and negative test c
 
 3.Click Apply
 
+# My Thoughts
+
+## Strengths
+
+1.Broad functional coverage
+
+2.Accelerated baseline creation
+
+3.Inclusion of common edge cases
+
+## Areas for Improvement
+
+1.Lack of application-specific context
+
+2.Insufficient field-level validation coverage
+
+3.Assumption-driven negative scenarios
+
+
+
+
 
 
 

@@ -264,6 +264,7 @@ Click on the “Add to cart” button of the ${firstProductName}.
  Verify that the error message is equal to “Error: First Name is required."
 
 Verify that the user should add the product to the cart from the respective product page. 
+
 Navigate to the target URL “https://www.saucedemo.com/”. 
 Enter the username into the username text field as ${validUsername}. 
 Enter the secure string into the password text field as ${validPassword}. 
@@ -272,9 +273,24 @@ Verify that the page sub-label is ${Products}.
 Verify that the list of products is visible in grid format.
 Store the first product name in a variable as ${firstProductName}. 
 Store the first product price as ${firstProductPrice}. 
-Hover on the ${firstProductName}
+ Hover on the ${firstProductName}
  Verify that the ${firstProductName} is highlighted with green color. 
- Click 
+ Click on the ${firstProductName}. 
+ Verify that the “Back to products” link is enabled in the upper left corner. 
+ Verify that the product name is equal to ${firstProductName}. 
+ Verify that the product price is equal to ${firstProductPrice}.
+ Store the cart count in a variable as ${initialCartCount}  
+ Click on the “Add to cart” button. 
+ Verify that the cart count is ${initialCartCount+1}. 
+ Verify that the “Remove” button is enabled for the ${firstProductName}.
+ Click on the cart icon. 
+ Verify that the page header is equal to “Your Cart”. 
+ Verify that the product name is equal to ${firstProductName}. 
+ Verify that the product price is equal to ${firstProductPrice}.
+ Verify that the “Remove” button is enabled for the ${firstProductName}.
+
+
+
 
 
 
@@ -282,5 +298,4 @@ Hover on the ${firstProductName}
 
 
  
-
 

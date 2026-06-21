@@ -1,4 +1,4 @@
-Manual Test Cases:- Member:-Sayan Senapati
+Manual Test Cases:- Group 3:- Member:- Sayan Senapati
 
 Working URL-https://v0-e-commerce-lunchbox-site.vercel.app/
 

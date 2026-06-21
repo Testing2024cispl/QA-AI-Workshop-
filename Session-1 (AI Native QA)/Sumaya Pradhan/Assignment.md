@@ -929,26 +929,26 @@ Validate presence of “self” link in API response.
 2.Capture the REST API response.
 3.Inspect the _links section.
 
-_AI_TC_ConfirmationPage_027_
+_AI_TC_ConfirmationPage_025_
 Validate “capture” link works correctly.
 1.Complete a purchase.
 2.Capture the REST API response.
 3.Inspect the _links section for capture.
 4.Trigger the capture link via API call.
 
-_AI_TC_ConfirmationPage_028_
+_AI_TC_ConfirmationPage_025_
 Validate “reversal” link works correctly.
 1.Complete a purchase.
 2.Capture the REST API response.
 3.Inspect the _links section for reversal.
 4.Trigger the reversal link via API call.
 
-_AI_TC_ConfirmationPage_029_
+_AI_TC_ConfirmationPage_027_
 Validate behavior when API response returns error (e.g., failed capture).
 1.Simulate a failed capture scenario (e.g., invalid capture request).
 2.Observe the API response.
 
-_AI_TC_ConfirmationPage_030_
+_AI_TC_ConfirmationPage_028_
 Validate UI shows appropriate error message for failed purchase.
 1.Attempt a purchase with invalid/malformed input to force failure.
 2.Observe the Confirmation page.

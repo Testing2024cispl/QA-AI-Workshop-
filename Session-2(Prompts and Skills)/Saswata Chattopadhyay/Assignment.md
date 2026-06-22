@@ -1255,9 +1255,9 @@ Enter only special characters in Street Address.
 5. Monitor browser console/network requests if applicable.
 6. Verify the application handles the scenario appropriately.
 
-=====================================================================================================================================
+===================================================================================
 
-# QA Skill File — Standard Test Case Generation
+# QA Skill File — Ecommerce Project Test Case Generation
 
 ## Purpose
 This skill file defines a strict, reusable format for generating consistent test cases across any module (login, cart, checkout, payment, API, etc.).

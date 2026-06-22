@@ -5,7 +5,7 @@ Prompt 1:- Write test cases for (https://v0-e-commerce-lunchbox-site.vercel.app/
 
 Suppose, you are a manual Tester,
 
-This is a ecommerce website where currently users have to add products to cart , go to checkout, and they can add promocode LUNCH20  which will apply 20% discount on listing price and then proceed to checkout . Now generate only the testcases for this particular flow. Make a table of three columns as testcase number, positive and negative testcases
+This is a ecommerce website where currently users have to add products to cart , go to checkout, and they can add promocode LUNCH20  which will apply 20% discount on listing price and then proceed to checkout . Now generate only the testcases for this particular flow. Make a table of four columns as testcase number, positive and negative testcases and test steps
 
 Prompt 2: Vibe coding: Also in the cart page there are address section as well where the prospect fields included Street address, City and zip code and also a payment prospect field with card number, expiry year and CVV so now refine the tescases and please note that for the timebeing the website accepts only these test data for card details such as : number: 4242 4242 4242 4242 Expiry: 12/29 CVV: 100
 
@@ -875,8 +875,9 @@ Final Test Cases:-
 Positive Test Cases
 
 TC-001
-
 Checking if the the provided url is opening properly or not
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Checking if the the provided url is opening properly or not
@@ -886,6 +887,8 @@ Checking if the the provided url is opening properly or not
 
 TC-002
 User should be able to add products in the cart by clicking on add to cart
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: User should be able to add products in the cart by clicking on add to cart
@@ -895,6 +898,8 @@ User should be able to add products in the cart by clicking on add to cart
 
 TC-003
 They can add products multiple number of times which should reflect in the cart bubble counter
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: They can add products multiple number of times which should reflect in the cart bubble counter
@@ -904,6 +909,8 @@ They can add products multiple number of times which should reflect in the cart 
 
 TC-004
 By clicking on the cart icon users should be able to land on to the cart page
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: By clicking on the cart icon users should be able to land on to the cart page
@@ -913,6 +920,8 @@ By clicking on the cart icon users should be able to land on to the cart page
 
 TC-005
 Validating each product prices properly with their respective product details pages
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating each product prices properly with their respective product details pages
@@ -922,6 +931,8 @@ Validating each product prices properly with their respective product details pa
 
 TC-006
 Checking quantity adder buttons by adding or removing quantities of a product
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Checking quantity adder buttons by adding or removing quantities of a product
@@ -931,6 +942,8 @@ Checking quantity adder buttons by adding or removing quantities of a product
 
 TC-007
 In the address field validating zipcode field by giving proper credentials
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: In the address field validating zipcode field by giving proper credentials
@@ -940,6 +953,8 @@ In the address field validating zipcode field by giving proper credentials
 
 TC-008
 Validating if auto suggestions are appearing after user gives certain inputs into address field
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating if auto suggestions are appearing after user gives certain inputs into address field
@@ -949,6 +964,8 @@ Validating if auto suggestions are appearing after user gives certain inputs int
 
 TC-009
 Validating card prospect fields by giving vaid card number, expiry year and CVV
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating card prospect fields by giving vaid card number, expiry year and CVV
@@ -958,6 +975,8 @@ Validating card prospect fields by giving vaid card number, expiry year and CVV
 
 TC-010
 Validating promocode by giving valid promo code(LUNCH20) to the promocode field
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating promocode by giving valid promo code(LUNCH20) to the promocode field
@@ -967,6 +986,8 @@ Validating promocode by giving valid promo code(LUNCH20) to the promocode field
 
 TC-011
 Validating discounted price by manually calculating
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating discounted price by manually calculating
@@ -976,6 +997,8 @@ Validating discounted price by manually calculating
 
 TC-012
 Validating the submit CTA button label text where the total product price is showing and tally the total amount with products sum price which is present in the cart
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating the submit CTA button label text where the total product price is showing and tally the total amount with products sum price which is present in the cart
@@ -985,6 +1008,8 @@ Validating the submit CTA button label text where the total product price is sho
 
 TC-013
 Validating the if the submit button is working properly or not
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Validating the if the submit button is working properly or not
@@ -994,6 +1019,8 @@ Validating the if the submit button is working properly or not
 
 TC-014
 Verify order summary displays product details correctly.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verify order summary displays product details correctly.
@@ -1003,6 +1030,8 @@ Verify order summary displays product details correctly.
 
 TC-015
 Verify order summary displays address correctly.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verify order summary displays address correctly.
@@ -1012,6 +1041,8 @@ Verify order summary displays address correctly.
 
 TC-016
 Verify order summary displays discount correctly.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verify order summary displays discount correctly.
@@ -1021,6 +1052,8 @@ Verify order summary displays discount correctly.
 
 TC-017
 Verify successful checkout on Chrome.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verify successful checkout on Chrome.
@@ -1030,6 +1063,8 @@ Verify successful checkout on Chrome.
 
 TC-018
 Verify cart is cleared after successful order placement.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verify cart is cleared after successful order placement.
@@ -1039,6 +1074,8 @@ Verify cart is cleared after successful order placement.
 
 TC-019
 Verify thank-you/order confirmation page loads correctly.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verify thank-you/order confirmation page loads correctly.
@@ -1048,6 +1085,8 @@ Verify thank-you/order confirmation page loads correctly.
 
 TC-020
 Verifying all the order summary details such as product prices, discounted prices etc and manuall checking the price calculations
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant page or section.
 3. Perform the action related to: Verifying all the order summary details such as product prices, discounted prices etc and manuall checking the price calculations
@@ -1059,6 +1098,8 @@ Negative Test Cases
 
 TC-001
 Try to attempt checkout by clearing out all the products from the cart
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Try to attempt checkout by clearing out all the products from the cart
@@ -1068,6 +1109,8 @@ Try to attempt checkout by clearing out all the products from the cart
 
 TC-002
 Try to get discount by applying an invalid promocode
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Try to get discount by applying an invalid promocode
@@ -1077,6 +1120,8 @@ Try to get discount by applying an invalid promocode
 
 TC-003
 Try to place order by giving invalid zip code, card number, CVV etc.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Try to place order by giving invalid zip code, card number, CVV etc.
@@ -1086,6 +1131,8 @@ Try to place order by giving invalid zip code, card number, CVV etc.
 
 TC-004
 Try to place order by leaving address field empty
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Try to place order by leaving address field empty
@@ -1095,6 +1142,8 @@ Try to place order by leaving address field empty
 
 TC-005
 Try to place order by leaving card prospect field empty
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Try to place order by leaving card prospect field empty
@@ -1104,6 +1153,8 @@ Try to place order by leaving card prospect field empty
 
 TC-006
 Checking character length validation where user should not be able give more and less than 10 digits for phone number
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Checking character length validation where user should not be able give more and less than 10 digits for phone number
@@ -1113,6 +1164,8 @@ Checking character length validation where user should not be able give more and
 
 TC-007
 Checking character length validation where user should not be able give more and less than 16 digits for card number
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Checking character length validation where user should not be able give more and less than 16 digits for card number
@@ -1122,6 +1175,8 @@ Checking character length validation where user should not be able give more and
 
 TC-008
 Checking character length validation in CVV field where if amex card is present user should be able to give four digits
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Checking character length validation in CVV field where if amex card is present user should be able to give four digits
@@ -1131,6 +1186,8 @@ Checking character length validation in CVV field where if amex card is present 
 
 TC-009
 Checking Expiry year validation where users should not be able to give invalid month or year
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Checking Expiry year validation where users should not be able to give invalid month or year
@@ -1140,6 +1197,8 @@ Checking Expiry year validation where users should not be able to give invalid m
 
 TC-010
 Checking if multiple ajax is not firing from console in dev tools when users clicks on CTA button of submit while placing order
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Checking if multiple ajax is not firing from console in dev tools when users clicks on CTA button of submit while placing order
@@ -1149,6 +1208,8 @@ Checking if multiple ajax is not firing from console in dev tools when users cli
 
 TC-011
 Checking if any certain pages are getting 404 error from the backend when doing certain operations
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Checking if any certain pages are getting 404 error from the backend when doing certain operations
@@ -1158,6 +1219,8 @@ Checking if any certain pages are getting 404 error from the backend when doing 
 
 TC-012
 Enter card number containing alphabets.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Enter card number containing alphabets.
@@ -1167,6 +1230,8 @@ Enter card number containing alphabets.
 
 TC-013
 Attempt payment with only partial card number entered.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Attempt payment with only partial card number entered.
@@ -1176,6 +1241,8 @@ Attempt payment with only partial card number entered.
 
 TC-014
 Enter spaces only in payment fields.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Enter spaces only in payment fields.
@@ -1185,6 +1252,8 @@ Enter spaces only in payment fields.
 
 TC-015
 Refresh page during payment submission.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Refresh page during payment submission.
@@ -1194,6 +1263,8 @@ Refresh page during payment submission.
 
 TC-016
 Double-click Place Order and verify duplicate orders are not created.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Double-click Place Order and verify duplicate orders are not created.
@@ -1203,6 +1274,8 @@ Double-click Place Order and verify duplicate orders are not created.
 
 TC-017
 Simulate payment gateway failure and verify proper error handling.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Simulate payment gateway failure and verify proper error handling.
@@ -1212,6 +1285,8 @@ Simulate payment gateway failure and verify proper error handling.
 
 TC-018
 Disconnect internet during payment submission and verify recovery behavior.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Disconnect internet during payment submission and verify recovery behavior.
@@ -1221,6 +1296,8 @@ Disconnect internet during payment submission and verify recovery behavior.
 
 TC-019
 Apply promo code multiple times and verify discount is not stacked.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Apply promo code multiple times and verify discount is not stacked.
@@ -1230,6 +1307,8 @@ Apply promo code multiple times and verify discount is not stacked.
 
 TC-020
 Verify discount is not greater than 20% after quantity changes.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Verify discount is not greater than 20% after quantity changes.
@@ -1239,6 +1318,8 @@ Verify discount is not greater than 20% after quantity changes.
 
 TC-021
 Attempt to modify discount value through browser DevTools.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Attempt to modify discount value through browser DevTools.
@@ -1248,6 +1329,8 @@ Attempt to modify discount value through browser DevTools.
 
 TC-022
 Enter only special characters in Street Address.
+
+Test Steps:
 1. Go to https://v0-e-commerce-lunchbox-site.vercel.app/
 2. Navigate to the relevant checkout or payment section.
 3. Perform the invalid scenario: Enter only special characters in Street Address.

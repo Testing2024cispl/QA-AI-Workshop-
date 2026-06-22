@@ -750,7 +750,7 @@ Test Steps
 6. Verify products shown
 
 =======================================
-Session-2
+# Session-2
 # QA Testing Skill File
 
 ## Skill Name

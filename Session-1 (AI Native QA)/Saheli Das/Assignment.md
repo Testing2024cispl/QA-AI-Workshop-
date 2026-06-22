@@ -28,14 +28,14 @@ AI Manual Test Cases:-
 Member :- Saheli Das
 
 Prompt:- Write test cases for Grocery Store Demo login using mobile number and OTP
-14. Go to https://grocerystoredemo.pcubeweb.com/
-15. Click on Account
-16. Enter a valid registered mobile number
-17. Click on Send OTP
-18. Enter the valid OTP received within the time limit
-19. Click on Verify
-20. Verify that the user is logged in successfully
-21. Verify that the user is redirected to the Account page
+ Go to https://grocerystoredemo.pcubeweb.com/
+ Click on Account
+ Enter a valid registered mobile number
+ Click on Send OTP
+ Enter the valid OTP received within the time limit
+ Click on Verify
+ Verify that the user is logged in successfully
+ Verify that the user is redirected to the Account page
 
 Your thoughts:-
 What you felt Suitable:- The AI version laid out a clean, structured happy-path flow with explicit verification points ("Verify user is logged in", "Verify redirect to Account page") that map directly onto automation assertions.
@@ -45,45 +45,45 @@ What you felt Not suitable:- The AI version missed all the negative scenarios en
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_001 — Login with Mobile OTP (Automation Ready)
 
-22. Navigate to https://grocerystoredemo.pcubeweb.com/
-23. Click on the "Account" link
-24. Verify that the Sign In modal is displayed with a mobile number field
-25. Enter an invalid mobile number and click "Send OTP"
-26. Verify that a validation error message is displayed
-27. Enter a valid registered mobile number and click "Send OTP"
-28. Verify that the OTP Verification modal is displayed
-29. Enter the correct OTP received within the validity time and click "Verify"
+Navigate to https://grocerystoredemo.pcubeweb.com/
+Click on the "Account" link
+Verify that the Sign In modal is displayed with a mobile number field
+Enter an invalid mobile number and click "Send OTP"
+Verify that a validation error message is displayed
+Enter a valid registered mobile number and click "Send OTP"
+Verify that the OTP Verification modal is displayed
+Enter the correct OTP received within the validity time and click "Verify"
 
 TestCases_002 — Account Page After Sign-in (Manage Addresses)
 QA Manual Test Cases:-
 Member :- Saheli Das
 Query/Test cases:- Grocery Store Demo (Human Thinking Test Cases)
 
-31. My Orders menu is getting selected by default
-32. Click on My Addressess Link from Menu bar
-33. Display Add new Address with (+) button
-34. Click on Add new Address with (+) button
-35. Display Add new address popup modal
-36. Click on Add address button without enter value
-37. Check validation messages
-38. Enter correct adderess with name & mobile number
-39. Click on Add Address button
-40. Display Added Address
+14. My Orders menu is getting selected by default
+15. Click on My Addressess Link from Menu bar
+16. Display Add new Address with (+) button
+17. Click on Add new Address with (+) button
+18. Display Add new address popup modal
+19. Click on Add address button without enter value
+20. Check validation messages
+21. Enter correct adderess with name & mobile number
+22. Click on Add Address button
+23. Display Added Address
 
 AI Manual Test Cases:-
 Member :- Saheli Das
 
 Prompt:- Write test cases for adding a new address in the Grocery Store Demo account
-41. Log in and navigate to the Account page
-42. Verify that "My Orders" tab is selected by default
-43. Click on "My Addresses"
-44. Click on the "Add new Address (+)" button
-45. Submit the form without entering any details
-46. Verify that validation messages are displayed for mandatory fields
-47. Enter a valid Name, Mobile Number and Address
-48. Click on "Add Address" button
-49. Verify that the address is saved successfully
-50. Verify that the newly added address appears in the address list
+Log in and navigate to the Account page
+Verify that "My Orders" tab is selected by default
+Click on "My Addresses"
+Click on the "Add new Address (+)" button
+Submit the form without entering any details
+Verify that validation messages are displayed for mandatory fields
+Enter a valid Name, Mobile Number and Address
+Click on "Add Address" button
+Verify that the address is saved successfully
+Verify that the newly added address appears in the address list
 
 Your thoughts:-
 What you felt Suitable:- The AI version captured the full happy path and explicitly called out checking the validation messages before re-submitting — easy to turn into separate pass/fail assertions.
@@ -93,41 +93,41 @@ What you felt Not suitable:- The AI version doesn't know the exact UI element is
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_002 — Add New Address (Automation Ready)
 
-51. Log in to the Grocery Store Demo account
-52. Verify that "My Orders" tab is selected by default on the Account page
-53. Click on "My Addresses" from the menu bar
+Log in to the Grocery Store Demo account
+Verify that "My Orders" tab is selected by default on the Account page
+Click on "My Addresses" from the menu bar
 54. Verify that the "Add new Address (+)" button is displayed
-55. Click on the "Add new Address (+)" button and verify the popup modal opens
-56. Click "Add Address" without entering any values and verify validation messages are shown
-57. Enter a valid Name, Mobile Number and Address
-58. Click on "Add Address" button
-59. Verify that the new address is displayed correctly in the address list
+Click on the "Add new Address (+)" button and verify the popup modal opens
+Click "Add Address" without entering any values and verify validation messages are shown
+Enter a valid Name, Mobile Number and Address
+Click on "Add Address" button
+Verify that the new address is displayed correctly in the address list
 
 TestCases_003 — Sort & Filter Products
 QA Manual Test Cases:-
 Member :- Saheli Das
 
 Query/Test cases:- Grocery Store Demo (Human Thinking Test Cases)
-60. Click on Categories
-61. Navigate to the Categories page
-62. Display All Product categories
-63. Click on one category
-64. Navigate to the product category page
-65. Sort and filter the product page
-66. Display product lists based on sort & Filter
+24. Click on Categories
+25. Navigate to the Categories page
+26. Display All Product categories
+27. Click on one category
+28. Navigate to the product category page
+29. Sort and filter the product page
+30. Display product lists based on sort & Filter
 
 AI Manual Test Cases:-
 Member :- Saheli Das
 
 Prompt:- Write test cases for sorting and filtering products on the Grocery Store Demo categories page
-67. Click on "Categories"
-68. Verify that the Categories page displays all product categories
-69. Click on any one category
-70. Verify that the product listing page for that category loads
-71. Click on "Sort by" and select "Price low to high"
-72. Verify that products are displayed in ascending order of price
-73. Select "Price high to low"
-74. Verify that products are displayed in descending order of price
+Click on "Categories"
+Verify that the Categories page displays all product categories
+Click on any one category
+Verify that the product listing page for that category loads
+Click on "Sort by" and select "Price low to high"
+Verify that products are displayed in ascending order of price
+Select "Price high to low"
+Verify that products are displayed in descending order of price
 
 Your thoughts:-
 What you felt Suitable:- The AI version broke my vague step "Sort and filter the product page" into two concrete, individually testable cases (low-to-high, high-to-low) with a clear expected outcome for each — much easier to automate than one broad manual step.
@@ -137,31 +137,33 @@ What you felt Not suitable:- The AI version only tested two of the four sort opt
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_003 — Sort & Filter Products (Automation Ready)
 
-75. Click on "Categories" and verify the Categories page lists all product categories
-76. Click on one category and verify navigation to its product listing page
-77. Verify the product listing page displays products for the selected category
-78. Click on "Sort by" and select "Price low to high"; verify products are re-ordered in ascending price order
-79. Select "Price high to low"; verify products are re-ordered in descending price order
+Click on "Categories" and verify the Categories page lists all product categories
+Click on one category and verify navigation to its product listing page
+Verify the product listing page displays products for the selected category
+Click on "Sort by" and select "Price low to high"; 
+Verify products are re-ordered in ascending price order
+Select "Price high to low"; 
+Verify products are re-ordered in descending price order
 
 TestCases_004 — Search Product
 QA Manual Test Cases:-
 Member :- Saheli Das
 Query/Test cases:- Grocery Store Demo (Human Thinking Test Cases)
 
-80. Search with categories or Products
-81. Display Search results
+31. Search with categories or Products
+32. Display Search results
 
 AI Manual Test Cases:-
 Member :- Saheli Das
 
 Prompt:- Write test cases for the product search functionality on Grocery Store Demo
-82. Click on the search bar
-83. Enter a valid product name
-84. Verify that relevant search results are displayed
-85. Enter a valid category name
-86. Verify that relevant search results are displayed
-87. Enter a keyword that does not match any product
-88. Verify that a "No products found" message is displayed
+Click on the search bar
+Enter a valid product name
+Verify that relevant search results are displayed
+Enter a valid category name
+Verify that relevant search results are displayed
+Enter a keyword that does not match any product
+Verify that a "No products found" message is displayed
 
 Your thoughts:-
 What you felt Suitable:- The AI version added a "no results found" negative case on its own, which wasn't in my manual notes — a useful gap-filler I hadn't thought to write down.
@@ -171,10 +173,10 @@ What you felt Not suitable:- The AI version uses generic placeholders like "a va
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_004 — Search Product (Automation Ready)
 
-89. Click on the search bar and enter a valid product or category keyword
-90. Verify that the search results display matching products
-91. Enter a keyword with no matching products
-92. Verify that an appropriate "No products found" message is displayed instead of a blank page
+Click on the search bar and enter a valid product or category keyword
+Verify that the search results display matching products
+Enter a keyword with no matching products
+Verify that an appropriate "No products found" message is displayed instead of a blank page
 
 TestCases_005 — Add to Cart and Proceed to Checkout
 
@@ -182,25 +184,25 @@ QA Manual Test Cases:-
 Member :- Saheli Das
 Query/Test cases:- Grocery Store Demo (Human Thinking Test Cases)
 
-93. Click on Add + button to add a product to the cart
-94. Click on Cart
-95. Navigate to the Cart page
-96. Click on + button to increase quantity
-97. Check the updated quantity
-98. Click on Proceed to Checkout button
+33. Click on Add + button to add a product to the cart
+34. Click on Cart
+35. Navigate to the Cart page
+36. Click on + button to increase quantity
+37. Check the updated quantity
+38. Click on Proceed to Checkout button
 
 AI Manual Test Cases:-
 Member :- Saheli Das
 Prompt:- Write test cases for add to cart and proceed to checkout flow on Grocery Store Demo
 
-99. Click on the "ADD" button for a product
-100. Verify that the product is added to the cart
-101. Click on the Cart icon
-102. Verify that the Cart page displays the added product with correct price
-103. Click on the "+" button to increase quantity
-104. Verify that the quantity and cart total update correctly
-105. Click on "Proceed to Checkout"
-106. Verify that the user is navigated to the Checkout page
+Click on the "ADD" button for a product
+Verify that the product is added to the cart
+Click on the Cart icon
+Verify that the Cart page displays the added product with correct price
+Click on the "+" button to increase quantity
+Verify that the quantity and cart total update correctly
+Click on "Proceed to Checkout"
+Verify that the user is navigated to the Checkout page
 
 Your thoughts:-
 
@@ -211,10 +213,10 @@ What you felt Not suitable:- The AI version only tests increasing quantity, not 
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_005 — Add to Cart & Checkout (Automation Ready)
 
-107. Click on the "ADD" button for a product and verify it is added to the cart
-108. Click on the Cart icon and verify navigation to the Cart page
-109. Click on the "+" button and verify quantity and cart total update correctly
-110. Click on "Proceed to Checkout" and verify navigation to the Checkout page
+Click on the "ADD" button for a product and verify it is added to the cart
+Click on the Cart icon and verify navigation to the Cart page
+Click on the "+" button and verify quantity and cart total update correctly
+Click on "Proceed to Checkout" and verify navigation to the Checkout page
 
 TestCases_006 — Place Order
 
@@ -222,29 +224,29 @@ QA Manual Test Cases:-
 Member :- Saheli Das
 Query/Test cases:- Grocery Store Demo (Human Thinking Test Cases)
 
-111. Navigate to the Checkout page
-112. Check that added address already populate as Shipping Address
-113. Select shipping address same as Billing address
-114. Select shipping method
-115. Select on Credit card
-116. Enter Credit Card and Credit card name, Expiry date and cvv number
-117. Click on Complete order
-118. Navigate to the Thank you page
-119. Check the created order ID, Shipping and Billing address and Product with Quantity
+39. Navigate to the Checkout page
+40. Check that added address already populate as Shipping Address
+41. Select shipping address same as Billing address
+42. Select shipping method
+43. Select on Credit card
+44. Enter Credit Card and Credit card name, Expiry date and cvv number
+45. Click on Complete order
+46. Navigate to the Thank you page
+47. Check the created order ID, Shipping and Billing address and Product with Quantity
 
 AI Manual Test Cases:-
 Member :- Saheli Das
 
 Prompt:- Write test cases for placing an order on the Grocery Store Demo checkout page
-120. Navigate to the Checkout page
-121. Verify that the saved address is pre-filled as Shipping Address
-122. Select shipping address same as Billing address
-123. Select a shipping method
-124. Select "Credit Card" as the payment method
-125. Enter valid Card Number, Card Holder Name, Expiry Date and CVV
-126. Click on "Complete Order"
-127. Verify that the order is placed successfully and the Thank You page is displayed
-128. Verify that the Order ID, Shipping/Billing address and product with quantity are displayed correctly
+Navigate to the Checkout page
+Verify that the saved address is pre-filled as Shipping Address
+Select shipping address same as Billing address
+Select a shipping method
+Select "Credit Card" as the payment method
+Enter valid Card Number, Card Holder Name, Expiry Date and CVV
+Click on "Complete Order"
+Verify that the order is placed successfully and the Thank You page is displayed
+Verify that the Order ID, Shipping/Billing address and product with quantity are displayed correctly
 
 Your thoughts:-
 What you felt Suitable:- The AI version's steps map almost one-to-one onto a Page Object Model automation script — each step is a single, isolated, verifiable action (enter card number, click complete order, verify Thank You page).
@@ -253,13 +255,14 @@ What you felt Not suitable:- The AI version has no idea the site currently shows
 
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_006 — Place Order (Automation Ready)
-129. Navigate to the Checkout page and verify the saved address auto-populates as Shipping Address
-130. Select shipping address same as Billing address
-131. Select a shipping method
-132. Select "Credit Card" and enter valid Card Number, Card Holder Name, Expiry Date and CVV
-133. Click on "Complete Order"
-134. Verify navigation to the Thank You page
-135. Verify that the Order ID, Shipping/Billing address and product with quantity are correct on the Thank You page
+
+Navigate to the Checkout page and verify the saved address auto-populates as Shipping Address
+Select shipping address same as Billing address
+Select a shipping method
+Select "Credit Card" and enter valid Card Number, Card Holder Name, Expiry Date and CVV
+Click on "Complete Order"
+Verify navigation to the Thank You page
+Verify that the Order ID, Shipping/Billing address and product with quantity are correct on the Thank You page
 
 TestCases_007 — Account Page (Order History & Sign Out)
 
@@ -267,21 +270,21 @@ QA Manual Test Cases:-
 Member :- Saheli Das
 
 Query/Test cases:- Grocery Store Demo (Human Thinking Test Cases)
-136. Click on Account link
-137. Check the Order has been created or not
-138. Click on Sign out button
-139. The user is getting logout from the Grocery Store
+48. Click on Account link
+49. Check the Order has been created or not
+50. Click on Sign out button
+51. The user is getting logout from the Grocery Store
 
 AI Manual Test Cases:-
 Member :- Saheli Das
 
 Prompt:- Write test cases for verifying order history and sign out on Grocery Store Demo
-140. Click on "Account" link
-141. Open the "My Orders" tab
-142. Verify that the recently placed order is listed with correct Order ID and status
-143. Click on "Sign out" button
-144. Verify that the user is logged out successfully
-145. Verify that the user is redirected to the homepage in a logged-out state
+Click on "Account" link
+Open the "My Orders" tab
+Verify that the recently placed order is listed with correct Order ID and status
+Click on "Sign out" button
+Verify that the user is logged out successfully
+Verify that the user is redirected to the homepage in a logged-out state
 
 Your thoughts:-
 What you felt Suitable:- The AI version explicitly verifies the post-logout state (redirected to homepage, logged-out), while my manual note just said "user is getting logout" — the AI phrasing is more precise about what "success" actually means here.
@@ -290,9 +293,10 @@ What you felt Not suitable:- The AI version assumes an order will always exist t
 
 Final Test Case:- (AI + Manual, Combined, Automation Ready)
 Final Test Case_007 — Order History & Sign Out (Automation Ready)
-146. Click on "Account" link and open the "My Orders" tab
-147. Verify that the recently placed order is listed with correct Order ID and status
-148. Click on "Sign out" button
-149. Verify that the user is logged out and redirected to the homepage in a logged-out state
-150. Verify that the user is logged in successfully and redirected to the Account page
+
+Click on "Account" link and open the "My Orders" tab
+Verify that the recently placed order is listed with correct Order ID and status
+Click on "Sign out" button
+Verify that the user is logged out and redirected to the homepage in a logged-out state
+Verify that the user is logged in successfully and redirected to the Account page
 

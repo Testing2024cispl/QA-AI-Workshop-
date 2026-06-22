@@ -1254,3 +1254,63 @@ Enter only special characters in Street Address.
 4. Observe validation messages and application behavior.
 5. Monitor browser console/network requests if applicable.
 6. Verify the application handles the scenario appropriately.
+
+=====================================================================================================================================
+
+# QA Skill File — Standard Test Case Generation
+
+## Purpose
+This skill file defines a strict, reusable format for generating consistent test cases across any module (login, cart, checkout, payment, API, etc.).
+
+---
+
+## AI INSTRUCTION (STRICT RULES)
+- Output ONLY the test case table.
+- Do NOT add explanations, notes, or extra text.
+- Use the exact column structure defined below.
+- Ensure each test case is atomic and independently executable.
+- Include both positive and negative scenarios when applicable.
+- Maintain consistent naming conventions for Test Case IDs.
+
+---
+
+## TEST CASE FORMAT (DO NOT MODIFY STRUCTURE)
+
+| Test Case ID | Scenario | Preconditions | Test Steps | Test Data | Expected Result | Priority | Type |
+|--------------|----------|---------------|------------|-----------|-----------------|----------|------|
+
+---
+
+## COLUMN DEFINITIONS
+
+- Test Case ID → Unique identifier (TC-001, TC-002...)
+- Scenario → What is being tested (single line)
+- Preconditions → Required setup before execution
+- Test Steps → Step-by-step actions (use <br> for line breaks)
+- Test Data → Input values used in test
+- Expected Result → System behavior after execution
+- Priority → High / Medium / Low
+- Type → Positive / Negative / Edge / Regression
+
+---
+
+## EXAMPLE (FOR REFERENCE ONLY — DO NOT OUTPUT DURING GENERATION)
+
+| Test Case ID | Scenario | Preconditions | Test Steps | Test Data | Expected Result | Priority | Type |
+|--------------|----------|---------------|------------|-----------|-----------------|----------|------|
+| TC-001 | Verify user login with valid credentials | User must be registered | 1. Open login page<br>2. Enter username<br>3. Enter password<br>4. Click login | user=test, pass=1234 | User should login successfully | High | Positive |
+
+---
+
+## REUSABILITY
+This format applies to:
+- Login Module
+- Signup Module
+- Cart Module
+- Checkout Module
+- Payment Module
+- API Testing
+- Admin Panels
+- Any future feature modules
+
+

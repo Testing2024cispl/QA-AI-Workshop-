@@ -1,7 +1,5 @@
 QA Manual test cases--------------------
 https://grocerystoredemo.pcubeweb.com/
-https://grocerystoredemo.pcubeweb.com/
-
 
 Member :-Rumpa Das 
 Query/Test cases:- 

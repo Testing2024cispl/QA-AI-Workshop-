@@ -101,25 +101,8 @@
 | TC_009 | Navigation | All links, breadcrumbs, back navigation |
 | TC_010 | E2E Flow | Register → Book → Cancel → Logout |
 
----
 
-## 7. Example Test Cases
-
-### Example 1: Manual Test Case (for QA Team)
-
-| TC ID | Module | Scenario | Steps | Expected Result | Priority |
-|-------|--------|----------|-------|-----------------|----------|
-| TC_001 | Registration | Happy path | 1. Navigate to /register<br>2. Enter email "test_{timestamp}@yopmail.com"<br>3. Enter password "Test@1234"<br>4. Confirm password "Test@1234"<br>5. Click Create Account | User redirected to Dashboard, email displayed in navbar | High |
-
-### Example 2: Automation-Ready Test Case
-
-| TC ID | Module | Scenario | Precondition | Steps | Expected Result | Selectors | Priority |
-|-------|--------|----------|--------------|-------|-----------------|-----------|----------|
-| TC_001 | Registration | Happy path | User not logged in | 1. Navigate to /register<br>2. Enter dynamic email<br>3. Enter password "Test@1234"<br>4. Confirm password "Test@1234"<br>5. Click Create Account | Redirect to Dashboard, email in navbar | `#email`, `#password`, `#confirmPassword`, `button:has-text("Create Account")` | High |
-
----
-
-## 8. Prompting Guide
+## 7. Prompting Guide
 
 **To write a new test case, specify:**
 1. Feature (Registration, Login, Events, Booking, etc.)
@@ -134,7 +117,7 @@
 
 ---
 
-## 9. Key Decisions
+## 8. Key Decisions
 
 | Decision | Choice |
 |----------|--------|

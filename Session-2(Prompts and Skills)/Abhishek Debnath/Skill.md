@@ -28,11 +28,9 @@
 
 ## 3. Test Case Format (Manual — for QA Team)
 
-```markdown
 | TC ID | Module | Scenario | Steps | Expected Result | Priority |
 |-------|--------|----------|-------|-----------------|----------|
 | TC_001 | Registration | Happy path | 1. Navigate to /register<br>2. Enter email<br>3. Enter password<br>4. Click Create Account | User redirected to Dashboard | High |
-```
 
 **Columns:**
 - **TC ID:** Unique identifier (TC_001, TC_002, etc.)
@@ -46,11 +44,9 @@
 
 ## 4. Test Case Format (Automation-Ready)
 
-```markdown
 | TC ID | Module | Scenario | Precondition | Steps | Expected Result | Selectors | Priority |
 |-------|--------|----------|--------------|-------|-----------------|-----------|----------|
 | TC_001 | Registration | Happy path | User not logged in | 1. Navigate to /register<br>2. Enter dynamic email<br>3. Enter password "Test@1234"<br>4. Click Create Account | Redirect to Dashboard, email in navbar | `#email`, `button:has-text("Create Account")` | High |
-```
 
 **Additional Columns (vs Manual):**
 - **Precondition:** What must be true before execution

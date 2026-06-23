@@ -666,5 +666,314 @@ Login into application
 Place successful order
 Click Logout
 Verify session ends successfully
+
+
+===============================================Session-2=====================================================================
+
+# SKILL.md
+
+## QA Test Case Design & Website Testing Skill Specification
+
+---
+
+# Overview
+
+This skill defines the standards and workflow for analyzing web applications and creating comprehensive, professional-quality test cases.
+
+The objective is to evaluate website functionality, identify possible user journeys, and generate structured test cases covering positive, negative, validation, UI, functional, and usability scenarios.
+
+---
+
+# Skill Name
+
+**Web Application Functional Test Case Generator**
+
+---
+
+# Purpose
+
+The purpose of this skill is to:
+
+* Analyze a given website/application
+* Identify all possible user workflows
+* Create detailed manual test cases
+* Cover functional and non-functional scenarios
+* Avoid duplicate or logically repeated test scenarios
+* Maintain a consistent professional QA documentation format
+
+---
+
+# Testing Approach
+
+The testing process should follow these phases:
+
+## 1. Application Analysis
+
+Review the application and identify:
+
+* Available pages
+* User flows
+* Navigation paths
+* Forms
+* Buttons
+* Links
+* Input fields
+* Product/service flows
+* Authentication mechanisms
+* Error handling behavior
+
+---
+
+## 2. Feature Identification
+
+Identify testable modules such as:
+
+* Homepage
+* User Registration
+* Login/Logout
+* Product Listing
+* Product Details
+* Search Functionality
+* Cart Management
+* Checkout Process
+* Payment Flow
+* Order Confirmation
+* Profile Management
+* Navigation
+* UI Components
+
+---
+
+# Test Case Creation Guidelines
+
+Every test case must:
+
+* Have a unique Test Case ID
+* Follow a sequential format
+* Contain clear user actions
+* Include expected verification steps
+* Avoid duplicate scenarios
+* Represent a real user workflow
+
+---
+
+# Test Case Format Standard
+
+All test cases should follow this format:
+
+```
+TestCases_001:-
+
+1. Open the application URL
+2. Perform the required user action
+3. Enter required data
+4. Click on the required button
+5. Verify the expected behavior
+6. Confirm successful completion of the scenario
+```
+
+Example:
+
+```
+TestCases_001:-
+
+1. Go to Demoblaze.com
+2. Click on Sign Up
+3. Enter a valid username
+4. Enter a valid password
+5. Click on Sign Up button
+6. Verify that a new user account is created successfully
+7. Verify success notification is displayed
+```
+
+---
+
+# Test Scenario Coverage
+
+The generated test cases should include:
+
+## Functional Testing
+
+Validate:
+
+* Buttons
+* Links
+* Forms
+* Data submission
+* User workflows
+* Business logic
+
+---
+
+## Positive Test Scenarios
+
+Examples:
+
+* Valid login credentials
+* Successful product addition
+* Successful checkout
+* Correct data submission
+
+---
+
+## Negative Test Scenarios
+
+Examples:
+
+* Invalid username/password
+* Empty mandatory fields
+* Incorrect input format
+* Duplicate user registration
+
+---
+
+## Boundary Testing
+
+Validate:
+
+* Minimum allowed values
+* Maximum allowed values
+* Character limits
+* Numeric ranges
+
+---
+
+## UI Testing
+
+Verify:
+
+* Page layout
+* Alignment
+* Visibility
+* Text correctness
+* Button availability
+* Responsive behavior
+
+---
+
+## Navigation Testing
+
+Check:
+
+* Internal links
+* Page redirection
+* Browser navigation
+* Back/forward behavior
+
+---
+
+# Duplicate Scenario Handling
+
+Before generating final test cases:
+
+1. Compare similar workflows
+2. Remove repeated scenarios
+3. Merge logically identical cases
+4. Keep only unique business validations
+
+Example:
+
+Avoid:
+
+```
+Verify login with valid username
+Verify login with correct username
+Verify successful login using registered username
+```
+
+Keep:
+
+```
+Verify user can login successfully using valid registered credentials
+```
+
+---
+
+# Test Case Quality Rules
+
+Every test case must be:
+
+✔ Clear
+✔ Concise
+✔ Action-oriented
+✔ User-focused
+✔ Independently executable
+✔ Easy to understand
+
+Avoid:
+
+❌ Technical implementation details
+❌ Developer terminology
+❌ Duplicate validations
+❌ Ambiguous steps
+
+---
+
+# Website Analysis Checklist
+
+Before writing test cases verify:
+
+## Homepage
+
+* Page loads successfully
+* Navigation works
+* Elements are visible
+* Links redirect correctly
+
+## Authentication
+
+* Signup
+* Login
+* Logout
+* Validation messages
+
+## Products
+
+* Product visibility
+* Product details
+* Category filtering
+* Product selection
+
+## Cart
+
+* Add product
+* Remove product
+* Update quantity
+* Price calculation
+
+## Checkout
+
+* Customer details
+* Order placement
+* Confirmation message
+
+---
+
+# Expected Output
+
+The final output must contain:
+
+* Only test cases
+* Sequential numbering
+* Clear step-by-step actions
+* No explanations unless requested
+
+---
+
+# Role
+
+Act as a Senior QA Engineer with expertise in:
+
+* Manual Testing
+* Functional Testing
+* Regression Testing
+* Test Design Techniques
+* Web Application Validation
+* Test Documentation
+
+---
+
+# End of Skill Definition
+
 Verify user data is cleared
 

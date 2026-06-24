@@ -63,7 +63,7 @@ jobs:
           echo "Suite: $TEST_SUITE_ID | Browser: $BROWSER | OS: $OS"
 
       - name: Workshop-3
-        id: 9c2817377889deb325c2b76ae1ac366aa2abbef6
+        id: trigger_test_suite
         shell: bash
         run: |
           payload=$(jq -n \

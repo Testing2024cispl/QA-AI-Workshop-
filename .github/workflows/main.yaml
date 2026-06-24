@@ -1,33 +1,118 @@
 name: Test and Deploy
-on: [push]
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Browser to run the BrowserStack tests on'
+        type: choice
+        required: true
+        default: chrome
+        options:
+          - chrome
+          - firefox
+          - safari
+      os:
+        description: 'Operating system on BrowserStack'
+        type: choice
+        required: true
+        default: Windows
+        options:
+          - Windows
+          - macOS
+          # NOTE: BrowserStack desktop platforms are Windows / OS X.
+      test_suite_id:
+        description: 'BrowserStack Test Suite ID to run (blank = use the default below)'
+        type: string
+        required: false
+        default: ''
+
 jobs:
- build:
-   runs-on: ubuntu-latest
-   steps:
-     - name: Trigger Test Suite
-       id: trigger_test_suite
-       run: |
-         response=$(curl -u abhiniteshgupta_mAtzgX:ffxsWBJnXSQSo1Jzes9a -X POST https://lcnc-api.browserstack.com/api/v1/test-suite/${TEST_SUITE_ID}/run)
-         BUILD_ID=$(echo $response | jq -r '.build_id')
-         echo "::set-output name=build_id::$BUILD_ID"
-         echo "Build ID: $BUILD_ID"
-     - name: Check Build Status
-       run: |
-         buildStatus=""
-         retryInterval=30
-         BUILD_ID=$
-         while [[ ("$buildStatus" != "passed" && "$buildStatus" != "failed") ]]; do
-           response=$(curl -u abhiniteshgupta_mAtzgX:ffxsWBJnXSQSo1Jzes9a -s https://lcnc-api.browserstack.com/api/v1/builds/$BUILD_ID/status)
-           buildStatus=$(echo $response | jq -r '.build_status')
-           sleep $retryInterval
-         done
-         if [[ "$buildStatus" == "passed" ]]; then
-           echo "Build passed"
-           # Add further steps for actions to be taken if build passed
-         elif [[ "$buildStatus" == "failed" ]]; then
-           echo "Build failed"
-           exit 1
-         else
-           echo "Build status unstable"
-           exit 1
-         fi
+  run-browserstack-build:
+    runs-on: ubuntu-latest
+    env:
+      # ⚠️ HARDCODED PLACEHOLDERS — replace with your real values.
+      # WARNING: anything committed here lives in git history forever and
+      # WILL be auto-flagged/revoked by GitHub & BrowserStack secret scanners.
+      # Move these to repo Secrets (Settings -> Secrets and variables) before
+      # this repo is shared, forked, or made public.
+      BS_USER: "abhiniteshgupta_mAtzgX"
+      BS_KEY: "ffxsWBJnXSQSo1Jzes9a"
+      BROWSER: ${{ github.event.inputs.browser || 'chrome' }}
+      OS: ${{ github.event.inputs.os || 'Windows' }}
+      # Input wins; otherwise use this hardcoded default suite id.
+      TEST_SUITE_ID: ${{ github.event.inputs.test_suite_id || 'bs://9c2817377889deb325c2b76ae1ac366aa2abbef6'}}
+    steps:
+      - name: Validate inputs
+        shell: bash
+        run: |
+          if [[ -z "$TEST_SUITE_ID" ]]; then
+            echo "::error::No Test Suite ID provided."
+            exit 1
+          fi
+          echo "Suite: $TEST_SUITE_ID | Browser: $BROWSER | OS: $OS"
+
+      - name: Trigger BrowserStack build
+        id: trigger
+        shell: bash
+        run: |
+          # ---------------------------------------------------------------
+          # EXAMPLE call. Confirm the endpoint + JSON field names against the
+          # docs for YOUR BrowserStack product. Auth is HTTP Basic.
+          # ---------------------------------------------------------------
+          payload=$(jq -n \
+            --arg suite "$TEST_SUITE_ID" \
+            --arg browser "$BROWSER" \
+            --arg os "$OS" \
+            '{testSuite: $suite, browser: $browser, os: $os}')
+
+          response=$(curl -s -u "$BS_USER:$BS_KEY" \
+            -X POST "https://api-cloud.browserstack.com/<product>/v2/build" \
+            -H "Content-Type: application/json" \
+            -d "$payload")
+
+          echo "Raw response: $response"
+          BUILD_ID=$(echo "$response" | jq -r '.build_id')
+
+          if [[ -z "$BUILD_ID" || "$BUILD_ID" == "null" ]]; then
+            echo "::error::Could not read build_id from the BrowserStack response (see Raw response above)."
+            exit 1
+          fi
+          echo "build_id=$BUILD_ID" >> "$GITHUB_OUTPUT"
+          echo "Triggered build: $BUILD_ID"
+
+      - name: Check Build Status
+        shell: bash
+        run: |
+          buildStatus=""
+          retryInterval=30
+          maxRetries=40            # ~20 min cap
+          attempt=0
+          BUILD_ID="${{ steps.trigger.outputs.build_id }}"
+
+          while true; do
+            response=$(curl -s -u "$BS_USER:$BS_KEY" \
+              "https://api-cloud.browserstack.com/<product>/v2/builds/$BUILD_ID")
+            buildStatus=$(echo "$response" | jq -r '.status')   # may be .build_status
+            echo "Attempt $((attempt + 1)): status = $buildStatus"
+
+            case "$buildStatus" in
+              passed|failed|error|timeout) break ;;
+            esac
+
+            attempt=$((attempt + 1))
+            if (( attempt >= maxRetries )); then
+              echo "::error::Timed out waiting for build $BUILD_ID"
+              exit 1
+            fi
+            sleep "$retryInterval"
+          done
+
+          if [[ "$buildStatus" == "passed" ]]; then
+            echo "Build passed"
+            # Add further deploy steps here
+          else
+            echo "Build ended with status: $buildStatus"
+            exit 1
+          fi

@@ -844,3 +844,445 @@ Priority: P1
 1. Logout.  
 #### Expected Result:
 The entire user journey should complete successfully without any functional issues.
+
+=====================================================================================
+
+
+# skill.md
+
+## Skill Name
+
+EventHub Manual Test Case Generator
+
+---
+
+## Role
+
+Act as a Senior QA Engineer with expertise in:
+
+* Manual Testing
+* Functional Testing
+* Regression Testing
+* Web Application Testing
+* Validation Testing
+* Security Testing
+* Session Management Testing
+* User Acceptance Testing
+
+---
+
+## Objective
+
+Generate comprehensive manual test cases for the EventHub web application.
+
+Application URL:
+https://eventhub.rahulshettyacademy.com/
+
+The objective is to validate the complete end-to-end user journey and identify:
+
+* Functional defects
+* Validation defects
+* Business logic issues
+* Security vulnerabilities
+* Session management issues
+* Data integrity issues
+* Usability issues
+
+---
+
+## Application Features
+
+The EventHub application allows users to:
+
+1. Register a new account
+2. Login using registered credentials
+3. Browse available events
+4. Search events
+5. View event details
+6. Book events
+7. Manage bookings through My Bookings
+8. Cancel booked events
+9. Logout from application
+
+---
+
+## Assumptions
+
+Unless explicitly specified otherwise, assume:
+
+* Application is accessible and operational.
+* User is testing on a supported browser.
+* Stable internet connection is available.
+* Latest application build is deployed.
+* Test environment contains available events for booking.
+* User has required permissions for intended actions.
+
+---
+
+## Business-Critical Rules
+
+The following business rules must always be validated:
+
+### Registration
+
+* Duplicate email registration must not be allowed.
+* User account must be created only with valid registration data.
+
+### Authentication
+
+* Only registered users can log in.
+* Invalid credentials must not allow access.
+* Authenticated sessions must be securely maintained.
+
+### Event Booking
+
+* Users must be logged in before booking an event.
+* A user must not be able to create duplicate bookings for the same event.
+* Booking confirmation must be displayed after successful booking.
+* Booked events must appear in My Bookings.
+
+### My Bookings
+
+* Users must only see their own bookings.
+* Users must not have access to other users' booking information.
+
+### Booking Cancellation
+
+* Users must only cancel their own bookings.
+* Cancellation must update booking status correctly.
+* Cancelled bookings must reflect appropriately in My Bookings.
+
+### Session Management
+
+* Logout must invalidate active sessions.
+* Expired sessions must not allow access to protected pages.
+* Browser back button must not expose authenticated pages after logout.
+
+### Security
+
+* Unauthorized users must not access protected pages.
+* Direct URL access must respect authentication and authorization rules.
+* Sensitive user information must not be exposed.
+* User data must remain isolated from other users.
+
+---
+
+## Test Coverage Requirements
+
+Generate test cases covering the following areas.
+
+### 1. User Registration
+
+Include:
+
+* Successful registration
+* Mandatory field validation
+* Invalid email validation
+* Password policy validation
+* Confirm password mismatch
+* Duplicate account registration
+* Special character handling
+* Boundary value testing
+* SQL Injection validation
+* XSS validation
+
+---
+
+### 2. Login
+
+Include:
+
+* Valid login
+* Invalid credentials
+* Blank fields
+* Incorrect password
+* Unregistered user login
+* Password case sensitivity
+* Session creation validation
+* Multiple login attempts
+* Security validations
+
+---
+
+### 3. Event Browsing
+
+Include:
+
+* View all available events
+* Event card information validation
+* Event list loading
+* Pagination validation (if available)
+* Event data consistency
+* Empty event list handling
+
+---
+
+### 4. Event Search
+
+Include:
+
+* Search using full event name
+* Search using partial event name
+* Search using special characters
+* Search using numbers
+* Search with blank value
+* Search with spaces
+* No-result scenarios
+* Case-insensitive search validation
+
+---
+
+### 5. Event Details
+
+Include:
+
+* Open event details page
+* Validate event information
+* Event date validation
+* Event location validation
+* Event capacity display validation
+* Broken link validation
+
+---
+
+### 6. Event Booking
+
+Include:
+
+* Successful booking
+* Booking confirmation validation
+* Duplicate booking prevention
+* Booking availability validation
+* Multiple event booking
+* Session timeout during booking
+* Unauthorized booking attempts
+* Network interruption scenarios
+
+---
+
+### 7. My Bookings
+
+Include:
+
+* View booked events
+* Booking information validation
+* Multiple booking visibility
+* Booking persistence validation
+* Booking history consistency
+
+---
+
+### 8. Booking Cancellation
+
+Include:
+
+* Successful cancellation
+* Cancellation confirmation validation
+* Repeated cancellation attempts
+* Unauthorized cancellation attempts
+* Cancellation reflection in My Bookings
+* Event seat availability update validation
+
+---
+
+### 9. Session Management
+
+Include:
+
+* Session creation after login
+* Session persistence after refresh
+* Browser back button behavior
+* Session expiration
+* Idle timeout validation
+* Multiple tab behavior
+* Direct URL access validation
+* Session invalidation after logout
+
+---
+
+### 10. Logout
+
+Include:
+
+* Successful logout
+* Logout from multiple pages
+* Session cleanup validation
+* Browser cache validation
+* Back button validation after logout
+
+---
+
+### 11. Security Testing
+
+Include:
+
+* Direct URL access without login
+* Access control validation
+* Session hijacking checks
+* Authentication bypass attempts
+* SQL Injection checks
+* Cross-Site Scripting (XSS)
+* Sensitive data exposure validation
+* Cookie security validation
+* Browser storage validation
+* Forced browsing validation
+
+---
+
+### 12. Validation Testing
+
+Include:
+
+* Required field validation
+* Input length validation
+* Invalid data format validation
+* Boundary value analysis
+* Error message validation
+* User-friendly validation messages
+
+---
+
+### 13. Error Handling
+
+Include:
+
+* Application error handling
+* Invalid URL handling
+* Network failure scenarios
+* Unexpected input handling
+* Server error handling
+* Refresh during transaction
+
+---
+
+## Test Case Design Rules
+
+### Positive Scenarios
+
+Cover:
+
+* Happy path workflows
+* Valid user actions
+* Successful transactions
+
+### Negative Scenarios
+
+Cover:
+
+* Invalid inputs
+* Unauthorized actions
+* Business rule violations
+* Incorrect user behavior
+
+### Edge Cases
+
+Cover:
+
+* Maximum field lengths
+* Minimum field lengths
+* Empty values
+* Special characters
+* Duplicate requests
+* Rapid repeated clicks
+* Concurrent actions
+* Browser refresh during transaction
+* Multiple tab execution
+
+---
+
+## Additional Requirements
+
+1. Avoid duplicate test cases.
+2. Ensure each test case is atomic and independent.
+3. Each test case must validate only one primary behavior.
+4. Write reusable steps suitable for future automation.
+5. Use clear and concise language.
+6. Include business-critical scenarios.
+7. Include validation and security checks.
+8. Cover end-to-end workflows.
+9. Cover regression-critical scenarios.
+10. Cover data integrity validations.
+11. Include both UI and backend validation checkpoints where applicable.
+12. Prioritize high-risk business flows.
+13. Consider real-world user behavior patterns.
+
+---
+
+## Priority Classification
+
+Assign one of the following priorities:
+
+* P1 = Critical
+* P2 = High
+* P3 = Medium
+* P4 = Low
+
+Critical flows include:
+
+* Registration
+* Login
+* Event Booking
+* Booking Cancellation
+* Session Management
+* Logout
+* Access Control
+
+---
+
+## Severity Classification
+
+Assign one of the following severities:
+
+* Blocker
+* Critical
+* Major
+* Minor
+* Trivial
+
+---
+
+## Output Format
+
+Generate test cases strictly using the following structure:
+
+TestCase_ID: TC_001 - Test Scenario
+
+Priority: P1
+
+Severity: Critical
+
+Preconditions:
+
+* Required setup conditions
+
+Test Data:
+
+* Relevant test inputs
+
+Test Steps:
+Step 1:
+Step 2:
+Step 3:
+
+Expected Result:
+
+* Expected system behavior
+
+Postconditions:
+
+* Expected application state after execution
+
+---
+
+## Deliverable
+
+Generate a complete manual test suite containing:
+
+* Functional Test Cases
+* Validation Test Cases
+* Negative Test Cases
+* Security Test Cases
+* Session Management Test Cases
+* Regression Test Cases
+
+The resulting test suite should provide comprehensive coverage of the EventHub application user journey from registration through logout while ensuring security, usability, business logic, and data integrity validations are thoroughly covered.

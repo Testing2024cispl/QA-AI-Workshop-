@@ -1,104 +1,130 @@
 name: Test and Deploy
 
+# Original `on: [push]` is preserved. workflow_dispatch is ADDED so the
+# browser/OS dropdowns appear when you click "Run workflow" in the Actions tab.
+# (Dropdowns never show on a push run — push has no inputs, so defaults apply.)
 on:
   push:
   workflow_dispatch:
     inputs:
       browser:
-        description: 'Browser to run the BrowserStack tests on'
+        description: 'Desktop browser to run on'
         type: choice
         required: true
         default: chrome
         options:
           - chrome
           - firefox
-          - safari
+          - safari        # desktop Safari runs on macOS / OS X only
       os:
-        description: 'Operating system on BrowserStack'
+        description: 'Desktop OS to run on'
         type: choice
         required: true
         default: Windows
         options:
           - Windows
           - macOS
-          # NOTE: BrowserStack desktop platforms are Windows / OS X.
       test_suite_id:
-        description: 'BrowserStack Test Suite ID to run (blank = use the default below)'
+        description: 'Test Suite ID to run (blank = use the default below)'
         type: string
         required: false
         default: ''
 
 jobs:
-  run-browserstack-build:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest      # just an API client; the browser runs on BrowserStack
     env:
-      # ⚠️ HARDCODED PLACEHOLDERS — replace with your real values.
-      # WARNING: anything committed here lives in git history forever and
-      # WILL be auto-flagged/revoked by GitHub & BrowserStack secret scanners.
-      # Move these to repo Secrets (Settings -> Secrets and variables) before
-      # this repo is shared, forked, or made public.
+      # Hardcoded placeholders — replace with your real values.
       BS_USER: "abhiniteshgupta_mAtzgX"
       BS_KEY: "ffxsWBJnXSQSo1Jzes9a"
+
+      # >>> Fill these with YOUR trigger/status service URLs. <<<
+      # Leaving them blank makes the job stop with a clear message instead of
+      # a 404 + jq crash. (Stock desktop BrowserStack Automate has no such
+      # trigger-by-suite API, so these point at your own test service.)
+      TRIGGER_URL: ""
+      STATUS_URL_BASE: ""
+
       BROWSER: ${{ github.event.inputs.browser || 'chrome' }}
       OS: ${{ github.event.inputs.os || 'Windows' }}
-      # Input wins; otherwise use this hardcoded default suite id.
-      TEST_SUITE_ID: ${{ github.event.inputs.test_suite_id || 'bs://9c2817377889deb325c2b76ae1ac366aa2abbef6'}}
+      TEST_SUITE_ID: ${{ github.event.inputs.test_suite_id || '9c2817377889deb325c2b76ae1ac366aa2abbef6' }}
     steps:
-      - name: Validate inputs
+      - name: Validate config
         shell: bash
         run: |
-          if [[ -z "$TEST_SUITE_ID" ]]; then
-            echo "::error::No Test Suite ID provided."
+          if [[ -z "$TRIGGER_URL" || -z "$STATUS_URL_BASE" ]]; then
+            echo "::error::Set TRIGGER_URL and STATUS_URL_BASE in the env block to your real endpoints. They are empty, which is why the call would 404."
+            exit 1
+          fi
+          if [[ "$BROWSER" == "safari" && "$OS" != "macOS" ]]; then
+            echo "::error::Desktop Safari only runs on macOS. Pick OS = macOS or a different browser."
             exit 1
           fi
           echo "Suite: $TEST_SUITE_ID | Browser: $BROWSER | OS: $OS"
 
-      - name: Trigger BrowserStack build
-        id: trigger
+      - name: Workshop-3
+        id: 9c2817377889deb325c2b76ae1ac366aa2abbef6
         shell: bash
         run: |
-          # ---------------------------------------------------------------
-          # EXAMPLE call. Confirm the endpoint + JSON field names against the
-          # docs for YOUR BrowserStack product. Auth is HTTP Basic.
-          # ---------------------------------------------------------------
           payload=$(jq -n \
             --arg suite "$TEST_SUITE_ID" \
             --arg browser "$BROWSER" \
             --arg os "$OS" \
-            '{testSuite: $suite, browser: $browser, os: $os}')
+            '{test_suite_id: $suite, browser: $browser, os: $os}')
 
-          response=$(curl -s -u "$BS_USER:$BS_KEY" \
-            -X POST "https://api-cloud.browserstack.com/<product>/v2/build" \
+          # Separate the HTTP code from the body so a non-JSON error page
+          # (e.g. a 404 HTML page) never gets piped into jq.
+          http_code=$(curl -s -u "$BS_USER:$BS_KEY" \
+            -o trigger_response.json -w "%{http_code}" \
+            -X POST "$TRIGGER_URL" \
             -H "Content-Type: application/json" \
             -d "$payload")
 
-          echo "Raw response: $response"
-          BUILD_ID=$(echo "$response" | jq -r '.build_id')
+          echo "HTTP $http_code"
+          echo "Response:"; cat trigger_response.json; echo
 
-          if [[ -z "$BUILD_ID" || "$BUILD_ID" == "null" ]]; then
-            echo "::error::Could not read build_id from the BrowserStack response (see Raw response above)."
+          if [[ "$http_code" != "200" && "$http_code" != "201" ]]; then
+            echo "::error::Trigger failed with HTTP $http_code (see response above)."
             exit 1
           fi
+
+          BUILD_ID=$(jq -r '.build_id' trigger_response.json)
+          if [[ -z "$BUILD_ID" || "$BUILD_ID" == "null" ]]; then
+            echo "::error::No build_id in response — check the JSON field name your service returns."
+            exit 1
+          fi
+
+          # Modern replacement for the deprecated ::set-output
           echo "build_id=$BUILD_ID" >> "$GITHUB_OUTPUT"
-          echo "Triggered build: $BUILD_ID"
+          echo "Build ID: $BUILD_ID"
 
       - name: Check Build Status
         shell: bash
         run: |
           buildStatus=""
           retryInterval=30
-          maxRetries=40            # ~20 min cap
+          maxRetries=40                                   # ~20 min cap so it can't hang forever
           attempt=0
-          BUILD_ID="${{ steps.trigger.outputs.build_id }}"
+          BUILD_ID="${{ steps.trigger_test_suite.outputs.build_id }}"   # fixes the broken BUILD_ID=$
 
-          while true; do
-            response=$(curl -s -u "$BS_USER:$BS_KEY" \
-              "https://api-cloud.browserstack.com/<product>/v2/builds/$BUILD_ID")
-            buildStatus=$(echo "$response" | jq -r '.status')   # may be .build_status
-            echo "Attempt $((attempt + 1)): status = $buildStatus"
+          while [[ "$buildStatus" != "passed" && "$buildStatus" != "failed" ]]; do
+            http_code=$(curl -s -u "$BS_USER:$BS_KEY" \
+              -o status_response.json -w "%{http_code}" \
+              "$STATUS_URL_BASE/$BUILD_ID")
 
+            if [[ "$http_code" != "200" ]]; then
+              echo "::error::Status check failed with HTTP $http_code"
+              cat status_response.json
+              exit 1
+            fi
+
+            buildStatus=$(jq -r '.build_status' status_response.json)
+            echo "Attempt $((attempt + 1)): build_status = $buildStatus"
+
+            # Safety net: stop on terminal error states too, so the loop can't spin forever.
             case "$buildStatus" in
-              passed|failed|error|timeout) break ;;
+              passed|failed) break ;;
+              error|timeout) echo "Build status unstable ($buildStatus)"; exit 1 ;;
             esac
 
             attempt=$((attempt + 1))
@@ -111,8 +137,11 @@ jobs:
 
           if [[ "$buildStatus" == "passed" ]]; then
             echo "Build passed"
-            # Add further deploy steps here
+            # Add further steps for actions to be taken if build passed
+          elif [[ "$buildStatus" == "failed" ]]; then
+            echo "Build failed"
+            exit 1
           else
-            echo "Build ended with status: $buildStatus"
+            echo "Build status unstable"
             exit 1
           fi

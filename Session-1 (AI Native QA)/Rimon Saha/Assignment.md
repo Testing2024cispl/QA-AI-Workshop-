@@ -2194,6 +2194,9 @@ Expected: Missing fields = defect.
 (Your TC‑085 mentions missing details)
 
 =======================================================================================
+
+
+
 Day 2 Assignment  
 
 

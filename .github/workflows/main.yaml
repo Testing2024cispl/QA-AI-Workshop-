@@ -42,8 +42,8 @@ jobs:
       # Leaving them blank makes the job stop with a clear message instead of
       # a 404 + jq crash. (Stock desktop BrowserStack Automate has no such
       # trigger-by-suite API, so these point at your own test service.)
-      TRIGGER_URL: ""
-      STATUS_URL_BASE: ""
+      TRIGGER_URL: "https://eventhub.rahulshettyacademy.com/"
+      STATUS_URL_BASE: "https://eventhub.rahulshettyacademy.com/"
 
       BROWSER: ${{ github.event.inputs.browser || 'chrome' }}
       OS: ${{ github.event.inputs.os || 'Windows' }}

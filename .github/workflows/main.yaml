@@ -47,7 +47,7 @@ jobs:
 
       BROWSER: ${{ github.event.inputs.browser || 'chrome' }}
       OS: ${{ github.event.inputs.os || 'Windows' }}
-      TEST_SUITE_ID: ${{ github.event.inputs.test_suite_id || '9c2817377889deb325c2b76ae1ac366aa2abbef6' }}
+      TEST_SUITE_ID: ${{ github.event.inputs.test_suite_id || 'EXAMPLE_SUITE_ID' }}
     steps:
       - name: Validate config
         shell: bash

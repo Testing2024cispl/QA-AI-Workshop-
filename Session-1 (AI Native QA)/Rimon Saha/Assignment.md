@@ -1784,7 +1784,8 @@ AI Manual Test Case
 Member : Rimon Saha 
 Query/Test cases:- https://advantageonlineshopping.com/#/ 
 
-Promt >> 
+Promt >>  
+After pasting my whole testcase i added this prompt 
 this is the test case which i have written here, Now i am asking you to write the test cases for me don't copy my testcase, just use this template and make me a testcase 
 url : https://advantageonlineshopping.com/#/ give me the test cases scenarios for this site just the way its's written above 
 flow should be : create new account , tablets , Hp pro tablet 608 g1, shop now , colour grey, quantity 2, add to cart , checkout , safepay payment, thank you page 

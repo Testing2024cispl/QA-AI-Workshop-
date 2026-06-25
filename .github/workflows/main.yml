@@ -1,0 +1,120 @@
+name: Test and Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      browserstack_username:
+        description: 'BrowserStack Username'
+        required: true
+      browserstack_access_key:
+        description: 'BrowserStack Access Key'
+        required: true
+      test_suite_id:
+        description: 'BrowserStack Test Suite ID'
+        required: true
+      os:
+        description: 'Operating System'
+        required: true
+        default: 'Windows'
+        type: choice
+        options:
+          - Windows
+          - macOS
+      browser:
+        description: 'Browser'
+        required: true
+        default: 'chrome'
+        type: choice
+        options:
+          - chrome
+          - firefox
+          - safari
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Mask Credentials
+        run: |
+          echo "::add-mask::${{ github.event.inputs.browserstack_username }}"
+          echo "::add-mask::${{ github.event.inputs.browserstack_access_key }}"
+
+      - name: Set Credentials and Suite ID
+        run: |
+          echo "BS_USERNAME=${{ github.event.inputs.browserstack_username }}" >> $GITHUB_ENV
+          echo "BS_ACCESS_KEY=${{ github.event.inputs.browserstack_access_key }}" >> $GITHUB_ENV
+          echo "SUITE_ID=${{ github.event.inputs.test_suite_id }}" >> $GITHUB_ENV
+          echo "Selected OS      : ${{ github.event.inputs.os }}"
+          echo "Selected Browser : ${{ github.event.inputs.browser }}"
+
+      - name: Debug Variables
+        run: |
+          echo "Suite ID         : $SUITE_ID"
+          echo "Username         : $BS_USERNAME"
+          echo "Access Key Length: ${#BS_ACCESS_KEY}"
+
+      - name: Trigger Test Suite
+        id: trigger_test_suite
+        run: |
+          echo "Triggering BrowserStack Test Suite: $SUITE_ID"
+          response=$(curl -s \
+            -u $BS_USERNAME:$BS_ACCESS_KEY \
+            -X POST \
+            -H "Content-Type: application/json" \
+            https://lcnc-api.browserstack.com/api/v1/test-suite/${SUITE_ID}/run)
+
+          echo "Raw Response: $response"
+
+          BUILD_ID=$(echo $response | jq -r '.build_id')
+          echo "Build ID: $BUILD_ID"
+
+          if [ "$BUILD_ID" == "null" ] || [ -z "$BUILD_ID" ]; then
+            echo "❌ Failed to get Build ID."
+            echo "Possible reasons:"
+            echo "  - Wrong BrowserStack Username or Access Key"
+            echo "  - Wrong Suite ID"
+            echo "  - Suite does not exist in your BrowserStack account"
+            exit 1
+          fi
+
+          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+
+      - name: Check Build Status
+        run: |
+          buildStatus=""
+          retryInterval=30
+          maxRetries=40
+          retryCount=0
+          BUILD_ID=${{ steps.trigger_test_suite.outputs.build_id }}
+
+          echo "Polling status for Build ID: $BUILD_ID"
+
+          while [[ ("$buildStatus" != "passed" && "$buildStatus" != "failed") ]]; do
+
+            if [ "$retryCount" -ge "$maxRetries" ]; then
+              echo "❌ Max retries reached. Build did not finish in time."
+              exit 1
+            fi
+
+            response=$(curl -s \
+              -u $BS_USERNAME:$BS_ACCESS_KEY \
+              https://lcnc-api.browserstack.com/api/v1/builds/$BUILD_ID/status)
+
+            buildStatus=$(echo $response | jq -r '.build_status')
+            echo "Attempt $retryCount | Current Status: $buildStatus"
+
+            retryCount=$((retryCount + 1))
+            sleep $retryInterval
+
+          done
+
+          if [[ "$buildStatus" == "passed" ]]; then
+            echo "✅ Build passed"
+          elif [[ "$buildStatus" == "failed" ]]; then
+            echo "❌ Build failed"
+            exit 1
+          else
+            echo "⚠️ Build status unstable"
+            exit 1
+          fi

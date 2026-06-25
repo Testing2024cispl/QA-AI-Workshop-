@@ -596,27 +596,43 @@ Validation
 Security
 Regression
 
-Req ID	Component	Test Case ID	Feature	Test Scenario	Test Steps	Test Data	Expected Result	Priority	Test Type
-REQ_LOGIN_001	Login	TC_001	Mobile Login	Verify login with valid mobile number and OTP	1. Open website → 2. Click Account → 3. Enter valid mobile → 4. Click Send OTP → 5. Enter valid OTP → 6. Click Verify	Mobile: 9876543210 OTP: 123456	User should login successfully	High	Functional
-REQ_LOGIN_002	Login	TC_002	Mobile Login	Verify error message for invalid mobile number	Enter invalid mobile number and click Send OTP	Mobile: 12345	Validation message should appear	High	Validation
-REQ_LOGIN_003	OTP	TC_003	OTP Verification	Verify expired OTP cannot be used	Generate OTP and wait until expiry	OTP: Expired	Appropriate error message displayed	High	Negative
-REQ_LOGIN_004	OTP	TC_004	OTP Verification	Verify Resend OTP functionality	Click Resend OTP after timer expires	N/A	New OTP generated, old OTP invalid	High	Functional
-REQ_PRODUCT_005	Product	TC_005	Search	Verify product search with valid keyword	Enter “Milk” in search bar → Click Search	Keyword: Milk	Relevant products displayed	Medium	Functional
-REQ_PRODUCT_006	Product	TC_006	Search	Verify search with special characters	Enter “@@@” in search bar → Click Search	Keyword: @@@	No products found, error message shown	Medium	Negative
+|Req ID |	Component |	Test Case ID |	Feature	| Test Scenario |	Test Steps |	Test Data |	Expected Result |	Priority |	Test Type |
+| ------ | --------- | ------------ | ------- | ------------- | ---------- | --------- | --------------- | -------- | --------- |
+|REQ_LOGIN_001|	Login	TC_001|	Mobile Login|	Verify login with valid mobile number and OTP| 	1. Open website → 2. Click Account → 3. Enter valid mobile → 4. Click Send OTP → 5. Enter valid OTP → 6. Click Verify	| Mobile: 9876543210 OTP: 123456 |	User should login successfully|	High	|Functional |
+
+|REQ_LOGIN_002|	Login|	TC_002|	Mobile Login	|Verify error message for invalid mobile number|	Enter invalid mobile number and click Send OTP|	Mobile: 12345	|Validation message should appear	|High|	Validation|
+
+|REQ_LOGIN_003|	OTP|	TC_003|	OTP Verification|	Verify expired OTP cannot be used|	Generate OTP and wait until expiry|	OTP: Expired|	Appropriate error message displayed	|High|	Negative|
+
+|REQ_LOGIN_004|	OTP	|TC_004	|OTP Verification|	Verify Resend OTP functionality	|Click Resend OTP after timer expires|	N/A|	New OTP generated, old OTP invalid	|High	|Functional|
+
+|REQ_PRODUCT_005|	Product|	TC_005|	Search|	Verify product search with valid keyword|	Enter “Milk” in search bar → Click Search	|Keyword: Milk|	Relevant products displayed|	Medium|	Functional|
+
+|REQ_PRODUCT_006|	Product|	TC_006|	Search|	Verify search with special characters|	Enter “@@@” in search bar → Click Search|	Keyword: @@@|	No products found, error message shown|	Medium|	Negative
+
 REQ_CART_007	Cart	TC_007	Add to Cart	Verify adding product to cart	Select product → Click “Add to Cart”	Product: Bread	Product added to cart	High	Functional
-REQ_CART_008	Cart	TC_008	Cart Calculation	Verify cart total calculation	Add 2 products → Check cart total	Bread ₹40, Milk ₹50	Total = ₹90	High	Functional
-REQ_CART_009	Cart	TC_009	Duplicate Products	Verify duplicate product handling	Add same product twice	Product: Bread	Quantity increases, not duplicate entry	High	Regression
-REQ_CHECKOUT_010	Checkout	TC_010	Payment	Verify checkout with valid card	Enter valid card details → Place order	Card: 4111111111111111	Payment successful, order placed	High	Functional
-REQ_CHECKOUT_011	Checkout	TC_011	Payment	Verify checkout with invalid card	Enter invalid card number → Place order	Card: 123456	Error message shown, payment declined	High	Negative
-REQ_CHECKOUT_012	Checkout	TC_012	Coupon	Verify coupon application	Apply valid coupon code	Coupon: SAVE10	Discount applied	Medium	Functional
-REQ_ACCOUNT_013	Account	TC_013	Profile	Verify profile update	Navigate to My Profile → Edit name → Save	Name: “Saheli QA”	Profile updated successfully	Medium	Functional
-REQ_ACCOUNT_014	Account	TC_014	Order History	Verify order history displays past orders	Navigate to Order History	N/A	Past orders displayed	Medium	Functional
-REQ_SECURITY_015	Security	TC_015	SQL Injection	Verify login input against SQL injection	Enter “' OR 1=1 --” in mobile field	Mobile: ' OR 1=1 --	System should block input, show error	High	Security
-REQ_SECURITY_016	Security	TC_016	XSS Attack	Verify product review input against script tags	Enter “<script>alert(1)</script>” in review	Review: <script>alert(1)</script>	Input sanitized, no script execution	High	Security
-REQ_NAVIGATION_017	Navigation	TC_017	Browser Back	Verify checkout flow with browser back	Add product → Proceed to checkout → Click browser back	N/A	User redirected safely, no duplicate order	High	Error Handling
-REQ_UI_018	UI	TC_018	Alignment	Verify cart button alignment on mobile	Open site on mobile → Navigate to cart	Device: iPhone	Cart button aligned properly	Low	UI Validation
 
+|REQ_CART_008	|Cart	|TC_008	|Cart Calculation|	Verify cart total calculation|	Add 2 products → Check cart| total	Bread ₹40, Milk ₹50|	Total = ₹90|	High	|Functional|
 
+|REQ_CART_009	|Cart	|TC_009	|Duplicate Products	|Verify duplicate product handling|	Add same product twice	|Product: Bread |	Quantity increases, not duplicate entry|	High|	Regression|
+
+|REQ_CHECKOUT_010	|Checkout	|TC_010	|Payment|	Verify checkout with valid card	|Enter valid card details → Place order	|Card: 4111111111111111	|Payment successful, order placed	|High|	Functional|
+
+|REQ_CHECKOUT_011|	Checkout|	TC_011|	Payment|	Verify checkout with invalid card	|Enter invalid card number → Place order|	Card: 123456|	Error message shown, payment declined|	High	|Negative|
+
+|REQ_CHECKOUT_012|	Checkout	|TC_012	|Coupon|	Verify coupon application|	Apply valid coupon code	|Coupon: SAVE10|	Discount applied|	Medium	|Functional|
+
+|REQ_ACCOUNT_013|	Account	|TC_013|	Profile|	Verify profile update	|Navigate to My Profile → Edit name → Save|	Name: “Saheli QA”	Profile updated successfully|	Medium|	Functional|
+
+|REQ_ACCOUNT_014|	Account|	TC_014	|Order History|	Verify order history displays past orders	| Navigate to Order History|	N/A|	Past orders displayed	|Medium	|Functional|
+
+|REQ_SECURITY_015|	Security|	TC_015	|SQL Injection|	Verify login input against SQL injection|	Enter “' OR 1=1 --” in mobile field	Mobile: ' OR 1=1 --|	System should block input, show error|	High	|Security|
+
+|REQ_SECURITY_016|	Security|	TC_016|	XSS Attack|	Verify product review input against script tags|	Enter “<script>alert(1)</script>” in review	Review: <script>alert(1)</script>|	Input sanitized, no script execution|	High|	Security|
+
+|REQ_NAVIGATION_017|	Navigation	|TC_017|	Browser Back	|Verify checkout flow with browser back|	Add product → Proceed to checkout → Click browser back|	N/A	|User redirected safely, no duplicate order|	High|	Error Handling
+
+|REQ_UI_018|	UI|	TC_018	|Alignment|	Verify cart button alignment on mobile|	Open site on mobile → Navigate to cart|	Device: iPhone|	Cart button aligned properly|	Low	|UI Validation|
 
 
 ## Recommended Prompt ##

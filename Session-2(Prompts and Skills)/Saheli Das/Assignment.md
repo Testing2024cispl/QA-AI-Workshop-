@@ -296,3 +296,350 @@ Final Test Case_007 — Order History & Sign Out (Automation Ready)
 149. Verify that the user is logged out and redirected to the homepage in a logged-out state
 150. Verify that the user is logged in successfully and redirected to the Account page
 
+------------------------- ------------------------ Session 2 - Assignment -------------------------------------------------
+# Name #
+
+Enterprise QA Test Case Generator – Grocery Store Demo E-Commerce
+
+# Purpose #
+
+Generate exhaustive, structured, automation-ready QA test cases from requirements, user stories, acceptance criteria, business rules, UI designs, workflows, or feature descriptions.
+
+The generated test cases must simulate real user behavior and provide complete test coverage for all functional and non-functional aspects of the Grocery Store application.
+
+The skill should think like:
+
+Senior QA Engineer
+Business User
+End Customer
+Negative Tester
+Automation Engineer
+Security Tester
+Core Objective
+
+# Never generate only happy-path scenarios.
+
+Always generate:
+
+✓ Positive Scenarios
+✓ Negative Scenarios
+✓ Boundary Value Scenarios
+✓ Validation Scenarios
+✓ UI Scenarios
+✓ Functional Scenarios
+✓ Navigation Scenarios
+✓ Error Handling Scenarios
+✓ Integration Scenarios
+✓ Security Scenarios
+✓ Regression Scenarios
+✓ Edge Cases
+
+# Coverage Rules (Mandatory)
+
+Before generating test cases, identify all possible feature areas.
+
+If the feature contains multiple modules, generate test cases for every module.
+
+## Example:
+
+-- ------------------------------Login Feature ------------------
+
+Generate cases for:
+
+Mobile Number Validation
+OTP Generation
+OTP Verification
+OTP Expiry
+Resend OTP
+Invalid OTP
+Session Creation
+Logout
+Browser Refresh
+Multiple Login Attempts
+
+--------------------------------Product Feature---------------------
+
+Generate cases for:
+
+Categories
+Search
+Filters
+Sorting
+Product Details
+Product Availability
+Product Images
+
+-------------------------------Cart Feature---------------------
+
+Generate cases for:
+
+Add to Cart
+Remove Product
+Increase Quantity
+Decrease Quantity
+Cart Calculation
+Empty Cart
+Duplicate Products
+
+------------------------------Checkout Feature---------------------
+
+Generate cases for:
+
+Shipping Address
+Billing Address
+Shipping Methods
+Payment Methods
+Coupon Codes
+Order Placement
+Order Confirmation
+
+------------------------------Account Feature-------------------------
+
+Generate cases for:
+
+My Profile
+Address Management
+Order History
+Sign Out
+Test Design Techniques (Mandatory)
+
+## Generate scenarios using:
+
+### Equivalence Partitioning
+
+Valid and invalid input classes.
+
+### Boundary Value Analysis
+
+Minimum value
+Maximum value
+Just Below Minimum
+Just Above Maximum
+
+### Error Guessing
+
+Generate scenarios based on common user mistakes.
+
+## State Transition Testing
+
+### Example:
+
+OTP Generated
+OTP Expired
+OTP Resent
+OTP Verified
+Decision Table Testing
+
+### Example:
+
+| Mobile  | OTP     | Result  |
+| ------- | ------- | ------- |
+| Valid   | Valid   | Success |
+| Valid   | Invalid | Error   |
+| Invalid | Valid   | Error   |
+| Invalid | Invalid | Error   |
+
+# Smart Coverage Reminder #
+
+When generating test cases:
+
+DO NOT stop after:
+
+Login Success
+Add Address Success
+Add to Cart Success
+Order Success
+
+## Also generate:
+
+What if user:
+Clicks button multiple times
+Refreshes page
+Uses browser back button
+Uses invalid data
+Leaves mandatory fields blank
+Uses special characters
+Uses emojis
+Uses SQL Injection text
+Uses script tags
+Uses expired OTP
+Uses duplicate address
+Uses invalid payment details
+
+## Priority Assignment Rules
+---- High ---
+
+Revenue impacting
+Business critical
+
+### Examples:
+
+Login
+Checkout
+Payment
+Place Order
+
+---- Medium ---
+
+## Important functionality
+
+### Examples:
+
+Search
+Filter
+Address
+
+------ Low ----
+
+## Cosmetic validations
+
+UI alignment
+Optional features
+
+## Test Type Assignment Rules
+
+Assign one or more:
+
+Functional
+UI
+Validation
+Negative
+Boundary
+Security
+Integration
+Regression
+Smoke
+Sanity
+
+## Output Format (RCTFC) ##
+
+Generate all test cases using the following format:
+| Req ID | Component | Test Case ID | Feature | Test Scenario | Test Steps | Test Data | Expected Result | Priority | Test Type |
+| ------ | --------- | ------------ | ------- | ------------- | ---------- | --------- | --------------- | -------- | --------- |
+
+## RCTFC Field Definition ##
+### Req ID ###
+
+Requirement identifier.
+
+### Example:
+
+REQ_LOGIN_001
+
+## Component ##
+
+Feature area.
+
+### Examples:
+
+Login
+OTP
+Address
+Search
+Cart
+Checkout
+Order
+
+## Test Case ID ##
+
+Unique identifier.
+
+### Example:
+
+TC_001
+TC_002
+TC_003
+
+## Feature
+
+Feature name.
+
+### Example:
+
+Login with Mobile Number
+
+## Test Scenario ##
+
+Brief description.
+
+### Example:
+
+Verify user can login using valid OTP.
+
+## Test Steps ##
+
+Detailed execution steps.
+
+## Test Data ##
+
+Input values.
+
+### Example:
+
+Mobile: 9876543210
+OTP: 123456
+
+## Expected Result ##
+
+System behavior.
+Priority
+High
+Medium
+Low
+
+## Test Type ##
+
+Functional
+Negative
+Boundary
+Validation
+Security
+Regression
+
+| Req ID     | Component |Test Case ID | Feature  | Test Scenario   | Test Steps  | Test Data  | Expected Result| Priority | Test Type  |
+
+| REQ_LOGIN_001 | Login |TC_001| Mobile Login| Verify login with valid|1. Open website     | User should login  | High    |Functional |  
+                                                mobile number and OTP  2. Click Account    | successfully 
+                                                                       3. Enter valid mobile number|navigate to Account 
+                                                                       4. Click Send OTP 
+                                                                       5. Enter valid OTP
+                                                                        6. Click Verify |Mobile: 9876543210 
+                                                                                         OTP: 123456  page |  
+
+| REQ_LOGIN_002 | Login   | TC_002  | Mobile Login  | Verify error message for invalid mobile number | Enter invalid mobile number and click Send OTP             | Mobile: 12345  | Validation message should appear | High     | Validation |
+
+| REQ_LOGIN_003 | OTP   | TC_003  | OTP Verification | Verify expired OTP cannot be used  | Generate OTP and wait until expiry | OTP: Expired OTP | Appropriate error message should be displayed | High     | Negative   |
+
+| REQ_LOGIN_004 | OTP | TC_004 |OTP Verification | Verify Resend OTP functionality | Click Resend OTP after timer expires | N/A| New OTP should be generated and previous OTP should become invalid | High | Functional |
+
+
+## Recommended Prompt ##
+
+Act as a Senior QA Engineer with 10+ years of experience in E-commerce applications.
+
+Analyze the provided requirement thoroughly.
+
+Generate exhaustive QA test cases in RCTFC format.
+
+Requirements:
+1. Cover all user journeys.
+2. Cover positive scenarios.
+3. Cover negative scenarios.
+4. Cover validation scenarios.
+5. Cover boundary value scenarios.
+6. Cover edge cases.
+7. Cover security scenarios.
+8. Cover UI scenarios.
+9. Cover integration scenarios.
+10. Cover error handling scenarios.
+
+When the application has multiple modules, generate test cases for every module while maintaining continuous numbering.
+
+Assign Priority and Test Type.
+
+Do not stop at happy-path scenarios.
+
+Generate automation-ready test cases.
+
+
+

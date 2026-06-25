@@ -598,6 +598,7 @@ Regression
 
 |Req ID |	Component |	Test Case ID |	Feature	| Test Scenario |	Test Steps |	Test Data |	Expected Result |	Priority |	Test Type |
 | ------ | --------- | ------------ | ------- | ------------- | ---------- | --------- | --------------- | -------- | --------- |
+
 |REQ_LOGIN_001|	Login	TC_001|	Mobile Login|	Verify login with valid mobile number and OTP| 	1. Open website → 2. Click Account → 3. Enter valid mobile → 4. Click Send OTP → 5. Enter valid OTP → 6. Click Verify	| Mobile: 9876543210 OTP: 123456 |	User should login successfully|	High	|Functional |
 
 |REQ_LOGIN_002|	Login|	TC_002|	Mobile Login	|Verify error message for invalid mobile number|	Enter invalid mobile number and click Send OTP|	Mobile: 12345	|Validation message should appear	|High|	Validation|

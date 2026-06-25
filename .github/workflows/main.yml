@@ -1,0 +1,85 @@
+name: Test and Deploy
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      browserstack_username:
+        description: 'BrowserStack Username'
+        required: true
+      browserstack_access_key:
+        description: 'BrowserStack Access Key'
+        required: true
+      test_suite_id:
+        description: 'BrowserStack Test Suite ID'
+        required: true
+      os:
+        description: 'Operating System'
+        required: true
+        default: 'Windows'
+        type: choice
+        options:
+          - Windows
+          - macOS
+      browser:
+        description: 'Browser'
+        required: true
+        default: 'chrome'
+        type: choice
+        options:
+          - chrome
+          - firefox
+          - safari
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Dynamic Credentials and Suite ID
+        id: set_vars
+        run: |
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            # Manual trigger → use values entered by user in GitHub UI
+            echo "BS_USERNAME=${{ github.event.inputs.browserstack_username }}" >> $GITHUB_ENV
+            echo "BS_ACCESS_KEY=${{ github.event.inputs.browserstack_access_key }}" >> $GITHUB_ENV
+            echo "SUITE_ID=${{ github.event.inputs.test_suite_id }}" >> $GITHUB_ENV
+            echo "Selected OS   : ${{ github.event.inputs.os }}"
+            echo "Selected Browser : ${{ github.event.inputs.browser }}"
+          else
+            # Push trigger → fall back to GitHub Secrets
+            echo "BS_USERNAME=${{ secrets.BROWSERSTACK_USERNAME }}" >> $GITHUB_ENV
+            echo "BS_ACCESS_KEY=${{ secrets.BROWSERSTACK_ACCESS_KEY }}" >> $GITHUB_ENV
+            echo "SUITE_ID=${{ secrets.TEST_SUITE_ID }}" >> $GITHUB_ENV
+            echo "Triggered by push - using credentials from secrets"
+          fi
+
+      - name: Trigger Test Suite
+        id: trigger_test_suite
+        run: |
+          response=$(curl -u $BS_USERNAME:$BS_ACCESS_KEY \
+            -X POST https://lcnc-api.browserstack.com/api/v1/test-suite/${SUITE_ID}/run)
+          BUILD_ID=$(echo $response | jq -r '.build_id')
+          echo "build_id=$BUILD_ID" >> $GITHUB_OUTPUT
+          echo "Build ID: $BUILD_ID"
+
+      - name: Check Build Status
+        run: |
+          buildStatus=""
+          retryInterval=30
+          BUILD_ID=${{ steps.trigger_test_suite.outputs.build_id }}
+          while [[ ("$buildStatus" != "passed" && "$buildStatus" != "failed") ]]; do
+            response=$(curl -u $BS_USERNAME:$BS_ACCESS_KEY \
+              -s https://lcnc-api.browserstack.com/api/v1/builds/$BUILD_ID/status)
+            buildStatus=$(echo $response | jq -r '.build_status')
+            echo "Current Status: $buildStatus"
+            sleep $retryInterval
+          done
+          if [[ "$buildStatus" == "passed" ]]; then
+            echo "Build passed"
+          elif [[ "$buildStatus" == "failed" ]]; then
+            echo "Build failed"
+            exit 1
+          else
+            echo "Build status unstable"
+            exit 1
+          fi

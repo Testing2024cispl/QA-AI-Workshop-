@@ -542,6 +542,9 @@ Your thoughts:-
 What you felt Suitable:- My own test cases are accurate since they're based on actually testing the live site. AI cases are well-structured with clear, assertion-ready verify steps. AI covered extra areas that I missed. AI generated test cases much faster than me, saving significant time. My test cases were strong on the full checkout-to-payment flow. 
 
 What you felt Not suitable:-  My test cases felt slower and more inconsistent in wording, while AI test cases felt fast but sometimes disconnected from real site behavior. AI cases include unverified assumptions.Sometimes AI hallucinates and gets confused while writing test cases, leading to inaccurate assumptions about the site.
+
+_________________________________________________________________________________________________
+
 Final Test Case:- AI+Manual, Combine them and make a proper test case for Automation ready.
 Application:- GreenKart (https://rahulshettyacademy.com/seleniumPractise/#/)
 TC_001:- 
@@ -788,6 +791,176 @@ TC_042:-
  2. Verify the confirmation page for a 'Home' link or button
  3. Click on the 'Home' link
  4. Verify that the user is navigated back to the Home page.
+
+ ===================================================================================================================================================================
+ SESSION -2
+
+
+ 
+# Test Case Generation Skill
+
+Use this skill whenever you want to convert raw test case notes, manual test steps, or a combined AI/manual test case list into a clean, automation-ready test case format.
+
+**Application:** GreenKart
+**URL:** https://rahulshettyacademy.com/seleniumPractise/#/
+
+**Module Map** 
+GreenKart
+├── Header
+│   ├── Logo (GREENKART — GREEN=green, KART=orange)
+│   ├── Search Bar
+│   ├── Top Deals link
+│   ├── Flight Booking link
+│   └── Cart Icon → Items count + Price
+├── Product Listing (Home Page)
+│   └── Product Card → image · name · price · qty (+/-) · ADD TO CART
+├── Cart Panel (dropdown on cart icon click)
+│   ├── Item rows → name · qty · unit price · total
+│   ├── X (remove) button per item
+│   └── PROCEED TO CHECKOUT button
+├── Order Details Page
+│   ├── Order table → # · Product Name · Quantity · Price · Total
+│   ├── Promo Code input + Apply button
+│   ├── Summary → No. of Items · Total Amount · Discount · Total After Discount
+│   └── Place Order button
+├── Payment Page
+│   ├── Choose Country dropdown
+│   ├── Agree to Terms & Conditions checkbox + hyperlink
+│   └── Proceed button
+└── Order Confirmation Page
+    ├── Success message (green text)
+    ├── Redirect notice
+    └── Home link
+
+## PURPOSE
+
+This skill enables QA teams and AI assistants to transform raw test scenarios, manual test notes, and exploratory test observations into **structured, automation-ready test cases**. 
+
+**Why it matters:**
+- Ensures consistency across test case documentation
+- Reduces ambiguity in test execution and validation
+- Provides a standardized format for test tracking and reporting
+- Facilitates seamless integration with test automation frameworks
+- Maintains traceability from requirements to test execution results
+
+**Target outcome:** Production-grade test cases ready for manual or automated execution, complete with evidence (screenshots, actual results, status tracking).
+
+## QA Instruction for AI
+
+When using this skill to generate test cases, follow these instructions:
+
+1. **Read the context carefully**: Understand the application structure (Module Map), RCTFC framework, and output format requirements before generating any test cases.
+
+2. **Apply RCTFC rigorously**: 
+   - Identify and define the **Role** (QA perspective, not just user persona)
+   - Clarify **Context** (project overview, application scope, environment, and current state)
+   - Define **Task** (type and scope of test cases needed)
+   - Use the **Format** (9-column table structure: Test Case ID, Title, Preconditions, Test Steps, Expected Result, Test Data, Actual Result, Screenshot, Status)
+   - Enforce **Constraints** (what NOT to do—no exploratory notes, no API testing unless requested, exact data only, visible UI only, max 2-3 assertions per case)
+
+3. **Generate precise test steps**: Each step must be discrete, actionable, and verifiable. Use exact product names, values, and UI element references.
+
+4. **Preserve test data**: If input includes specific values (product names, prices, promo codes, URLs), maintain them exactly in the output.
+
+5. **Provide realistic expected results**: Make assertions specific to visible UI elements and user-observable outcomes only.
+
+6. **Fill template fields systematically**:
+   - **Actual Result & Screenshot**: Mark as [To be filled after execution] or provide if test has been executed
+   - **Status**: Set as Pass/Fail/Blocked/Pending based on execution
+   - Leave no columns empty—use N/A if data is not applicable
+
+7. **Avoid scope creep**: Do not generate tests outside the defined task scope. Clarify ambiguous requests before proceeding.
+
+8. **Maintain consistency**: Use the same format, terminology, and structure for all generated test cases in a batch.
+
+## How to use
+
+1. Provide the application name and URL.
+2. Provide the raw test case list or scenario text.
+3. Ask the skill to generate structured test cases with a consistent format.
+
+## Output format
+
+The skill should produce test cases with the following table structure:
+
+| Test Case ID | Title | Preconditions | Test Steps | Expected Result | Test Data (if applicable) | Actual Result | Screenshot | Status |
+|--------------|-------|---------------|------------|-----------------|---------------------------|---------------|------------|--------|
+
+### Column Descriptions:
+- **Test Case ID**: Unique identifier for the test case
+- **Title**: Clear, concise description of what is being tested
+- **Preconditions**: Setup requirements before executing the test
+- **Test Steps**: Detailed numbered steps to execute the test
+- **Expected Result**: Desired outcome after completing all steps
+- **Test Data**: Specific values or inputs used in the test
+- **Actual Result**: What actually happened during execution
+- **Screenshot**: Visual evidence of the test execution result
+- **Status**: Pass/Fail/Blocked/Pending
+
+## Prompt template
+
+Use this as a reusable prompt whenever you want to generate test cases:
+
+"First Read the skill.md file properly. Convert the following raw test scenarios into automation-ready test cases for [Application Name] at [URL]. Use the table format with columns: Test Case ID, Title, Preconditions, Test Steps, Expected Result, Test Data, Actual Result, Screenshot, and Status. Preserve the numbered test case IDs and produce clean, readable output. Always follow role, context, task, format, and constraint as defined in the RCTFC rule."
+
+## RCTFC Definition (QA Engineer Perspective)
+
+RCTFC is a prompt engineering framework for structuring test case generation with discipline and precision. Apply it as follows:
+
+### **Role**
+Define the QA perspective and the actor's intent within the project context.
+- **What it means**: Who is performing the test? What is their responsibility in the system?
+- **Example**: `As a QA Engineer validating customer purchase workflows in GreenKart e-commerce platform.`
+
+### **Context**
+Define the project overview, application scope, environment, and current application state.
+- **What it means**: Where and under what conditions should this test be executed? What is the project/module scope?
+- **Example**: `Testing GreenKart application (https://rahulshettyacademy.com/seleniumPractise/#/) in a staging environment. Current state: User is on the home page with product listings loaded.`
+
+### **Task**
+Define the specific type of test cases to generate and the focus area.
+- **What it means**: What functionality or scenario needs testing? What is the goal of these test cases?
+- **Example**: `Generate functional test cases for product search, add-to-cart, and checkout workflows.`
+
+### **Format**
+Define the exact output structure and structure with mandatory columns.
+- **What it means**: Specify the table/document format with all required fields and columns.
+- **Example**: Use the table structure with columns: Test Case ID, Title, Preconditions, Test Steps, Expected Result, Test Data, Actual Result, Screenshot, Status.
+
+### **Constrain**
+Define what NOT to do—the boundaries, limitations, and exclusions in test case generation.
+- **What it means**: Set clear guardrails to ensure focus and prevent scope creep.
+- **Examples**:
+  - Do NOT include exploratory or ad-hoc test notes
+  - Do NOT generate performance or load test cases
+  - Use only exact product names and realistic data
+  - Verify only visible UI elements, not hidden DOM attributes
+  - Limit test cases to functional scenarios only
+  - Do NOT include tests for backend APIs unless explicitly requested
+
+### Example RCTFC Application:
+
+| Element | Definition |
+| **Role** | QA Engineer responsible for validating GreenKart's e-commerce workflows |
+| **Context** | GreenKart staging environment; test Product Search & Add-to-Cart modules; user starts on home page |
+| **Task** | Generate functional test cases for product search, filtering, and cart management |
+| **Format** | Table format with: Test Case ID, Title, Preconditions, Test Steps, Expected Result, Test Data, Actual Result, Screenshot, Status |
+| **Constrain** | - No exploratory tests<br/>- No API testing<br/>- Use exact product names (Broccoli, Cauliflower, etc.)<br/>- No performance testing<br/>- Verify visible UI elements only<br/>- Max 2–3 assertions per test case |
+
+### Output Example with RCTFC Applied:
+
+| Test Case ID | Title | Preconditions | Test Steps | Expected Result | Test Data | Actual Result | Screenshot | Status |
+-------------------------------------------------------------------------------------------------------------------------
+| TC_001 | Verify site header displays shopping site name | Browser open; GreenKart loaded | 1. Navigate to GreenKart. 2. Observe header top-left. | Site name visible in header | N/A | [To be filled] | [Attach] | Pass/Fail |
+| TC_002 | Verify product search returns matching results | GreenKart loaded; search bar visible | 1. Enter `cauli` in search. 2. Click search. | Only Cauliflower product displays | Search: `cauli` | [To be filled] | [Attach] | Pass/Fail |
+| TC_003 | Verify add-to-cart increases cart count | Product page loaded; cart icon visible | 1. Click ADD TO CART. 2. Check cart icon count. | Cart count increments by 1 | Product: Broccoli | [To be filled] | [Attach] | Pass/Fail |
+
+## Notes
+
+- The skill is designed for functional UI test cases.
+- If the input includes values like product names, prices, or promo codes, preserve them in the output.
+- Use clear, concise language suitable for automation test scripts.
+
 
 
 

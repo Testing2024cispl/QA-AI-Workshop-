@@ -581,4 +581,396 @@ You are an Software QA engineer, please give me the positive and negative test c
 3.Immediately apply LUNCH20
 
 
+-------------------------------------SESSION 2----------------------------------
+
+
+
+# Manual Test Cases
+
+**Group:** Group 3
+**Member:** Sayan Senapati
+
+**Working URL:** https://v0-e-commerce-lunchbox-site.vercel.app/
+
+## Module
+
+**Cart & Checkout — Discount Coupon**
+
+### Test Data
+
+| Item                     | Value       |
+| ------------------------ | ----------- |
+| Base Price per Lunch Box | **$150**    |
+| Coupon Code              | **LUNCH20** |
+| Discount                 | **20% Off** |
+| Discount Amount          | **$30**     |
+| Final Price              | **$120**    |
+
+---
+
+# Human Written Test Cases
+
+## Positive Test Cases
+
+### TC_001 — Verify product listing price is displayed correctly
+
+**Steps**
+
+1. Navigate to the application.
+2. Verify the price displayed under each of the following six products:
+
+   * Bamboo Bento Box
+   * Stainless Steel Tiffin
+   * Glass Meal Prep Set
+   * Thermal Insulated Box
+   * Eco Bamboo Carrier
+   * Electric Heated Box
+
+**Expected Result**
+
+* All products display a price of **$150**.
+
+---
+
+### TC_002 — Add a single lunch box to cart and examine subtotal calculation
+
+**Steps**
+
+1. Open the product listing page.
+2. Click **Add to Cart** on **Bamboo Bento Box**.
+3. Click the Shopping Cart icon.
+
+**Expected Result**
+
+* Bamboo Bento Box appears in the cart.
+* Cart subtotal equals **$150**.
+
+---
+
+### TC_003 — Apply LUNCH20 coupon on a single item
+
+**Steps**
+
+1. Add **Glass Meal Prep Set ($150)** to the cart.
+2. Navigate to Checkout.
+3. Enter **LUNCH20**.
+4. Click **Apply**.
+
+**Expected Result**
+
+* Discount = **$30**
+* Total = **$120**
+
+---
+
+### TC_004 — Verify discount amount equals 20%
+
+**Steps**
+
+1. Add one lunch box.
+2. Apply **LUNCH20**.
+3. Observe discount and total.
+
+**Expected Result**
+
+* Discount = **20% ($30)**
+* Final Total = **$120**
+
+---
+
+### TC_005 — Apply coupon on multiple quantities
+
+**Steps**
+
+1. Add **Thermal Insulated Box**.
+2. Increase quantity to **2**.
+3. Go to Checkout.
+4. Apply **LUNCH20**.
+
+**Expected Result**
+
+| Subtotal | Discount | Final Total |
+| -------- | -------- | ----------- |
+| $300     | $60      | $240        |
+
+---
+
+### TC_006 — Apply coupon on multiple different products
+
+**Steps**
+
+1. Add **Stainless Steel Tiffin**.
+2. Add **Eco Bamboo Carrier**.
+3. Proceed to Checkout.
+4. Apply **LUNCH20**.
+
+**Expected Result**
+
+| Subtotal | Discount | Final Total |
+| -------- | -------- | ----------- |
+| $300     | $60      | $240        |
+
+---
+
+## Negative Test Cases
+
+### TC_007 — Verify coupon code is case-insensitive
+
+**Steps**
+
+1. Add any lunch box.
+2. Go to Checkout.
+3. Enter **lunch20**.
+4. Click Apply.
+
+**Expected Result**
+
+* Coupon is accepted (if application supports case-insensitive validation).
+
+---
+
+### TC_008 — Verify invalid coupon code is rejected
+
+**Steps**
+
+1. Add a lunch box.
+2. Enter **LUNCH50** or **LUNCH2O**.
+3. Click Apply.
+
+**Expected Result**
+
+* Error message appears.
+* Discount is not applied.
+
+---
+
+### TC_009 — Verify empty coupon submission
+
+**Steps**
+
+1. Add a lunch box.
+2. Leave coupon field blank.
+3. Click Apply.
+
+**Expected Result**
+
+* Validation message is displayed.
+
+---
+
+### TC_010 — Verify coupon removal
+
+**Steps**
+
+1. Apply **LUNCH20**.
+2. Remove the coupon.
+
+**Expected Result**
+
+* Discount is removed.
+* Original subtotal is restored.
+
+---
+
+### TC_011 — Verify coupon cannot be applied twice
+
+**Steps**
+
+1. Apply **LUNCH20**.
+2. Attempt to apply it again.
+
+**Expected Result**
+
+* Coupon is applied only once.
+
+---
+
+### TC_012 — Verify coupon on empty cart
+
+**Steps**
+
+1. Navigate directly to Checkout.
+2. Attempt to apply coupon.
+
+**Expected Result**
+
+* Coupon cannot be applied.
+* Appropriate validation message appears.
+
+---
+
+### TC_013 — Verify discount recalculates after removing product
+
+**Steps**
+
+1. Add two lunch boxes.
+2. Apply **LUNCH20**.
+3. Remove one product.
+
+**Expected Result**
+
+* Discount recalculates based on remaining subtotal.
+
+---
+
+### TC_014 — Verify checkout discount summary
+
+**Steps**
+
+1. Add one lunch box.
+2. Apply **LUNCH20**.
+3. Review Order Summary.
+
+**Expected Result**
+
+Order Summary displays:
+
+* Subtotal
+* Discount
+* Final Total
+
+---
+
+### TC_015 — Verify pricing consistency across all products
+
+**Steps**
+
+1. Add each of the six products individually.
+2. Apply **LUNCH20**.
+
+**Expected Result**
+
+Every product:
+
+* Price = **$150**
+* Discount = **$30**
+* Total = **$120**
+
+---
+
+# AI Generated Test Cases
+
+## Prompt
+
+> You are a Software QA Engineer. Generate positive and negative test cases with IDs, scenarios, and steps for the Lunch Box e-commerce website where **LUNCH20** provides **20% discount** on every lunch box priced at **$150**.
+
+---
+
+## Positive Test Cases
+
+| ID     | Test Scenario                                     |
+| ------ | ------------------------------------------------- |
+| TC_P01 | Verify listing price for all products             |
+| TC_P02 | Verify cart subtotal after adding one product     |
+| TC_P03 | Verify exact 20% discount on one item             |
+| TC_P04 | Validate percentage calculation                   |
+| TC_P05 | Verify coupon for multiple quantities             |
+| TC_P06 | Verify coupon for multiple products               |
+| TC_P07 | Verify lowercase coupon acceptance                |
+| TC_P08 | Verify order summary                              |
+| TC_P09 | Verify discount recalculation after removing item |
+| TC_P10 | Verify coupon removal                             |
+| TC_P11 | Verify consistency across all products            |
+
+---
+
+## Negative Test Cases
+
+| ID     | Test Scenario                           |
+| ------ | --------------------------------------- |
+| TC_N01 | Invalid coupon                          |
+| TC_N02 | Empty coupon                            |
+| TC_N03 | Duplicate coupon application            |
+| TC_N04 | Coupon on empty cart                    |
+| TC_N05 | Coupon with whitespace                  |
+| TC_N06 | Verify discount is percentage, not flat |
+| TC_N07 | SQL Injection / XSS input               |
+| TC_N08 | Long coupon input                       |
+| TC_N09 | Remove all items after coupon           |
+| TC_N10 | Rapid Apply button clicks               |
+| TC_N11 | Refresh after coupon applied            |
+| TC_N12 | Partial coupon code                     |
+
+---
+
+# Analysis
+
+## Strengths
+
+* Broad functional coverage
+* Faster baseline test creation
+* Covers common edge cases
+* Easy to automate
+
+## Areas for Improvement
+
+* Add application-specific scenarios
+* Include field validation tests
+* Add accessibility testing
+* Add performance testing
+* Include security-specific validations
+
+---
+
+# Final Test Cases (AI + Human Written)
+
+## Positive Test Cases
+
+| ID     | Test Scenario                            |
+| ------ | ---------------------------------------- |
+| TC_P01 | Verify listing price on homepage         |
+| TC_P02 | Verify subtotal after adding one product |
+| TC_P03 | Verify 20% coupon application            |
+| TC_P04 | Validate percentage discount             |
+| TC_P05 | Coupon with multiple quantities          |
+| TC_P06 | Coupon with multiple products            |
+| TC_P07 | Lowercase coupon acceptance              |
+| TC_P08 | Order summary validation                 |
+| TC_P09 | Discount recalculation                   |
+| TC_P10 | Coupon removal                           |
+| TC_P11 | Discount consistency                     |
+| TC_P12 | Coupon field length validation           |
+| TC_P13 | Cart icon updates immediately            |
+| TC_P14 | Cart persists after navigation           |
+| TC_P15 | Currency formatting validation           |
+
+---
+
+## Negative Test Cases
+
+| ID     | Test Scenario                     |
+| ------ | --------------------------------- |
+| TC_N01 | Invalid coupon                    |
+| TC_N02 | Empty coupon                      |
+| TC_N03 | Duplicate coupon                  |
+| TC_N04 | Coupon on empty cart              |
+| TC_N05 | Coupon with whitespace            |
+| TC_N06 | Prevent flat discount             |
+| TC_N07 | SQL Injection / XSS attempt       |
+| TC_N08 | Maximum input length              |
+| TC_N09 | Remove all products after coupon  |
+| TC_N10 | Rapid Apply button clicks         |
+| TC_N11 | Browser refresh after coupon      |
+| TC_N12 | Partial coupon variants           |
+| TC_N13 | Browser Back navigation           |
+| TC_N14 | Numeric/alphabetic invalid coupon |
+| TC_N15 | Slow network coupon application   |
+
+---
+
+# Conclusion
+
+The consolidated test suite combines **manual QA knowledge** with **AI-assisted scenario generation**, providing comprehensive coverage of:
+
+* Functional Testing
+* Coupon Validation
+* Discount Calculation
+* UI Verification
+* Boundary Testing
+* Negative Testing
+* Security-Oriented Input Validation
+* User Experience Validation
+
+This test suite serves as a strong foundation for both **manual testing** and **Playwright automation**.
+
 

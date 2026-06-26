@@ -1154,3 +1154,80 @@ Complete successful payment.
 Verify the Thank You page is displayed.
 Verify shipping details, payment details, and order summary are correct.
 
+
+
+
+
+
+===================================================================================================================================
+
+# Session 2 Assignment -
+
+## Skill File Creation: 
+---
+# name: qa-test-case-generator
+
+## Description: Generate comprehensive, automation-ready QA test cases for a web page/module when the user provides a URL and a module name. Use this skill whenever the user asks to "generate test cases", "create a test case file/sheet", "write test scenarios", or shares a URL + module name expecting QA coverage. Produces positive, negative, functional, non-functional, edge case, field validation, authentication, boundary value, error handling, usability, security, and API happy-path test cases in a fixed table format, with no duplicates and maximum practical coverage.
+---
+
+# QA Test Case Generator
+
+A skill for acting as a senior QA engineer who turns a URL + module name into a complete, automation-ready test case suite.
+
+## Trigger / Input expected
+
+The user will provide:
+1. A **URL** (the page/app/module to test)
+2. A **Module Name** (e.g., "Login", "Checkout", "User Registration")
+
+If either is missing, ask for it before proceeding (don't guess a URL).
+
+## Workflow
+
+1. **Inspect the target.** Use `web_fetch` on the provided URL to understand the actual UI/fields/flows present (form fields, buttons, labels, links, error messages, auth elements, etc.). If the URL is a webapp behind login or JS-rendered content that can't be fetched as plain text, note that and generate test cases based on standard patterns for that module type plus whatever is discoverable, and tell the user fetch was limited.
+2. **Identify scope** for the named module: list out the fields, actions, and visible flows you found (briefly, before the table) so the user can sanity-check coverage.
+3. **Generate test cases** covering ALL of the following categories — do not skip any:
+   - Positive (happy path) test cases
+   - Negative test cases
+   - Functional test cases
+   - Non-functional test cases (performance, usability, compatibility as applicable)
+   - Edge cases
+   - Field validation (required fields, format, length, special characters, whitespace)
+   - Authentication (valid/invalid credentials, session timeout, token expiry, logout, access control) — only if module involves auth; otherwise note it's not applicable
+   - Boundary value analysis (min/max length, min/max numeric values, just-inside/just-outside boundaries)
+   - Error handling (server errors, network failure, validation error messages, empty states)
+   - Usability (labels, placeholders, tab order, responsiveness if observable)
+   - Security (SQL injection, XSS, CSRF considerations, sensitive data exposure, rate limiting/brute force where relevant)
+   - API checks — happy path (if the module has an identifiable API/network call; otherwise state not applicable rather than fabricating endpoints)
+4. **Maximize coverage**: generate as many distinct, non-redundant test cases as the module realistically supports. Err on the side of more granular test cases rather than fewer broad ones — but never duplicate the same scenario with trivial rewording.
+5. **De-duplicate**: before finalizing, scan the list mentally — no two rows should test the identical condition/input/expected outcome combination.
+6. **Make automation-ready**: every Test Case Description and Test Data must be specific and concrete (exact input values, exact field names, exact expected message/status where known) — never vague phrases like "enter valid data". Each row should map cleanly to one automatable assertion.
+
+## Output format (mandatory)
+
+Output as a markdown table with EXACTLY these columns, in this order:
+
+| Sl No | Test Scenario ID | Test Scenario Name | Test Case ID | Test Case Description | Test Data | Expected Result | Actual Result | Severity | Priority | Comments |
+
+Rules for filling the table:
+- **Sl No**: sequential integer starting at 1.
+- **Test Scenario ID**: format `TS_<MODULE>_<NNN>` (e.g., `TS_LOGIN_001`). Group multiple test cases that belong to the same scenario under the same Test Scenario ID.
+- **Test Scenario Name**: short human-readable name of the scenario (e.g., "Login with valid credentials").
+- **Test Case ID**: format `TC_<MODULE>_<NNN>` (e.g., `TC_LOGIN_001`), unique per row, sequential.
+- **Test Case Description**: precise, single-condition, automatable step description (what is done).
+- **Test Data**: exact concrete input values to use (or "N/A" if none applicable).
+- **Expected Result**: precise, verifiable expected outcome (specific message, status code, UI state, redirect, etc.).
+- **Actual Result**: leave as `Pending Execution` (this is filled in after manual/automated run).
+- **Severity**: one of `Critical`, `High`, `Medium`, `Low` (impact if this fails).
+- **Priority**: one of `P1`, `P2`, `P3` (order of execution importance).
+- **Comments**: category tag(s) — e.g., `Functional | Field Validation`, `Security | XSS`, `API | Happy Path`, `Non-Functional | Usability`, `Boundary Value`, `Edge Case`, etc. Use this column to indicate which of the required categories this test case covers, plus any extra automation notes (e.g., "Automate via Selenium/Cypress", "Requires test account", "Needs network throttling tool").
+
+After the table, add a short summary line: total test cases generated, and a breakdown count per category (Positive / Negative / Functional / Non-Functional / Edge / Field Validation / Auth / Boundary / Error Handling / Usability / Security / API).
+
+## Quality bar
+
+- Treat this as a deliverable a senior QA engineer would hand to a team for execution and automation — no placeholders like "TBD", no generic "test the form works".
+- If the module clearly has no authentication or no API (e.g., a static informational page), explicitly state that those categories are marked Not Applicable instead of inventing fake auth/API cases.
+- If the page couldn't be fully inspected (JS-heavy, login-gated), say so upfront, generate the best possible coverage from what's visible plus standard domain knowledge for that module type, and recommend the user supply a screenshot or field list for deeper coverage if needed.
+- Because output will likely be long, this is a case where a downloadable file may be more usable than just chat — after presenting the table inline (or if very large, going straight to file), offer to export it as an Excel (.xlsx) file for direct import into test management tools. If the user confirms or has a default preference, use the `xlsx` skill to produce the file.
+

@@ -515,7 +515,9 @@ Layout adjusts properly.
 Menus and products remain usable.
 
 
-===========================================================Session 2===========================================================
+==========================================Session 2==============================
+
+
 ** QA Test Case Design & Website Testing Specification**
 
 ## Skill Name

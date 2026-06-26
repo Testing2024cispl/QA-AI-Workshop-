@@ -358,3 +358,284 @@
 | TC_32 | Negative | Access wishlist without logging in | Navigate to /wishlist without authentication | Low | Minor |
 
 ---
+=====================================================================================
+
+
+# skill.md
+
+---
+name: grocery-store-demo-test-case-generator
+description: >
+  Generate manual functional test cases for https://grocerystoredemo.pcubeweb.com/ — a Dukaan-based
+  grocery e-commerce demo. Use this skill whenever the user asks to generate, expand, review, or
+  stress-test manual test cases for this site. Covers positive flows, negative flows, and edge cases
+  across all functional modules: homepage, product catalog, cart, sort/filter, search, wishlist,
+  OTP authentication, checkout gate, category navigation, and URL boundary testing.
+  Do NOT generate automation scripts, performance tests, or accessibility tests — manual functional only.
+---
+
+# Manual Functional Test Case Generator — Grocery Store Demo
+
+## Site Context
+
+**URL:** https://grocerystoredemo.pcubeweb.com/
+**Platform:** Dukaan (hosted storefront)
+**Currency:** INR (₹)
+**Auth method:** OTP via Indian mobile number (+91XXXXXXXXXX)
+**Checkout state:** Store may show "currently not accepting orders" banner — this is a known demo constraint, not a bug.
+
+### Confirmed Categories (live as of last fetch)
+- Biscuits & Snacks → `/categories/biscuits-snacks`
+- Chocolates & Candies → `/categories/chocolates-candies`
+- Pooja Essentials → `/categories/pooja-essentials`
+- Bread & Bakery → `/categories/bread-bakery`
+- Stationary → `/categories/stationary`
+- Household & Kitchen Needs → `/categories/household-kitchen-needs`
+- Health Care → `/categories/health-care`
+- Grocery & Staples → `/categories/grocery-staples`
+- Drinking Water → `/categories/drinking-water`
+- Beverages → `/categories/beverages`
+
+### Sort Options Available
+Featured | Discount | Price low to high | Price high to low
+
+### Key URLs
+- Cart: `/grocerystoredemo/bag`
+- Wishlist: `/wishlist`
+- Store Locator: `/store-locator`
+- All Categories: `/categories`
+
+---
+
+## Output Format
+
+Always produce test cases in this exact table structure:
+
+| TC ID | Type | Module | Scenario | Precondition | Steps | Expected Result | Priority | Severity |
+|---|---|---|---|---|---|---|---|---|
+
+**Type:** Positive / Negative / Edge
+**Module:** Homepage | Cart | Search | Sort | Auth | Category | Product Detail | Wishlist | Checkout | Navigation | URL
+**Priority:** High / Medium / Low
+**Severity:** Critical / Major / Minor / Trivial
+
+---
+
+## Functional Modules & Coverage Rules
+
+### 1. Homepage
+
+**What to cover:**
+- Page load and all category section visibility
+- Category banner carousel clickability
+- Product card data accuracy (name, price, ADD button)
+- "View all" links per category section
+- Sort dropdown availability and persistence
+
+**Edge cases to include:**
+- Sort applied on homepage — does it persist when navigating to a category and back?
+- Does the category carousel loop correctly or break at the last item?
+- What happens if a category section has zero products — does the section header still render?
+- Product price displayed as ₹0 — is it still addable to cart?
+- Does the homepage reload reset the sort state to "Featured"?
+
+---
+
+### 2. Product Catalog / Category Pages
+
+**What to cover:**
+- Category page loads correct products (no cross-category bleed)
+- "View all" from homepage matches full category page product count
+- Breadcrumb accuracy on category pages
+- Sort applied within a category page
+
+**Edge cases to include:**
+- Navigate to a category with exactly 1 product — are layout/spacing rules intact?
+- Navigate to `/categories/invalid-slug` — expect 404 or graceful fallback, not a blank white page
+- What if a category has products with identical prices — does sort produce a stable order or shuffle?
+- Category page accessed via direct URL vs. via banner click — behavior must be identical
+- Applying sort on category page, then clicking browser Back — does sort reset or persist?
+
+---
+
+### 3. Product Detail Page
+
+**What to cover:**
+- Product name, image, price, description, and Add to Cart button all present
+- Wishlist (heart) icon available and functional
+- Add to Cart from detail page increments cart badge
+- Breadcrumb shows correct path: Home > Category > Product
+
+**Edge cases to include:**
+- Navigate directly to a valid product URL — page must load without requiring prior navigation
+- Navigate to `/products/fake-product-xyz` — expect 404 or redirect, not crash
+- Add to cart from detail page when the same product already exists in cart — quantity should increment, not duplicate
+- Product with a very long name — does the UI truncate or overflow?
+- Product with no description — does the layout break or gracefully omit the field?
+
+---
+
+### 4. Cart
+
+**What to cover:**
+- Add single product → cart badge increments
+- Add multiple distinct products → all appear as separate line items
+- Add same product multiple times → single line item with incremented quantity
+- Increase quantity via + button → subtotal updates
+- Decrease quantity via − button → subtotal updates
+- Decrease quantity to 0 → product is removed OR quantity is blocked at 1
+- Remove product explicitly → line item disappears
+- Remove all products → empty state message displayed, total shows ₹0
+- Cart total = sum of (unit price × quantity) for all items
+
+**Edge cases to include:**
+- Rapid-click ADD (5+ times in quick succession) on the same product — quantity must reflect actual count, no duplicate line items, no UI freeze
+- Add a product, navigate away, return to cart — cart must persist (session-level persistence)
+- Modify quantity in cart, then refresh the page — does the quantity persist or reset?
+- Cart with 10+ different products — does the cart page scroll correctly, no overflow clipping?
+- Add product at ₹0 price (if any exists) — does it appear in cart with ₹0 and not break the total?
+- Decrease quantity from 2 to 1, then click − again — must either remove the item or stay at 1, never show 0 or negative
+- Cart badge count — does it show total number of distinct items or total units? Must be consistent with cart page
+- Open cart without adding any product — empty state with ₹0, no stale data from any prior session
+
+---
+
+### 5. Search
+
+**What to cover:**
+- Valid keyword returns relevant products (e.g., "Cadbury" returns Cadbury items)
+- Partial keyword match (e.g., "Haldir" returns Haldiram products)
+- Non-existent keyword shows "No results found" message, no crash
+- Search results navigate correctly to product detail on click
+
+**Edge cases to include:**
+- Whitespace-only input (spaces, tabs) — must NOT return all products; show empty/no-results state
+- Special characters only (`!@#$%^&*`) — no crash, graceful empty results
+- Extremely long input string (100+ characters) — no layout overflow, no server error
+- Case sensitivity — "cadbury" vs "CADBURY" vs "Cadbury" must all return same results
+- Single character input (e.g., "a") — system must handle without crash; results may be broad but valid
+- Search term that matches a category name but not a product name (e.g., "Beverages") — does it return products from that category or show no results?
+- Searching immediately after page load before assets are fully rendered — must not throw a JS error
+
+---
+
+### 6. Sort
+
+**What to cover:**
+- Price low to high: ascending order confirmed across visible products
+- Price high to low: descending order confirmed
+- Discount: highest discount % first
+- Featured: returns to default ordering
+
+**Edge cases to include:**
+- Sort applied, then a product is added to cart — does the sort order hold, or does the page reflow/reset?
+- Sort on homepage: does it affect all category sections simultaneously, or only one?
+- Products with identical prices under "Price low to high" — order must be stable (no shuffle on re-click)
+- Sort applied, then navigate to a category via banner — does sort state carry over or reset on the new page?
+- Clicking the same sort option twice — no crash, order remains consistent
+- Sort dropdown closed without selecting — current sort must remain unchanged
+
+---
+
+### 7. Authentication (OTP Sign-in)
+
+**What to cover:**
+- Valid 10-digit Indian mobile → OTP sent confirmation
+- Correct OTP entered → user logged in, account state reflects authenticated status
+- Invalid OTP → error message, no login
+
+**Negative inputs:**
+- Fewer than 10 digits (e.g., 5 digits) → validation error before OTP is dispatched
+- More than 10 digits → field must reject extra input OR validation error before dispatch
+- Empty field → form does not submit, prompt to enter number
+- Alphabets in mobile field → input rejected or not accepted by the field
+- Special characters in mobile field → same rejection behavior
+
+**Edge cases to include:**
+- OTP request sent, OTP expires (if there's a timer visible) — attempting to use expired OTP must show appropriate error
+- OTP field accepts only 4–6 digits (whatever the actual OTP length is) — extra characters must be blocked
+- Double-tap or rapid double-click on "Send OTP" button — only one OTP request must be sent, not two
+- Sign-in modal opened, then closed without signing in — no partial auth state persists
+- Authenticated user navigates to sign-in URL directly — should redirect or show already-logged-in state
+- Session persistence after browser tab close and reopen — is the user still logged in?
+
+---
+
+### 8. Wishlist
+
+**What to cover:**
+- Add product via heart icon on detail page → appears in `/wishlist`
+- Wishlist page loads with saved items
+- Wishlist accessible without login shows empty state or redirects to sign-in (either is acceptable, must be consistent)
+
+**Edge cases to include:**
+- Add the same product to wishlist twice — must not duplicate the entry
+- Wishlist with many items — page must scroll correctly, no rendering overflow
+- Navigate to `/wishlist` without ever adding anything — empty state message must show, no crash
+- Product added to wishlist while not logged in — behavior must be defined (prompt to login, or guest wishlist that prompts on page load)
+- Remove a product from wishlist (if the feature exists) — item must disappear, no stale entry
+
+---
+
+### 9. Checkout Gate
+
+**What to cover:**
+- Unauthenticated user attempts checkout → redirect or modal prompt to sign in
+- Authenticated user with products in cart → checkout flow initiates (or blocked by store-not-accepting banner)
+- "Store is currently not accepting orders" banner present → no order placed silently, clear blocking message shown
+
+**Edge cases to include:**
+- User is logged in, store IS accepting orders, cart has 1 item — does checkout flow proceed without errors?
+- User is logged in, attempts checkout with an empty cart — must block or show "cart is empty" message
+- Store-not-accepting banner visible — clicking "Proceed" or "Checkout" button must not silently create an order in the background
+- Session expires mid-checkout — user must be re-prompted to login, cart data must not be lost
+
+---
+
+### 10. Navigation & URL Boundaries
+
+**What to cover:**
+- Breadcrumb links on category and product pages navigate correctly
+- Header navigation links (Home, Shop, Wishlist, Store Locator) work
+- Browser Back/Forward behaves consistently with application state
+
+**Edge cases to include:**
+- Navigate to `/categories/invalid-category` → 404 or graceful fallback, no white screen or JS error
+- Navigate to `/products/fake-product-xyz` → 404 or redirect, no raw stack trace
+- Navigate to a correct product URL directly (bypassing homepage) → detail page loads fully
+- Deep-link to a category page → products load without requiring homepage visit first
+- URL with query string appended manually (e.g., `?foo=bar`) → no crash, page handles gracefully
+- Navigate with browser Back after cart modification — cart state must remain consistent with what was last saved, not revert
+- Double-click on a navigation link — must not duplicate the navigation or cause a state loop
+
+---
+
+## What NOT to Include in Generated Test Cases
+
+- Performance benchmarks (page load time, TTFBs)
+- Accessibility audits (WCAG, ARIA)
+- SEO tag validation
+- API-level or network-level tests
+- Automated script steps (Selenium, Playwright, Cypress syntax)
+- Non-functional requirements (uptime, concurrency)
+
+---
+
+## Prioritization Logic
+
+Apply these priority and severity rules consistently:
+
+| Scenario Type | Priority | Severity |
+|---|---|---|
+| Core purchase flow (add to cart, cart total, checkout gate) | High | Critical |
+| Auth flows (valid OTP, invalid inputs) | High | Major–Critical |
+| Search (valid query, empty results) | High | Critical |
+| Sort (all options functional) | Medium | Major |
+| Navigation / breadcrumbs | Medium | Minor–Major |
+| Wishlist | Medium | Minor |
+| URL boundary / 404 handling | Low | Minor |
+| Edge cases on input boundaries | Medium | Major |
+| Edge cases on session/state persistence | High | Major |
+| Edge cases on rapid/duplicate interactions | Medium | Major |
+
+---

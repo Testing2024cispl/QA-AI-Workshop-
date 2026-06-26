@@ -375,7 +375,7 @@ Most test cases were reusable for automation with minor modifications.
 Functional coverage was good for an e-commerce application.
 Included verification points for critical functionalities such as cart updates, checkout, and order confirmation.
 
-**What I Felt Not Suitable:**
+What I Felt Not Suitable:**
 Generated too many test cases for a single flow. some of there were not that much useful with respect to the application.
 Some AI-generated test cases lacked detailed expected results.
 A few scenarios were too generic and required additional validation checkpoints.
@@ -385,6 +385,7 @@ Some test cases contained hardcoded values that may require dynamic test data fo
 Negative scenarios for registration, checkout, and form validations were not sufficiently covered.
 Accessibility, performance, and security-related test scenarios were not included.
 Certain test cases required refinement to make them fully automation-ready and maintainable.
+
 ------
 **Final Test Case:-**
 **AI+Manual, Combine them and make a proper test case
@@ -614,7 +615,7 @@ TC_DWT_024: Verify Responsive Layout and Core Functionality
 11. Verify page scrolling works properly throughout the site.
 ------
 ------
-# Demo Web Shop Functional Test Case Generator Skill
+**# Demo Web Shop Functional Test Case Generator Skill**
 
 ## Name
 
@@ -718,7 +719,6 @@ Generate automation-ready test cases using the following format:
 * One business objective per test case.
 * Generate reusable test cases.
 * Keep test cases independent.
-* Avoid hardcoded test data wherever possible.
 * Expected results must be measurable and testable.
 * Cover both positive and negative scenarios.
 * Include business-critical workflows.

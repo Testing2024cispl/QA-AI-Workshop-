@@ -1341,7 +1341,8 @@ The user is redirected back to the home page successfully.
 **Expected Result:**
 The entire user journey — from registration through product discovery, search, cart management, order placement, invoice download, and account deletion — completes successfully without any functional errors or broken flows.
 
-============================================================================================================================================================================
+=====================================================================================================================================================================================
+
 
 ## Test Case Generator Skill
 ---
@@ -1350,7 +1351,7 @@ The entire user journey — from registration through product discovery, search,
 Test Case Generator
 
 ## Purpose
-Generate comprehensive, structured, and traceable test cases from requirements, user stories, acceptance criteria, feature specifications, or business rules — covering functional, negative, boundary, edge, and error-handling scenarios following industry-standard QA practices with 10+ years of domain experience.
+Generate comprehensive, structured, and traceable test cases from requirements, user stories, acceptance criteria, feature specifications, or business rules — covering functional, negative, boundary, edge, and error-handling scenarios following industry-standard QA practices.
 
 ## Instructions
 1. Analyze the provided requirement, user story, specification, or existing test suite.

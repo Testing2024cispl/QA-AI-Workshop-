@@ -248,7 +248,7 @@ Member :- Saheli Das
 Member :- Saheli Das
 
 #### Prompt:- Write test cases for placing an order on the Grocery Store Demo checkout page
-•  to the Checkout page ;
+• Go to the Checkout page ;
 • Verify that the saved address is pre-filled as Shipping Address ;
 • Select shipping address same as Billing address ;
 • Select a shipping method ;

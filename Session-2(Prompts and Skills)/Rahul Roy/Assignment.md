@@ -1341,9 +1341,10 @@ The user is redirected back to the home page successfully.
 **Expected Result:**
 The entire user journey — from registration through product discovery, search, cart management, order placement, invoice download, and account deletion — completes successfully without any functional errors or broken flows.
 
-=====================================================================================================================================================================
+============================================================================================================================================================================
 
-**# Test Case Generator Skill**
+## Test Case Generator Skill
+---
 
 ## Name
 Test Case Generator

@@ -689,3 +689,118 @@ Complete checkout process
 Order should be placed successfully from start to finish  
 **Test Type:** End-to-End
 
+
+---------------------------------------------------------Session 2----------------------------------------------------------------------------------
+
+# QA Automation Skills Demonstrated
+
+## Project
+
+**Swag Labs Test Case Design & Automation-Ready Test Documentation**
+
+## Testing Skills
+
+### Manual Testing
+
+* Requirement Analysis
+* Functional Testing
+* End-to-End Testing
+* Smoke Testing
+* Regression Testing
+* Positive Testing
+* Negative Testing
+* Validation Testing
+* UI Testing
+* Exploratory Testing
+
+## Test Case Design
+
+* Requirement-based Test Case Creation
+* AI-assisted Test Case Generation
+* Manual Test Case Design
+* Automation-ready Test Case Preparation
+* Test Case Optimization
+* Test Case Review & Gap Analysis
+* Test Scenario Identification
+* Edge Case Identification
+
+## Functional Coverage
+
+* Login Functionality
+* Product Browsing
+* Product Details Validation
+* Product Filtering
+* Add to Cart
+* Remove from Cart
+* Shopping Cart Validation
+* Continue Shopping Flow
+* Checkout Information Validation
+* Checkout Overview Verification
+* Order Completion
+* End-to-End Purchase Flow
+
+## Validation Coverage
+
+* Mandatory Field Validation
+* Invalid Login Validation
+* Empty Field Validation
+* Error Message Verification
+* Business Rule Validation
+
+## Automation Readiness
+
+* Clear Test Steps
+* Expected Results Defined
+* Functional Segmentation
+* Modular Test Cases
+* Reusable Test Design
+* Stable Verification Points
+* Automation-friendly Structure
+
+## AI in Testing
+
+* Prompt Engineering for QA
+* AI-generated Test Cases
+* Manual Review of AI Output
+* AI + Manual Test Case Consolidation
+* Test Coverage Improvement
+* Gap Analysis
+* Quality Enhancement of AI-generated Test Cases
+
+## Documentation Skills
+
+* Test Case Documentation
+* Requirement Interpretation
+* Test Coverage Mapping
+* Severity & Priority Classification
+* QA Documentation Standards
+
+## QA Best Practices Applied
+
+* End-to-End User Journey Validation
+* Business Flow Verification
+* Functional Completeness
+* Maintainable Test Documentation
+* Readable Test Structure
+* Reusable Test Assets
+* Automation-focused Design
+
+## Tools & Technologies
+
+* Manual Testing
+* AI-assisted Test Design
+* Markdown Documentation
+* GitHub-ready Documentation
+
+## Outcome
+
+This project demonstrates the ability to:
+
+* Design comprehensive manual test cases.
+* Evaluate AI-generated test cases.
+* Identify missing functional coverage.
+* Improve test quality through manual review.
+* Prepare automation-ready test cases.
+* Document QA artifacts following industry best practices.
+
+

@@ -333,6 +333,68 @@ Check cart remains consistent across navigation.
 Check application handles large quantities correctly.
 Check application remains stable after rapid user actions.
 
+-------------------------------------------------------------------
+Session 2
+Metadata
+       Name: ecommerce-functional-qa-checklist
+       Category: QA Testing / Functional Testing
+       User Role: QA Engineer
+       Use Case: Website and e-commerce application testing
+Skill Name
+                 Ecommerce-functional-qa-checklist
+      Purpose
+     Create complete functional QA test cases for an e-commerce website, especially flows like homepage, product listing, cart, coupon, checkout, payment, and thank-you page.
+Instructions
+       When the user provides an e-commerce website link or raw test cases:
+Review the user’s provided test cases.
+Group them by functional module.
+Remove duplicate or repeated cases.
+Add missing important functional scenarios.
+Separate positive, negative, validation, and edge cases.
+Keep wording clear and executable.
+    Include modules such as:
+Homepage
+Header/Menu
+Product Listing
+Add to Cart
+Cart Page
+Coupon Code
+Checkout
+Customer Details
+Shipping Address
+Payment Details
+Order Placement
+Thank You Page
+Footer
+Console/Error Handling
+Responsive Testing
+Input
+       The Skill should accept:
+Website URL
+Raw QA test cases
+Requirement document, if available
+Preferred output format: checklist, table, Excel, Word, or Jira-style
+Testing scope: functional only, UI, negative, responsive, regression, smoke
+Output
+      The Skill should produce:
+Final combined QA checklist
+Module-wise test cases
+Positive test cases
+Negative test cases
+Validation test cases
+Edge cases
+Constraints
+Do not create duplicate test cases.
+Do not include API/performance/security testing unless requested.
+Keep test cases simple and executable.
+Use QA-friendly wording starting with “Verify” or “Check”.
+Do not assume unavailable functionality.
+Mark unclear scenarios as “To be confirmed”.
+Keep checkout/payment cases based only on visible or provided requirements.
+
+Example
+User Input:
+ “Check Add to Cart button is working, check cart quantity updates, check coupon code applies, check invalid coupon does not apply
 
 
 

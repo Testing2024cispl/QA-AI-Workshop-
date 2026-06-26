@@ -1257,3 +1257,167 @@ Expected Result:
 Application should correctly handle all empty cart scenarios.
 
 
+======================================== Session 2 ===========================================================================
+
+# Skill: Test Forge - QA Test Case Generator
+
+## Overview
+
+**Test Forge** is an intelligent QA Test Case Generator designed to automate and streamline the creation of comprehensive software testing scenarios from business requirements, user stories, acceptance criteria, validation rules, and business logic.
+
+The application analyzes input requirements and dynamically generates structured, enterprise-grade test cases covering multiple testing categories while ensuring requirement traceability and reducing manual effort.
+
+---
+
+## Purpose
+
+The primary objective of Test Forge is to assist QA Engineers, Business Analysts, Product Owners, and Development Teams in generating high-quality test scenarios quickly and consistently.
+
+The platform improves requirement analysis efficiency, increases test coverage, and helps teams create standardized QA documentation with minimal manual intervention.
+
+---
+
+## Core Capabilities
+
+### Requirement Analysis
+
+* Parse functional requirements and user stories.
+* Analyze acceptance criteria and business rules.
+* Identify validation requirements and expected behaviors.
+* Extract key testing conditions from requirement documents.
+
+### Intelligent Test Case Generation
+
+* Generate Positive Test Scenarios.
+* Generate Negative Test Scenarios.
+* Generate Boundary Value Test Scenarios.
+* Generate Validation Test Cases.
+* Generate Business Rule Verification Scenarios.
+* Generate Field-Level Validation Scenarios.
+
+### Advanced Coverage Areas
+
+* Functional Testing
+* Validation Testing
+* Boundary Testing
+* Security Scenario Suggestions
+* UI Testing Scenarios
+* Accessibility Testing Scenarios
+* Compatibility Testing Scenarios
+* Performance Testing Scenarios
+
+### Requirement Traceability
+
+* Map generated test cases to source requirements.
+* Maintain requirement-to-test-case relationships.
+* Improve coverage tracking and audit readiness.
+
+### Test Case Management
+
+* Search generated test cases.
+* Filter by category and requirement.
+* Edit test cases.
+* Delete unnecessary scenarios.
+* Detect and avoid duplicate test cases.
+* Organize test cases efficiently.
+
+### Export Functionality
+
+* Export generated test cases to Excel format.
+* Support enterprise documentation workflows.
+* Enable easy sharing with QA and project teams.
+
+### OCR Support
+
+* Extract text from uploaded requirement documents and images.
+* Convert image-based requirements into editable content.
+* Improve requirement ingestion efficiency.
+
+### Performance Optimization
+
+* Background processing using Web Workers.
+* Improved responsiveness during large-scale test generation.
+* Reduced UI blocking and enhanced user experience.
+
+---
+
+## Technology Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+* Vanilla JavaScript
+
+### Browser APIs
+
+* LocalStorage
+* Web Workers
+
+### OCR Integration
+
+* Tesseract.js
+
+---
+
+## Key Features
+
+* Dynamic Requirement-Driven Test Case Generation
+* Acceptance Criteria Analysis
+* Validation Rule Processing
+* Business Logic Interpretation
+* Duplicate Scenario Detection
+* Requirement Traceability Mapping
+* Excel Export Support
+* OCR-Based Requirement Extraction
+* Search and Filtering Capabilities
+* Editable Test Case Repository
+* Local Data Persistence
+* Responsive SaaS-Style Interface
+* Dark Theme Support
+* Background Processing Optimization
+
+---
+
+## Roles & Responsibilities
+
+### Solution Design
+
+* Designed the overall application architecture.
+* Defined test generation workflows.
+* Created scalable component structures.
+
+### Development
+
+* Developed intelligent requirement parsing logic.
+* Built dynamic test case generation engine.
+* Implemented validation and boundary testing algorithms.
+* Developed traceability mapping functionality.
+* Implemented Excel export capability.
+* Integrated OCR processing using Tesseract.js.
+
+### Performance Optimization
+
+* Implemented Web Worker-based background processing.
+* Optimized application responsiveness.
+* Improved large dataset handling.
+
+### User Experience
+
+* Designed responsive user interface.
+* Implemented modern SaaS dashboard experience.
+* Enhanced usability and accessibility.
+
+### Maintenance & Enhancements
+
+* Performed debugging and issue resolution.
+* Enhanced generation accuracy.
+* Added new testing categories and features.
+* Improved overall platform stability.
+
+---
+
+## Outcome
+
+Test Forge significantly reduces manual effort in test design by automatically generating comprehensive QA scenarios from requirements. The platform enhances requirement analysis, improves test coverage, accelerates QA documentation creation, and provides a scalable solution for modern software testing workflows.
+

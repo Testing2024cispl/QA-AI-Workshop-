@@ -1145,3 +1145,119 @@ Steps:
 4. Click on register button
 Expected Result: It should register the user successfully (Company is an optional field)
 
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+skill : 
+
+---
+name: test-case-writer
+description: Write manual / functional QA test cases in a consistent ID-Title-Steps-Expected-Result format. Use this skill whenever the user wants to create, expand, or reformat manual test cases, test scenarios, QA cases, regression cases, or "TCs" for a website, web app, page, feature, or user flow — including phrasings like "write test cases for the login page", "add some negative test cases for checkout", "cover the registration form", or "verify that X works". Trigger it even when the user doesn't say the word "skill" and even if they just paste a feature or URL and ask for test coverage.
+---
+
+# Test Case Writer
+
+Write manual functional test cases in a fixed, repeatable format. The goal is coverage a human tester can execute by hand and a teammate can read at a glance.
+
+## Output format — use this EXACT structure for every case
+
+```
+{PREFIX}_{NNN}: Verify <behavior being tested> Steps:
+
+    <Step 1>
+    <Step 2>
+    ... Expected Result: <what should happen — observable and verifiable>
+```
+
+Rules for each part:
+
+**ID** — `{PREFIX}_{NNN}`, zero-padded to 3 digits, sequential with no gaps (`AMTC_001`, `AMTC_002`, …). Default prefix is `AMTC`. If the user has their own prefix (e.g. `TC`, `LOGIN`, `QA`), use theirs. Continue numbering from the last existing case when extending a suite.
+
+**Title** — always begins with **"Verify"** and names the exact behavior:
+- Positive / happy path: `Verify <feature> working correctly` or `Verify <feature> functionality working correctly`
+- Negative / validation: `Verify <feature> is not working with <bad condition>`, `Verify user can't <action> with <bad input>`, or `Verify without <required thing> user can't <action>`
+
+**Steps** — a numbered list of concrete actions:
+- The **first step is always** "Go to <base URL>" (or "Go to <page URL>" for a specific page).
+- Repeat the **full navigation chain** needed to reach the test point, every time — don't assume the reader is already deep in a flow. (e.g. select departure → select destination → click find flights → click choose this flight → …)
+- The last action step is usually the trigger (clicking the submit/purchase/login button).
+- For negative tests, put the bad input inline as a parenthetical example: `Enter wrong zip code format (example: 12, tes3, test)`.
+
+**Expected Result** — what a tester should observe:
+- Positive: describe what shows / happens correctly.
+- Validation / negative: give **two things** — (1) the rule or constraint being enforced, and (2) the error message, phrased as "similar to:" or "example:" because exact UI wording is usually unknown. Example: "Zip code length should be between 5-9 digits" *and* "error message similar to: Please enter the correct zipcode…".
+- When several outcomes apply, list them as separate lines under Expected Result.
+
+## Organize into sections by user journey
+
+Group related cases under a dashed, centered, uppercase header and order them the way a user moves through the product:
+
+```
+------------------------- FLIGHT RESULTS ----------------------------
+```
+
+Typical journey order: landing / navigation → search / browse → results display → purchase / booking → login → forgot password → registration. Only include sections that exist for the product under test.
+
+## Coverage checklist — aim for breadth, not just the happy path
+
+For each feature, write **one happy-path case plus several negative / edge cases**. Pull from these recurring patterns:
+
+- **Happy path** — the feature works with valid input.
+- **Empty required fields** — submitting with nothing filled in; note that required fields should be marked (e.g. asterisk).
+- **Wrong format** — malformed email (`test@`), bad zip, bad card number, out-of-range month/year. State the accepted format/length as the rule.
+- **Invalid-but-well-formed values** — e.g. a card number with a valid shape that fails validation, an expired card, a non-registered email.
+- **Boundary / mismatch** — password vs confirm-password mismatch, weak/short password, same value where two distinct ones are required (same departure & destination).
+- **Duplicates** — registering an already-used email.
+- **Dropdown completeness** — open a dropdown and verify it lists *all* expected options (name them explicitly).
+- **Calculation correctness** — totals add up (Total = Price + Fees + Taxes).
+- **Uniqueness** — repeat an action and confirm IDs differ (booking ID unique each time).
+- **State toggles** — checkboxes check/uncheck correctly (remember me).
+- **Display / formatting** — currency shows a symbol and two decimals; masked fields show only the last 4 digits.
+- **Navigation / redirection** — links and menu items route to the correct page.
+
+## Worked examples
+
+A positive case:
+
+```
+AMTC_002: Verify search flights functionality working correctly Steps:
+
+    Go to https://blazedemo.com/
+    Select departure city
+    Select destination city
+    Click on find flights button Expected Result: All flight details, Departs city name and Arrives city name should show correctly
+```
+
+A negative / validation case (note the rule + error-message pair):
+
+```
+AMTC_014: Verify with wrong zip code format user can't purchase a flight Steps:
+
+    Go to https://blazedemo.com/
+    Select departure city
+    Select destination city
+    Click on find flights button
+    Click on choose this flight button of any flight
+    Enter wrong zip code format (example: 12, tes3, test)
+    Fill up other required fields and click on Purchase Flight button Expected Result:
+    Zip code length should be between 5-9 digits
+    With wrong zipcode submission there should be an error message similar to: Please enter the correct zipcode to purchase your flight.
+```
+
+A dropdown-completeness case (name every expected option):
+
+```
+AMTC_003: Verify departure and destination dropdowns contain all expected cities Steps:
+
+    Go to https://blazedemo.com/
+    Open the "Choose your departure city" dropdown
+    Open the "Choose your destination city" dropdown Expected Result:
+    Departure dropdown should list: Paris, Philadelphia, Boston, ...
+    Destination dropdown should list: Buenos Aires, Rome, London, ...
+```
+
+See `references/example-suite.md` for a fuller reference suite spanning every section and pattern.
+
+## Before you write
+
+If the user gives only a URL or feature name with no other detail, you can proceed straight to writing cases using sensible assumptions — but state any assumption inline (e.g. "assuming the base URL is …"). Ask a clarifying question only when the target is genuinely ambiguous (e.g. which of several features, or an unfamiliar prefix). Match the user's existing prefix and continue their numbering whenever they share an existing suite.

@@ -1341,4 +1341,225 @@ The user is redirected back to the home page successfully.
 **Expected Result:**
 The entire user journey — from registration through product discovery, search, cart management, order placement, invoice download, and account deletion — completes successfully without any functional errors or broken flows.
 
+=====================================================================================================================================================================
+
+**# Test Case Generator Skill**
+
+## Name
+Test Case Generator
+
+## Purpose
+Generate comprehensive, structured, and traceable test cases from requirements, user stories, acceptance criteria, feature specifications, or business rules — covering functional, negative, boundary, edge, and error-handling scenarios following industry-standard QA practices with 10+ years of domain experience.
+
+## Instructions
+1. Analyze the provided requirement, user story, specification, or existing test suite.
+2. Identify all functional and non-functional requirements implied by the input.
+3. Map each requirement to one or more test scenarios covering:
+   - Positive / Happy-path cases
+   - Negative cases (invalid input, wrong credentials, etc.)
+   - Boundary value cases (empty fields, max length, min/max quantities)
+   - Edge cases (special characters, concurrent actions, session behaviour)
+   - Error handling cases (network errors, server errors, unexpected states)
+4. Create detailed, unambiguous test cases with clear, numbered steps and measurable expected results.
+5. Assign a Priority (High / Medium / Low) and Test Type to every test case.
+6. Ensure full traceability — each test case must map back to a specific feature or requirement area.
+7. Do NOT make assumptions about functionality that is not explicitly stated or inferable from the input.
+8. Avoid duplicate test cases; consolidate overlapping scenarios where possible.
+9. Number test cases sequentially using the format: TC_<MODULE>_<NNN> (e.g., TC_LOGIN_001).
+10. Group test cases by functional section/module for readability and maintainability.
+
+## Input
+The skill accepts one or more of the following:
+
+- User Story
+- Requirement Document
+- Acceptance Criteria
+- Feature Specification
+- Existing manual or automated test suite (for gap analysis or enrichment)
+- Website URL with section scope (Home, Products, Cart, Auth, Contact, etc.)
+
+## Output
+
+Generate test cases in the following format:
+
+| Field | Description |
+|-----------|---------------|
+| Test Case ID | Unique identifier following TC_<MODULE>_<NNN> convention |
+| Title | Brief, action-oriented description of what is being tested |
+| Priority | High / Medium / Low |
+| Preconditions | System state and data conditions required before test execution |
+| Test Steps | Numbered, atomic steps that a tester can follow without ambiguity |
+| Test Data | Exact input values, credentials, or data sets required |
+| Expected Result | Observable, measurable system behaviour upon completion |
+| Test Type | Functional · Negative · Boundary · Edge · End-to-End · Regression |
+
+---
+
+## Module Coverage Reference (AutomationExercise.com)
+
+Use the following module tags when generating test case IDs for this website:
+
+| Module Tag | Scope |
+|---|---|
+| HOME | Home page load, headings, logo, scroll behaviour, recommended items |
+| NAV | Navigation bar links and routing |
+| PROD | Products listing, search, filter by category/brand, product detail page |
+| CART | Add to cart, quantity update, remove item, cart count badge, cart details |
+| CHECKOUT | Proceed to checkout, address verification, order placement, invoice download |
+| AUTH | Signup, login, logout, session management, account deletion |
+| CONTACT | Contact Us form — valid/invalid/empty submission, home navigation |
+| SUB | Subscription form in Home and Cart page footers |
+| E2E | Full end-to-end user journey flows |
+
+---
+
+## Test Case Templates by Type
+
+### Functional (Positive)
+```
+| Test Case ID   | TC_<MODULE>_<NNN>                                      |
+| Title          | Verify <feature> works correctly with valid input       |
+| Priority       | High                                                   |
+| Preconditions  | <State of application before test>                     |
+| Test Steps     | 1. <Step one>                                          |
+|                | 2. <Step two>                                          |
+|                | N. <Step N>                                            |
+| Test Data      | <Exact values used>                                    |
+| Expected Result| <Measurable, observable outcome>                       |
+| Test Type      | Functional                                             |
+```
+
+### Negative
+```
+| Test Case ID   | TC_<MODULE>_<NNN>                                      |
+| Title          | Verify system rejects <action> with invalid <input>    |
+| Priority       | High                                                   |
+| Preconditions  | <State of application before test>                     |
+| Test Steps     | 1. <Step one>                                          |
+|                | N. <Step N>                                            |
+| Test Data      | <Invalid / boundary values>                            |
+| Expected Result| <Error message text or validation behaviour>           |
+| Test Type      | Negative                                               |
+```
+
+### Boundary / Edge
+```
+| Test Case ID   | TC_<MODULE>_<NNN>                                      |
+| Title          | Verify behaviour at boundary condition for <field>     |
+| Priority       | Medium                                                 |
+| Preconditions  | <State of application before test>                     |
+| Test Steps     | 1. <Step one>                                          |
+|                | N. <Step N>                                            |
+| Test Data      | <Boundary or edge-case values>                         |
+| Expected Result| <Expected system behaviour>                            |
+| Test Type      | Boundary / Edge                                        |
+```
+
+### End-to-End
+```
+| Test Case ID   | TC_E2E_<NNN>                                           |
+| Title          | Complete journey: <flow summary>                       |
+| Priority       | High                                                   |
+| Preconditions  | Fresh browser session, no prior login                  |
+| Test Steps     | 1. <Step one>                                          |
+|                | N. <Final verification step>                           |
+| Test Data      | <All data sets used across the journey>                |
+| Expected Result| <All checkpoints pass; final state confirmed>          |
+| Test Type      | End-to-End                                             |
+```
+
+---
+
+## Constraints
+
+- Avoid duplicate test cases; if two scenarios are near-identical, merge them into one with parameterised test data.
+- Use concise and unambiguous language — each step must be executable by a junior tester without clarification.
+- Maintain traceability to requirements or feature areas at all times using module tags.
+- Cover positive, negative, boundary, and exception scenarios for every major feature.
+- Expected results must be measurable and testable — avoid vague language like "should work" or "loads correctly".
+- Assign priority based on business impact: Auth, Checkout, and Cart flows are always High priority.
+- Follow standard QA best practices: independence between test cases, single responsibility per test, clear setup and teardown preconditions.
+- For session/auth tests, always include a logout or session-reset precondition.
+- For E2E tests, document all intermediate checkpoint verifications as explicit steps, not just the final outcome.
+- Flag data-dependent tests (e.g., "email already registered") with a note on pre-existing test data requirements.
+
+---
+
+## Priority Assignment Guidelines
+
+| Feature Area | Default Priority |
+|---|---|
+| Login / Registration / Auth | High |
+| Checkout / Order Placement | High |
+| Cart Operations | High |
+| Payment / Invoice | High |
+| Product Search & Filter | Medium |
+| Navigation & Routing | Medium |
+| Subscription Form | Medium |
+| Contact Us Form | Medium |
+| UI / Scroll / Visual Elements | Low |
+| Brand / Category Filter | Low |
+
+---
+
+## Example — Generated Test Cases
+
+### TC_AUTH_001 – Login with Valid Credentials
+
+| Field | Value |
+|---|---|
+| Test Case ID | TC_AUTH_001 |
+| Title | Verify successful login with valid registered email and password |
+| Priority | High |
+| Preconditions | User account exists with email `testuser@example.com` and password `Test@1234`. Browser is open on https://automationexercise.com. |
+| Test Steps | 1. Click "Signup / Login" in the top navigation bar. 2. Under "Login to your account", enter `testuser@example.com` in the Email field. 3. Enter `Test@1234` in the Password field. 4. Click the "Login" button. |
+| Test Data | Email: `testuser@example.com` · Password: `Test@1234` |
+| Expected Result | User is logged in. Navigation bar displays "Logged in as testuser". |
+| Test Type | Functional |
+
+---
+
+### TC_AUTH_002 – Login with Incorrect Password
+
+| Field | Value |
+|---|---|
+| Test Case ID | TC_AUTH_002 |
+| Title | Verify login fails and error is shown when incorrect password is entered |
+| Priority | High |
+| Preconditions | User account exists with email `testuser@example.com`. Browser is open on the Login page. |
+| Test Steps | 1. Click "Signup / Login". 2. Enter `testuser@example.com` in the Email field. 3. Enter `WrongPass999` in the Password field. 4. Click "Login". |
+| Test Data | Email: `testuser@example.com` · Password: `WrongPass999` |
+| Expected Result | Error message "Your email or password is incorrect!" is displayed. User remains on the Login page and is not authenticated. |
+| Test Type | Negative |
+
+---
+
+### TC_CART_001 – Add Single Product and Verify Cart Modal
+
+| Field | Value |
+|---|---|
+| Test Case ID | TC_CART_001 |
+| Title | Verify product is added to cart and confirmation modal appears |
+| Priority | High |
+| Preconditions | Home page is loaded. User may be logged in or guest. |
+| Test Steps | 1. On the home page, hover over the product priced at Rs. 500. 2. Click the "Add to cart" button that appears. 3. Observe the modal popup. |
+| Test Data | Product: Rs. 500 item on home page |
+| Expected Result | Modal appears with message "Added!" and provides "View Cart" and "Continue Shopping" buttons. |
+| Test Type | Functional |
+
+---
+
+### TC_E2E_001 – Full User Journey: Register → Search → Cart → Order → Delete Account
+
+| Field | Value |
+|---|---|
+| Test Case ID | TC_E2E_001 |
+| Title | Complete end-to-end journey from registration through order placement to account deletion |
+| Priority | High |
+| Preconditions | Fresh browser session. No prior login. Unique email address prepared for registration. |
+| Test Steps | 1. Open https://automationexercise.com. 2. Register new user with all valid details and verify "ACCOUNT CREATED!". 3. Verify "Logged in as [username]" in header. 4. Navigate to Products page and verify "ALL PRODUCTS" heading. 5. Search for "Top" and verify "SEARCHED PRODUCTS" section appears. 6. Click "View Product" and verify product detail fields (name, price, category, availability, condition, brand). 7. Set quantity to 2 and click "Add to cart". 8. Click "Continue Shopping". 9. Navigate to Cart; verify product with quantity 2 and correct price. 10. Click "Proceed To Checkout"; verify address matches registration details. 11. Enter comment and click "Place Order". 12. Enter valid payment details and click "Pay and Confirm Order". 13. Verify "Your order has been placed successfully!". 14. Click "Download Invoice" and verify file downloads. 15. Click "Continue". 16. Click "Delete Account" and verify "ACCOUNT DELETED!" is displayed. |
+| Test Data | Registration: unique name + email + full address. Search keyword: "Top". Quantity: 2. Payment: test card details. |
+| Expected Result | All 16 checkpoints pass. Account is deleted at end of flow. No functional errors or broken navigations throughout the journey. |
+| Test Type | End-to-End |
+
 

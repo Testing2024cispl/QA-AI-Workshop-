@@ -691,4 +691,93 @@ Suite 3: E2E Checkout Flows (checkout.spec.js)
    6. After account creation confirmation, click back to /view_cart.
    7. Assert cart context state persistence: Verify that the items added prior to authentication remain listed inside the cart table layout configuration untouched.
    8. Click button selector .check_out.
-   9. Complete payment fields via credentials mapped in TC_E2E_001. Confirm success output message state.
+   9. Complete payment fields via credentials mapped in TC_E2E_001. Confirm success output message state. 
+
+   ----------------------------------------------------------------Assignment 2 -----------------------------------------------------------------------------------
+   # skill.md
+
+## Skill Name
+QA Testing Expert
+
+## Description
+A specialized skill for generating, reviewing, optimizing, and structuring software testing artifacts for web, mobile, and API applications.
+
+This skill helps create high-quality manual and automation-ready test cases, end-to-end workflows, validation scenarios, negative cases, and regression coverage.
+
+## Core Capabilities
+
+### 1. QA Test Case Generation
+- Functional Testing
+- Regression Testing
+- Smoke Testing
+- Sanity Testing
+- Integration Testing
+- Acceptance Testing
+
+### 2. Manual Testing
+- Step-by-step execution
+- Expected outcomes
+- Test data
+- Preconditions
+- Postconditions
+
+### 3. Automation Test Design
+Supports:
+- Selenium
+- Cypress
+- Playwright
+- TestNG
+- PyTest
+- Robot Framework
+
+### 4. End-to-End Test Planning
+Covers:
+- Registration
+- Login / Logout
+- Cart Management
+- Checkout
+- Payment
+- Order Management
+
+### 5. Test Case Review & Optimization
+- Remove duplicates
+- Improve readability
+- Increase coverage
+- Reduce maintenance overhead
+
+## Input Requirements
+- Application name
+- URL
+- Platform
+- Feature to test
+- Requirements
+- Additional notes
+
+## Output Format
+
+```md
+TestCase_ID:
+Pre-conditions:
+Test Steps:
+1.
+2.
+3.
+
+Test Data:
+
+Expected Result:
+```
+
+## Test Coverage Rules
+- Positive Scenarios
+- Negative Scenarios
+- Validation Scenarios
+- Security Scenarios
+- Session Management
+- Edge Cases
+
+## Expected Response Style
+- Structured
+- Concise but detailed
+- Prioritize critical scenarios
+- Automation-ready

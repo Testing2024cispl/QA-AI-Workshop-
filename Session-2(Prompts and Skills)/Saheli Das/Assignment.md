@@ -289,12 +289,12 @@ The user is getting logout from the Grocery Store
 Member :- Saheli Das
 
 #### Prompt:- Write test cases for verifying order history and sign out on Grocery Store Demo
-Click on "Account" link
-Open the "My Orders" tab
-Verify that the recently placed order is listed with correct Order ID and status
-Click on "Sign out" button
-Verify that the user is logged out successfully
-Verify that the user is redirected to the homepage in a logged-out state
+- Click on "Account" link
+- Open the "My Orders" tab
+- Verify that the recently placed order is listed with correct Order ID and status
+- Click on "Sign out" button
+- Verify that the user is logged out successfully
+- Verify that the user is redirected to the homepage in a logged-out state
 
 ## Your thoughts:-
 ### What you felt Suitable:- 
@@ -305,11 +305,11 @@ The AI version assumes an order will always exist to check in "My Orders" — it
 
 ### Final Test Case:- (AI + Manual, Combined, Automation Ready)
 #### Final Test Case_007 — Order History & Sign Out (Automation Ready)
-Click on "Account" link and open the "My Orders" tab
-Verify that the recently placed order is listed with correct Order ID and status
-Click on "Sign out" button
-Verify that the user is logged out and redirected to the homepage in a logged-out state
-Verify that the user is logged in successfully and redirected to the Account page
+- Click on "Account" link and open the "My Orders" tab
+- Verify that the recently placed order is listed with correct Order ID and status
+- Click on "Sign out" button
+- Verify that the user is logged out and redirected to the homepage in a logged-out state
+- Verify that the user is logged in successfully and redirected to the Account page
 
 ------------------------- ------------------------ Session 2 - Assignment -------------------------------------------------
 # Name #
@@ -324,30 +324,30 @@ The generated test cases must simulate real user behavior and provide complete t
 
 The skill should think like:
 
-Senior QA Engineer
-Business User
-End Customer
-Negative Tester
-Automation Engineer
-Security Tester
-Core Objective
+- Senior QA Engineer
+- Business User
+- End Customer
+- Negative Tester
+- Automation Engineer
+- Security Tester
+- Core Objective
 
 # Never generate only happy-path scenarios.
 
 Always generate:
 
-✓ Positive Scenarios
-✓ Negative Scenarios
-✓ Boundary Value Scenarios
-✓ Validation Scenarios
-✓ UI Scenarios
-✓ Functional Scenarios
-✓ Navigation Scenarios
-✓ Error Handling Scenarios
-✓ Integration Scenarios
-✓ Security Scenarios
-✓ Regression Scenarios
-✓ Edge Cases
+- ✓ Positive Scenarios
+- ✓ Negative Scenarios
+- ✓ Boundary Value Scenarios
+- ✓ Validation Scenarios
+- ✓ UI Scenarios
+- ✓ Functional Scenarios
+- ✓ Navigation Scenarios
+- ✓ Error Handling Scenarios
+- ✓ Integration Scenarios
+- ✓ Security Scenarios
+- ✓ Regression Scenarios
+- ✓ Edge Cases
 
 # Coverage Rules (Mandatory)
 
@@ -361,62 +361,62 @@ If the feature contains multiple modules, generate test cases for every module.
 
 Generate cases for:
 
-Mobile Number Validation
-OTP Generation
-OTP Verification
-OTP Expiry
-Resend OTP
-Invalid OTP
-Session Creation
-Logout
-Browser Refresh
-Multiple Login Attempts
+- Mobile Number Validation
+- OTP Generation
+- OTP Verification
+- OTP Expiry
+- Resend OTP
+- Invalid OTP
+- Session Creation
+- Logout
+- Browser Refresh
+- Multiple Login Attempts
 
 --------------------------------Product Feature---------------------
 
 Generate cases for:
 
-Categories
-Search
-Filters
-Sorting
-Product Details
-Product Availability
-Product Images
+- Categories
+- Search
+- Filters
+- Sorting
+- Product Details
+- Product Availability
+- Product Images
 
 -------------------------------Cart Feature---------------------
 
 Generate cases for:
 
-Add to Cart
-Remove Product
-Increase Quantity
-Decrease Quantity
-Cart Calculation
-Empty Cart
-Duplicate Products
+- Add to Cart
+- Remove Product
+- Increase Quantity
+- Decrease Quantity
+- Cart Calculation
+- Empty Cart
+- Duplicate Products
 
 ------------------------------Checkout Feature---------------------
 
 Generate cases for:
 
-Shipping Address
-Billing Address
-Shipping Methods
-Payment Methods
-Coupon Codes
-Order Placement
-Order Confirmation
+- Shipping Address
+- Billing Address
+- Shipping Methods
+- Payment Methods
+- Coupon Codes
+- Order Placement
+- Order Confirmation
 
 ------------------------------Account Feature-------------------------
 
 Generate cases for:
 
-My Profile
-Address Management
-Order History
-Sign Out
-Test Design Techniques (Mandatory)
+- My Profile
+- Address Management
+- Order History
+- Sign Out
+- Test Design Techniques (Mandatory)
 
 ## Generate scenarios using:
 
@@ -426,10 +426,10 @@ Valid and invalid input classes.
 
 ### Boundary Value Analysis
 
-Minimum value
-Maximum value
-Just Below Minimum
-Just Above Maximum
+- Minimum value
+- Maximum value
+- Just Below Minimum
+- Just Above Maximum
 
 ### Error Guessing
 
@@ -439,11 +439,11 @@ Generate scenarios based on common user mistakes.
 
 ### Example:
 
-OTP Generated
-OTP Expired
-OTP Resent
-OTP Verified
-Decision Table Testing
+- OTP Generated
+- OTP Expired
+- OTP Resent
+- OTP Verified
+- Decision Table Testing
 
 ### Example:
 
@@ -460,10 +460,10 @@ When generating test cases:
 
 DO NOT stop after:
 
-Login Success
-Add Address Success
-Add to Cart Success
-Order Success
+- Login Success
+- Add Address Success
+- Add to Cart Success
+- Order Success
 
 ## Also generate:
 

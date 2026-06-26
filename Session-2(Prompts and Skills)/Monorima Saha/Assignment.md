@@ -694,7 +694,7 @@ Suite 3: E2E Checkout Flows (checkout.spec.js)
    9. Complete payment fields via credentials mapped in TC_E2E_001. Confirm success output message state. 
 
    ----------------------------------------------------------------Assignment 2 -----------------------------------------------------------------------------------
-   # skill.md
+   # skill.m
 
 ## Skill Name
 QA Testing Expert

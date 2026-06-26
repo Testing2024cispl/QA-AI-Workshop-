@@ -515,3 +515,416 @@ Layout adjusts properly.
 Menus and products remain usable.
 
 
+===========================================================Session 2===========================================================
+** QA Test Case Design & Website Testing Specification**
+
+## Skill Name
+QA Test Case Design & Website Functional Testing
+
+## Tester
+**Subhradipta Chakraborty**
+
+---
+
+# Purpose
+
+This skill defines the standard process for performing comprehensive manual testing of a web application by analyzing requirements, identifying user workflows, designing detailed test cases, and validating website functionality.
+
+The objective is to ensure that every major feature of a web application behaves correctly from an end-user perspective while maintaining usability, reliability, and functional quality.
+
+---
+
+# Target Application
+
+DemoBlaze
+
+https://www.demoblaze.com/
+
+---
+
+# Scope
+
+This skill covers complete functional testing of an e-commerce web application including:
+
+- Homepage verification
+- Navigation testing
+- Product category filtering
+- Product detail validation
+- Shopping cart functionality
+- Order placement
+- User authentication
+- User registration
+- Contact module
+- About Us module
+- UI testing
+- Responsive testing
+
+---
+
+# Testing Objectives
+
+The testing process validates:
+
+- Website accessibility
+- Navigation correctness
+- Functional behavior
+- Business workflow
+- User interaction
+- Data validation
+- UI consistency
+- Responsive behavior
+- Error handling
+- Positive and negative scenarios
+
+---
+
+# Modules Covered
+
+## Module 1 — Home Page & Navigation
+
+### Test Coverage
+
+- Homepage loads successfully
+- Logo visibility
+- Default Home selection
+- Product list visibility
+- Navigation menu availability
+- Navigation menu functionality
+- Contact popup
+- About Us popup
+- Cart navigation
+
+---
+
+## Module 2 — Product Categories
+
+### Test Coverage
+
+- Phones filter
+- Laptops filter
+- Monitors filter
+
+Validation includes:
+
+- Correct products displayed
+- Incorrect category products hidden
+
+---
+
+## Module 3 — Product Details
+
+### Test Coverage
+
+- Product details page
+- Product image rendering
+- Product price
+- Product description
+- Add To Cart button availability
+
+---
+
+## Module 4 — Shopping Cart
+
+### Test Coverage
+
+- Empty cart
+- Single product addition
+- Multiple product addition
+- Cart total calculation
+- Delete product
+- Total update after deletion
+
+---
+
+## Module 5 — Place Order
+
+### Test Coverage
+
+- Place Order popup
+- Successful purchase
+- Purchase confirmation
+- Order ID generation
+- Purchase with blank fields
+- Validation handling
+
+---
+
+## Module 6 — Login
+
+### Test Coverage
+
+Positive Scenario
+
+- Valid username
+- Valid password
+
+Negative Scenario
+
+- Invalid credentials
+- Blank credentials
+
+Additional
+
+- Logout functionality
+
+---
+
+## Module 7 — Sign Up
+
+### Test Coverage
+
+- Successful registration
+- Duplicate username
+- Blank username
+- Blank password
+
+---
+
+## Module 8 — Contact Us
+
+### Test Coverage
+
+- Contact popup
+- Email entry
+- Name entry
+- Message entry
+- Successful submission
+
+---
+
+## Module 9 — About Us
+
+### Test Coverage
+
+- About Us popup
+- Video display
+- Popup close functionality
+
+---
+
+## Module 10 — UI & Responsive Testing
+
+### Test Coverage
+
+UI
+
+- Alignment
+- Layout consistency
+- Broken elements
+- Visual validation
+
+Responsive
+
+- Mobile viewport
+- Navigation usability
+- Product visibility
+- Layout adaptation
+
+---
+
+# Testing Types Covered
+
+## Functional Testing
+
+Verification of all application features against expected behavior.
+
+Examples
+
+- Login
+- Signup
+- Cart
+- Purchase
+- Product filtering
+
+---
+
+## UI Testing
+
+Verification of
+
+- Alignment
+- Buttons
+- Images
+- Fonts
+- Menus
+- Popups
+
+---
+
+## Validation Testing
+
+Verification of
+
+- Blank inputs
+- Invalid credentials
+- Duplicate users
+- Required fields
+
+---
+
+## Navigation Testing
+
+Verification of
+
+- Internal links
+- Menus
+- Page transitions
+- Popups
+
+---
+
+## End-to-End Testing
+
+Complete user journey including
+
+Homepage
+
+↓
+
+Browse Product
+
+↓
+
+View Details
+
+↓
+
+Add To Cart
+
+↓
+
+Place Order
+
+↓
+
+Purchase Confirmation
+
+---
+
+## Responsive Testing
+
+Validation across
+
+- Mobile
+- Tablet
+- Desktop
+
+---
+
+## Regression Testing
+
+Re-execution of all major test cases after application updates.
+
+---
+
+# Test Design Approach
+
+The test suite follows industry-standard manual testing practices.
+
+Each test case contains
+
+- Test Case ID
+- Module
+- Objective
+- Preconditions
+- Test Steps
+- Expected Result
+
+---
+
+# Test Case Coverage Summary
+
+| Module | Test Cases |
+|----------|-----------|
+| Home & Navigation | 3 |
+| Categories | 3 |
+| Product Details | 3 |
+| Cart | 5 |
+| Place Order | 3 |
+| Login | 4 |
+| Sign Up | 3 |
+| Contact | 1 |
+| About Us | 2 |
+| UI & Responsive | 2 |
+
+**Total Test Cases:** **29**
+
+---
+
+# Positive Scenarios Covered
+
+- Successful login
+- Successful signup
+- Successful purchase
+- Product addition
+- Category filtering
+- Contact form submission
+
+---
+
+# Negative Scenarios Covered
+
+- Invalid login
+- Blank login
+- Duplicate signup
+- Blank signup
+- Blank purchase form
+
+---
+
+# Validation Scenarios Covered
+
+- Mandatory fields
+- User authentication
+- Duplicate account validation
+- Purchase validation
+
+---
+
+# Deliverables
+
+This testing skill produces:
+
+- Functional Test Cases
+- Manual Test Execution
+- Bug Reports
+- Validation Reports
+- UI Review
+- Regression Checklist
+- Test Summary Report
+
+---
+
+# Expected Outcome
+
+After executing this testing specification, the application should demonstrate:
+
+- Stable navigation
+- Correct product filtering
+- Accurate cart calculations
+- Reliable order processing
+- Secure authentication
+- Proper validation handling
+- Responsive user interface
+- Consistent user experience
+
+---
+
+# Best Practices Followed
+
+- Requirement-based testing
+- User-centric scenarios
+- Positive and negative testing
+- Boundary validation
+- Functional verification
+- UI consistency checks
+- Reusable test design
+- Modular test organization
+- Clear expected results
+- Industry-standard documentation
+
+---
+
+# Conclusion
+
+This skill provides a structured methodology for designing and executing comprehensive manual test cases for an e-commerce web application. It emphasizes complete functional coverage, validation testing, usability verification, and end-to-end workflow testing while following standard QA documentation practices.

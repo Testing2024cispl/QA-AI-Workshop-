@@ -2386,3 +2386,460 @@ Expected Result:
 - Payment processing works successfully.
 - UI layout and responsiveness remain consistent across supported browsers.
 ---
+
+SESSION: 2
+
+
+
+Test Case Generation using Skill:
+
+Purpose: This skill define a strict and reusable format for generating test cases accross any module in the application.
+
+------------------------------------------------------------
+APPLICATION
+------------------------------------------------------------
+
+Application Name:
+LunchBox E-commerce Website
+
+Application URL:
+https://v0-e-commerce-lunchbox-site.vercel.app/
+
+------------------------------------------------------------
+BUSINESS FLOW
+------------------------------------------------------------
+
+1. Open website.
+
+2. Select any product.
+
+3. Product price = $150
+
+4. Click Add to Cart.
+
+5. Click Cart icon.
+
+6. Checkout page opens.
+
+7. Update quantity using + and – buttons.
+
+8. Enter Contact Information
+
+Email:
+testuser@example.com
+
+Full Name:
+Test User
+
+9. Shipping Address
+
+Street:
+123 Main Street
+
+City:
+New York
+
+ZIP:
+10001
+
+10. Payment Information
+
+Card Number:
+4242 4242 4242 4242
+
+Expiry:
+12/29
+
+CVC:
+100
+
+11. Enter Coupon
+
+Coupon:
+LUNCH20
+
+12. Click Apply
+
+Expected Discount:
+20%
+
+Discount Amount:
+$30
+
+Expected Final Price:
+$120
+
+13. Click Pay
+
+14. Payment Successful
+
+15. Order Confirmation page displayed
+
+------------------------------------------------------------
+GENERATE TEST CASES FOR
+------------------------------------------------------------
+
+A. Positive Test Cases
+
+B. Negative Test Cases
+
+C. Boundary Value Test Cases
+
+D. UI Test Cases
+
+E. Field Validation Test Cases
+
+F. Coupon Validation
+
+G. Cart Validation
+
+H. Pricing Validation
+
+I. Payment Validation
+
+J. Payment Card Validation
+
+K. Payment Security Testing
+
+L. API Validation (if applicable)
+
+M. Session Management
+
+N. Browser Compatibility
+
+O. Mobile Responsiveness
+
+P. Accessibility Testing
+
+Q. Performance Testing
+
+R. Security Testing
+
+S. Error Handling
+
+T. Regression Test Cases
+
+U. Smoke Test Cases
+
+V. Sanity Test Cases
+
+W. End-to-End Test Cases
+
+X. Database Validation (Expected DB Changes)
+
+Y. Logging Validation
+
+Z. Edge Cases
+
+------------------------------------------------------------
+FOR EVERY FIELD GENERATE TEST CASES
+------------------------------------------------------------
+
+Email
+
+Full Name
+
+Street Address
+
+City
+
+ZIP Code
+
+Coupon
+
+Card Number
+
+Expiry Date
+
+CVC
+
+Quantity
+
+------------------------------------------------------------
+VALIDATION TO COVER
+------------------------------------------------------------
+
+Empty
+
+Null
+
+Blank
+
+Leading spaces
+
+Trailing spaces
+
+Multiple spaces
+
+Uppercase
+
+Lowercase
+
+Mixed Case
+
+Unicode Characters
+
+Emoji
+
+Special Characters
+
+SQL Injection
+
+Cross Site Scripting (XSS)
+
+HTML Tags
+
+Very Long Input
+
+Minimum Length
+
+Maximum Length
+
+Boundary Values
+
+Copy Paste
+
+Browser Autofill
+
+Keyboard Navigation
+
+Tab Order
+
+Required Field Validation
+
+Duplicate Submission
+
+Session Timeout
+
+Browser Refresh
+
+Back Button
+
+Forward Button
+
+Network Failure
+
+Slow Internet
+
+API Timeout
+
+Payment Gateway Failure
+
+Double Click
+
+Multiple Tabs
+
+------------------------------------------------------------
+PAYMENT VALIDATIONS
+------------------------------------------------------------
+
+Visa
+
+MasterCard
+
+Amex
+
+Invalid Card
+
+Expired Card
+
+Future Card
+
+Luhn Validation
+
+Invalid CVC
+
+Invalid Expiry
+
+Duplicate Payment
+
+Retry Payment
+
+Payment Timeout
+
+Gateway Down
+
+Refund Validation
+
+------------------------------------------------------------
+COUPON VALIDATIONS
+------------------------------------------------------------
+
+Valid Coupon
+
+Invalid Coupon
+
+Expired Coupon
+
+Disabled Coupon
+
+Already Used Coupon
+
+Multiple Coupons
+
+Coupon Removal
+
+Coupon Persistence
+
+Coupon after Quantity Change
+
+Coupon Calculation
+
+------------------------------------------------------------
+CALCULATION VALIDATIONS
+------------------------------------------------------------
+
+Subtotal
+
+Discount
+
+Tax
+
+Shipping
+
+Grand Total
+
+Quantity
+
+Decimal Precision
+
+Currency Symbol
+
+Price Formatting
+
+------------------------------------------------------------
+SECURITY TESTING
+------------------------------------------------------------
+
+HTTPS
+
+CSRF
+
+XSS
+
+SQL Injection
+
+Sensitive Data Exposure
+
+PCI Compliance
+
+Card Masking
+
+Password Masking
+
+Secure Cookies
+
+Session Hijacking
+
+------------------------------------------------------------
+OUTPUT FORMAT
+------------------------------------------------------------
+
+Generate test cases in Markdown table.
+
+Columns:
+
+Test Case ID
+
+Module
+
+Feature
+
+Category
+
+Test Scenario
+
+Objective
+
+Preconditions
+
+Test Steps
+
+Test Data
+
+Expected Result
+
+Priority
+
+Severity
+
+Test Type
+
+
+Requirement ID
+
+------------------------------------------------------------
+RULES
+------------------------------------------------------------
+
+1. Generate at least 150 realistic test cases.
+
+2. Do NOT repeat scenarios.
+
+3. Cover every positive, negative, boundary and edge case.
+
+4. Include realistic business validations.
+
+5. Include hidden edge cases that are commonly missed by QA engineers.
+
+6. Include accessibility checks.
+
+7. Include browser compatibility.
+
+8. Include mobile responsiveness.
+
+9. Include API validation wherever applicable.
+
+10. Use professional QA terminology.
+
+11. Assign unique Test Case IDs starting from TC-001.
+
+12. Mark High Priority scenarios first.
+
+13. Test Steps should be detailed and executable.
+
+14. Expected Result should be measurable.
+
+OUTPUT as Example:
+
+Test Case ID
+
+TC-001
+
+Module
+
+Checkout
+
+Category	
+
+Positive
+
+Test Scenario
+
+Verify successful checkout with valid details
+
+Preconditions
+
+Product added to cart
+
+Test Steps
+
+1. Open checkout page.2. Enter valid customer details.3. Enter valid payment details.4. Click Pay.
+Test Data
+
+Email: testuser@example.com
+
+Expected Result
+
+Order is placed successfully and a success message is displayed.
+
+Priority
+
+High
+Severity
+
+Critical	
+
+Test Type
+
+Functional

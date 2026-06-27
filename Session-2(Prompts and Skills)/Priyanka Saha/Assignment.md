@@ -361,6 +361,247 @@ OBSERVATIONS (SUITABLE/NOT SUITABLE):
 AI Generated responses are more structured, well-defined and cover almost all possible scenarios available for testing within a few seconds. It creates a huge number of test cases which must be sorted out by QA manually as per his/her requirement and also must verify whether the AI generated responses are correct or not.
 Overall, AI improves quality testing in less time.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ASSIGNMENT -02 (22/06/26)
+----------------------------------
+
+Name: Priyanka Saha
+Url: https://automationexercise.com/
+
+---------------------------------------------------------------
+
+# E-Commerce Test Case Generator Skill
+
+## Name
+E-Commerce Test Case Generator
+
+## Purpose
+Generate comprehensive, structured, and reusable test cases for any e-commerce web application covering all critical functional and non-functional areas — from user authentication and product discovery to checkout, order management, and post-purchase flows. This skill is framework-agnostic and can be adapted to any e-commerce platform (e.g., fashion, electronics, grocery, health & wellness).
+
+---
+
+## Instructions
+
+1. Analyze the provided input (user story, feature spec, acceptance criteria, or business rule).
+2. Identify the e-commerce module or functional area being tested (e.g., Cart, Checkout, Search).
+3. Generate test scenarios covering all of the following case types:
+   - **Positive cases** — happy path / expected behavior
+   - **Negative cases** — invalid inputs, unauthorized access, broken flows
+   - **Boundary value cases** — min/max quantities, price limits, character limits
+   - **Edge cases** — empty states, zero results, concurrent actions, network drops
+   - **UI/UX cases** — layout, responsiveness, accessibility, error message clarity
+   - **Security cases** — authentication bypass, injection attempts, session handling
+   - **Performance cases** — load time thresholds, image rendering, API response time
+4. Write each test case with precise, unambiguous steps reproducible by any tester.
+5. Assign priority (High / Medium / Low) based on business impact.
+6. Tag each test with the relevant module and test type.
+7. Flag any assumption made due to missing specification details.
+8. Avoid generating duplicate or overlapping test cases.
+
+---
+
+## Input
+
+The skill accepts one or more of the following:
+
+- User Story (e.g., "As a guest user, I want to add items to the cart without logging in")
+- Acceptance Criteria
+- Feature Specification or PRD excerpt
+- API Documentation (for backend/integration test cases)
+- Business Rules (e.g., "Coupon codes cannot be stacked")
+- Module Name only (e.g., "Write test cases for the Wishlist module")
+- Bug Report (to derive regression test cases)
+- UI Screenshot or Figma description
+
+---
+
+## E-Commerce Module Coverage
+
+When generating test cases, this skill covers the following standard modules:
+
+### 1. Home Page & Navigation
+- Hero banners, promotional sliders load correctly
+- Category navigation menus (top nav, sidebar, hamburger) work on all breakpoints
+- Footer links (About, Contact, T&C, Privacy Policy) are functional
+- Breadcrumb trail reflects correct page hierarchy
+- Site search bar is accessible from all pages
+
+### 2. User Authentication & Account Management
+- New user registration with valid and invalid data
+- Login with correct credentials, wrong password, unregistered email
+- Password reset via email link (valid/expired token)
+- Social login flows (if applicable)
+- Session persistence after browser refresh / tab close
+- Account logout and session invalidation
+- Profile update (name, email, phone, address)
+- Account deletion / deactivation
+
+### 3. Product Listing Page (PLP)
+- Products display with correct image, name, price, and rating
+- Filter options (category, price range, brand, size, rating) work independently and in combination
+- Sort options (price low-high, high-low, newest, relevance) produce correct ordering
+- Pagination — correct item count per page, navigation between pages
+- Infinite scroll (if applicable) — loads next batch without duplicate items
+- Out-of-stock badge displays correctly and blocks add-to-cart
+- Quick view / hover interactions (if applicable)
+
+### 4. Product Detail Page (PDP)
+- Product images, thumbnails, and zoom functionality work correctly
+- All variants (size, color, quantity) are selectable and update price/stock dynamically
+- Product description, specifications, and reviews render without truncation
+- "Add to Cart" and "Buy Now" buttons behave correctly
+- Related / recommended products section loads relevant items
+- Share product links generate correct URLs
+- Breadcrumb reflects correct category path
+
+### 5. Search Functionality
+- Keyword search returns relevant results
+- Partial keyword, misspelling, and synonym handling
+- Empty search bar submission shows validation or all products
+- No-results state shows user-friendly message and suggestions
+- Search with special characters
+- Search filters persist when applied after a new search
+
+### 6. Shopping Cart
+- Add single and multiple items to cart
+- Update item quantity (increase, decrease, set to zero)
+- Remove individual items from cart
+- Cart persists across sessions for logged-in users
+- Guest cart behavior (persists in session, prompts login at checkout)
+- Correct subtotal, item count, and line-item prices shown
+- Out-of-stock items flagged if stock changes after cart addition
+- Maximum cart item / quantity limits enforced
+
+### 7. Wishlist / Save for Later
+- Add item to wishlist from PLP and PDP
+- Remove item from wishlist
+- Move item from wishlist to cart
+- Wishlist persists across sessions (logged-in users)
+- Guest user prompted to login/register to save wishlist
+- Wishlist item count badge updates in real time
+
+### 8. Coupon Codes & Promotions
+- Valid coupon applies correct discount amount
+- Invalid, expired, or already-used coupon shows appropriate error
+- Stacking multiple coupons (if not allowed, verify block)
+- Minimum order value requirement enforced for coupon eligibility
+- Discount visible in cart summary and at checkout
+- Promotional banners link to correct category / product pages
+
+### 9. Checkout Flow
+- Guest checkout without account creation
+- Logged-in checkout with pre-filled address
+- Add, edit, and delete shipping addresses
+- Address form validation (required fields, postcode format, phone format)
+- Shipping method selection (standard, express, pickup) and correct fee calculation
+- Order summary matches cart contents before payment
+- Place order button disabled until all required fields are complete
+
+### 10. Payment Processing
+- Successful payment with valid card details
+- Declined payment with invalid card number, expired date, wrong CVV
+- Payment with saved cards (if applicable)
+- Alternative payment methods (UPI, PayPal, Wallet, COD) work end-to-end
+- 3DS authentication / OTP verification flow completes correctly
+- Payment timeout / network drop handling — no double charge
+- Order NOT created if payment fails
+
+### 11. Order Confirmation & Email Notifications
+- Order confirmation page displays correct order ID, items, and total
+- Confirmation email received with correct order details
+- Order appears in "My Orders" immediately after placement
+- Invoice / receipt download works (PDF opens correctly)
+
+### 12. Order Management (Post-Purchase)
+- Order list displays correct status (Processing, Shipped, Delivered, Cancelled)
+- Order detail page shows tracking number and carrier link
+- Cancel order within allowed window — refund initiated
+- Return / refund request flow (submit reason, upload image if required)
+- Reorder from previous order populates cart correctly
+
+### 13. Reviews & Ratings
+- Verified-purchase user can submit a rating and text review
+- Guest or non-purchaser blocked from submitting review
+- Review with prohibited content shows moderation message
+- Average rating updates after new review is submitted
+- Existing reviews render correctly with date and username
+
+### 14. Responsive Design & Cross-Browser Compatibility
+- Layout renders correctly on desktop (1280px+), tablet (768px), and mobile (375px)
+- Touch interactions (swipe carousel, tap dropdowns) work on mobile
+- All pages tested on Chrome, Firefox, Safari, and Edge
+- No horizontal scroll on any breakpoint
+- CTA buttons and form inputs are tap-friendly
+
+### 15. Accessibility
+- All images have descriptive alt text
+- Form fields have associated labels
+- Keyboard-only navigation reaches all interactive elements
+- Error messages linked to fields
+
+### 16. Performance & Load Behavior
+- Home page loads within 3 seconds on a standard connection
+- Product images use lazy loading — below-fold images not fetched on page load
+- API calls for search/filter return results within 2 seconds
+- No broken images or 404 resources on any key page
+
+---
+
+## Output Format
+
+Generate test cases using the following structure:
+
+| Field | Description |
+|-------|-------------|
+| Test Case ID | Unique identifier — format: `[MODULE]-TC-[NUMBER]` e.g. `CART-TC-001` |
+| Title | Short, action-oriented description of what is being tested |
+| Module | E-commerce area (Cart, Auth, Search, Checkout, etc.) |
+| Priority | High / Medium / Low |
+| Test Type | Functional / Negative / Boundary / UI / Security / Performance / Regression |
+| Preconditions | System state and data required before execution |
+| Test Steps | Numbered, unambiguous steps to execute the test |
+| Test Data | Specific input values, credentials, or configurations to use |
+| Expected Result | Exact observable outcome that defines pass/fail |
+| Actual Result | (Leave blank — filled during execution) |
+| Status | Pass / Fail / Blocked / Not Executed (filled during execution) |
+| Notes / Assumptions | Any clarification, dependency, or out-of-scope boundary |
+
+---
+
+## Example Test Case
+
+**Test Case ID:** CART-TC-007  
+**Title:** Verify cart quantity cannot exceed maximum stock limit  
+**Module:** Shopping Cart  
+**Priority:** High  
+**Test Type:** Boundary  
+**Preconditions:** User is logged in; product "Blue Polo Shirt - Size M" has a stock limit of 5 units  
+**Test Steps:**
+1. Navigate to the product detail page for "Blue Polo Shirt - Size M"
+2. Set quantity to 5 and click "Add to Cart"
+3. Navigate to the Cart page
+4. Attempt to increase the quantity to 6 using the "+" button
+
+**Test Data:** Product with max stock = 5; quantity input = 6  
+**Expected Result:** Quantity remains at 5; an inline message displays "Maximum available quantity is 5"  
+**Actual Result:** _(to be filled)_  
+**Status:** Not Executed  
+**Notes:** Behavior may differ if stock is managed server-side vs. client-side validation only
+
+---
+
+## Constraints
+
+- Every test case must have a unique Test Case ID following the `[MODULE]-TC-[NUMBER]` convention.
+- Test steps must be written so a junior tester with no product knowledge can execute them without guidance.
+- Expected results must describe observable, measurable outcomes — never vague statements like "it should work."
+- Do not assume functionality not explicitly stated in the input; flag gaps under Notes / Assumptions.
+- Cover at minimum one positive and one negative test per feature described.
+- Security and accessibility test cases must be included for any authentication, form, or payment-related feature.
+- All test cases must be traceable to the input requirement or user story provided.
+- Regression test cases should be flagged explicitly for features that have had past defects.
+
+
 
 
 

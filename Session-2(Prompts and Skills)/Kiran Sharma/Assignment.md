@@ -873,7 +873,7 @@ Expected Result: Checkout page should reload without losing cart and address det
 Test Case Generator Skill
 
 ---
-name: demoblaze-test-case-generator skill
+**name: demoblaze-test-case-generator skill
 description: >
  Generate comprehensive, structured, traceable, and automation-ready manual test cases
  for the DemoBlaze web application (https://www.demoblaze.com/). Use this skill when
@@ -881,8 +881,7 @@ description: >
  website URL scope. Covers functional, negative, validation, boundary, edge,
  session-management, and security-related scenarios following industry-standard QA
  best practices. Always produce output in the canonical table format with all
- mandatory fields populated and automation metadata included.
----
+ mandatory fields populated and automation metadata included.**
 
 
 # DemoBlaze Test Case Generator — SKILL

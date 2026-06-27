@@ -150,12 +150,13 @@ Go to the footer section and check.
 
 
 Role- Act as a Senior QA Engineer with expertise in Manual Testing, Functional Testing, Regression Testing, and Web Application Testing.
-Task:
-Generate comprehensive manual test cases for the AutomationExercise web application. Cover all major functionalities including Home Page, Products Listing, Product Search, Product Filtering, Cart Management, Checkout Flow, User Registration, Login, Logout, Account Management, and Contact Us Form.
 
-Context : The application under test is: https://www.demoblaze.com/AutomationExercise is a full-fledged e-commerce practice website where users can: Register a new account with full address details, Login with registered credentials, Browse and explore the home page, View all products and product details, Search and filter products by category and brand, Add products to a shopping cart, Manage cart items (increase quantity, remove items), Proceed through the checkout flow with order placement, Process an order and download the invoice, Logout from the application, Delete a registered account, Submit the Contact Us form, Subscribe to the newsletter via the footer.
+Task-Generate comprehensive manual test cases for the AutomationExercise web application. Cover all major functionalities including Home Page, Products Listing, Product Search, Product Filtering, Cart Management, Checkout Flow, User Registration, Login, Logout, Account Management, and Contact Us Form.
+
+Context- The application under test is: https://www.demoblaze.com/AutomationExercise is a full-fledged e-commerce practice website where users can: Register a new account with full address details, Login with registered credentials, Browse and explore the home page, View all products and product details, Search and filter products by category and brand, Add products to a shopping cart, Manage cart items (increase quantity, remove items), Proceed through the checkout flow with order placement, Process an order and download the invoice, Logout from the application, Delete a registered account, Submit the Contact Us form, Subscribe to the newsletter via the footer.
 The objective is to validate the complete end-to-end user journey and identify possible functional, validation, and security-related issues across the sections: Home, Products, Cart, About Us, Signup/Login, and Contact Us.
-Constraints:
+
+Constraints-
 Include both Positive and Negative test scenarios.
 Include Validation and Error Handling scenarios.
 Include Session Management and Security-related scenarios.
@@ -166,16 +167,14 @@ Ensure test cases are suitable for future automation.
 Cover mandatory field validations wherever applicable.
 Include business-critical scenarios such as cart persistence and unauthorized access checks.
 Do NOT include test cases for the Test Cases or API Testing sections.
-Output Format:
+
+Output Format-
 Generate test cases using the following format:
 TestCase_ID: TC_XXX - Test Scenario
 Test Steps:
 Step 1
 Step 2
 Step 3
-
-
-
 
 
 Final Test Cases (AI + Manual Combined)
@@ -189,18 +188,21 @@ Step 1: Open the browser and navigate website URL https://www.demoblaze.com/ .
 Step 2: Wait until the page is fully loaded.
 Step 3: Verify that the Home page is displayed with logo, navigation menu, product sections, category section, brand section, and footer.
 Expected Result: Home page should load successfully without broken layout, blank screen, or console-visible functional error.
+
 TestCase_ID: TC_002 - Verify Header Navigation Links
 Test Steps:
 Step 1: Open the Home page.
 Step 2: Click Home, Products, Cart, Signup/Login, Contact Us one by one.
 Step 3: Verify that each menu redirects to the correct page.
 Expected Result: Each navigation link should open the correct section/page.
+
 TestCase_ID: TC_003 - Verify Home Page Product Visibility
 Test Steps:
 Step 1: Open the Home page.
 Step 2: Scroll to the Featured Items section.
 Step 3: Verify product image, product name, price, Add to Cart button, and View Product link.
 Expected Result: Product cards should display correct product information and actionable buttons.
+
 TestCase_ID: TC_004 - Verify Product Added to Cart from Home Page
 Test Steps:
 Step 1: Open the Home page.
@@ -208,6 +210,7 @@ Step 2: Click Add to Cart for any product.
 Step 3: Verify the confirmation popup.
 Step 4: Click View Cart.
 Expected Result: Selected product should be added to cart and displayed correctly on the cart page.
+
 TestCase_ID: TC_005 - Verify Continue Shopping from Add to Cart Popup
 Test Steps:
 Step 1: Open the Home page.
@@ -215,6 +218,7 @@ Step 2: Click Add to Cart for any product.
 Step 3: Click Continue Shopping on the popup.
 Step 4: Verify user remains on the shopping page.
 Expected Result: Popup should close and user should be able to continue browsing products.
+
 TestCase_ID: TC_006 - Verify Footer Newsletter Subscription with Valid Email
 Test Steps:
 Step 1: Open the Home page.
@@ -222,6 +226,7 @@ Step 2: Scroll to the footer subscription section.
 Step 3: Enter a valid email address.
 Step 4: Click the Subscribe button.
 Expected Result: System should display a successful subscription message.
+
 TestCase_ID: TC_007 - Verify Newsletter Subscription with Blank Email
 Test Steps:
 Step 1: Open the Home page.
@@ -229,26 +234,29 @@ Step 2: Scroll to the footer subscription section.
 Step 3: Leave the email field blank.
 Step 4: Click the Subscribe button.
 Expected Result: System should not submit blank email and should show proper validation message.
+
 TestCase_ID: TC_008 - Verify Newsletter Subscription with Invalid Email Format
 Test Steps:
 Step 1: Open the Home page.
 Step 2: Enter invalid email format such as testmail.com.
 Step 3: Click the Subscribe button.
 Expected Result: System should display validation error for invalid email format.
-
 Products Listing and Product Details
+
 TestCase_ID: TC_009 - Verify Products Page Loads Successfully
 Test Steps:
 Step 1: Open the Home page.
 Step 2: Click Products from the header menu.
 Step 3: Verify product listing page is displayed.
 Expected Result: Products page should display product list with product name, price, image, Add to Cart, and View Product options.
+
 TestCase_ID: TC_010 - Verify Product Detail Page
 Test Steps:
 Step 1: Open the Products page.
 Step 2: Click View Product for any product.
 Step 3: Verify product detail page content.
 Expected Result: Product detail page should display product name, category, price, availability, condition, brand, quantity field, and Add to Cart button.
+
 TestCase_ID: TC_011 - Verify Add Product to Cart from Product Detail Page
 Test Steps:
 Step 1: Open any product detail page.
@@ -256,6 +264,7 @@ Step 2: Enter quantity as 1.
 Step 3: Click Add to Cart.
 Step 4: Click View Cart.
 Expected Result: Product should be added to cart with correct name, price, quantity, and total.
+
 TestCase_ID: TC_012 - Verify Product Quantity Update Before Adding to Cart
 Test Steps:
 Step 1: Open any product detail page.
@@ -263,18 +272,21 @@ Step 2: Enter quantity as 3.
 Step 3: Click Add to Cart.
 Step 4: Open the cart page.
 Expected Result: Cart should display the product quantity as 3 and total price should be calculated correctly.
+
 TestCase_ID: TC_013 - Verify Product Quantity Cannot Be Zero
 Test Steps:
 Step 1: Open any product detail page.
 Step 2: Enter quantity as 0.
 Step 3: Click Add to Cart.
 Expected Result: System should not allow zero quantity or should show validation message.
+
 TestCase_ID: TC_014 - Verify Product Quantity Cannot Be Negative
 Test Steps:
 Step 1: Open any product detail page.
 Step 2: Enter quantity as -1.
 Step 3: Click Add to Cart.
 Expected Result: System should not allow negative quantity and should show validation message.
+
 TestCase_ID: TC_015 - Verify Product Quantity Cannot Accept Alphabetic Value
 Test Steps:
 Step 1: Open any product detail page.
@@ -289,42 +301,49 @@ Step 1: Open the Products page.
 Step 2: Enter a valid product name in the search field.
 Step 3: Click the Search button.
 Expected Result: Matching product should be displayed in the search result.
+
 TestCase_ID: TC_017 - Verify Search Product with Partial Product Name
 Test Steps:
 Step 1: Open the Products page.
 Step 2: Enter partial product keyword.
 Step 3: Click the Search button.
 Expected Result: Products matching the keyword should be displayed.
+
 TestCase_ID: TC_018 - Verify Search Product with Invalid Product Name
 Test Steps:
 Step 1: Open the Products page.
 Step 2: Enter a non-existing product name.
 Step 3: Click the Search button.
 Expected Result: No matching product should be displayed or proper no-result behavior should be shown.
+
 TestCase_ID: TC_019 - Verify Search with Blank Input
 Test Steps:
 Step 1: Open the Products page.
 Step 2: Leave the search field blank.
 Step 3: Click the Search button.
 Expected Result: System should either display validation message or keep the product listing unchanged.
+
 TestCase_ID: TC_020 - Verify Search Field Against Script Injection
 Test Steps:
 Step 1: Open the Products page.
 Step 2: Enter <script>alert(1)</script> in the search field.
 Step 3: Click the Search button.
 Expected Result: Script should not execute. Input should be treated as plain text or rejected safely.
+
 TestCase_ID: TC_021 - Verify Product Filter by Category
 Test Steps:
 Step 1: Open the Home page or Products page.
 Step 2: Select any category such as Women, Men, or Kids.
 Step 3: Select a sub-category.
 Expected Result: Products related to the selected category should be displayed.
+
 TestCase_ID: TC_022 - Verify Product Filter by Brand
 Test Steps:
 Step 1: Open the Home page or Products page.
 Step 2: Select any brand from the Brands section.
 Step 3: Verify filtered product list.
 Expected Result: Products related to the selected brand should be displayed.
+
 TestCase_ID: TC_023 - Verify Category and Brand Filter Result Consistency
 Test Steps:
 Step 1: Open the Products page.
@@ -334,6 +353,7 @@ Step 4: Verify displayed products.
 Expected Result: Displayed products should match selected filter criteria and should not show unrelated products.
 
 User Registration
+
 TestCase_ID: TC_024 - Verify New User Registration with Valid Details
 Test Steps:
 Step 1: Click Signup/Login from the header menu.
@@ -342,12 +362,14 @@ Step 3: Click Signup.
 Step 4: Fill all mandatory account information and address details.
 Step 5: Click Create Account.
 Expected Result: Account should be created successfully and success message should be displayed.
+
 TestCase_ID: TC_025 - Verify Registration with Existing Email
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Enter name and already registered email address.
 Step 3: Click Signup.
 Expected Result: System should display error message that email already exists.
+
 TestCase_ID: TC_026 - Verify Registration with Blank Name
 Test Steps:
 Step 1: Open Signup/Login page.
@@ -355,6 +377,7 @@ Step 2: Leave name field blank.
 Step 3: Enter valid email.
 Step 4: Click Signup.
 Expected Result: System should not allow registration and should show name field validation.
+
 TestCase_ID: TC_027 - Verify Registration with Blank Email
 Test Steps:
 Step 1: Open Signup/Login page.
@@ -362,6 +385,7 @@ Step 2: Enter valid name.
 Step 3: Leave email field blank.
 Step 4: Click Signup.
 Expected Result: System should not allow registration and should show email field validation.
+
 TestCase_ID: TC_028 - Verify Registration with Invalid Email Format
 Test Steps:
 Step 1: Open Signup/Login page.
@@ -369,12 +393,14 @@ Step 2: Enter valid name.
 Step 3: Enter invalid email format.
 Step 4: Click Signup.
 Expected Result: System should display invalid email validation message.
+
 TestCase_ID: TC_029 - Verify Mandatory Fields on Account Information Page
 Test Steps:
 Step 1: Start signup with valid name and email.
 Step 2: On account information page, leave mandatory fields blank.
 Step 3: Click Create Account.
 Expected Result: System should highlight all mandatory fields and should not create account.
+
 TestCase_ID: TC_030 - Verify Password Field Validation During Registration
 Test Steps:
 Step 1: Start signup with valid name and email.
@@ -382,6 +408,7 @@ Step 2: Enter weak password or leave password blank.
 Step 3: Fill remaining mandatory fields.
 Step 4: Click Create Account.
 Expected Result: System should validate password field and should not allow blank password.
+
 TestCase_ID: TC_031 - Verify Address Details Are Saved Correctly During Registration
 Test Steps:
 Step 1: Register a new user with full address details.
@@ -391,30 +418,35 @@ Step 4: Verify delivery and billing address.
 Expected Result: Address details should match the details entered during registration.
 
 Login and Logout
+
 TestCase_ID: TC_032 - Verify Login with Valid Credentials
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Enter registered email and valid password.
 Step 3: Click Login.
 Expected Result: User should be logged in successfully and username should be displayed.
+
 TestCase_ID: TC_033 - Verify Login with Invalid Password
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Enter registered email and wrong password.
 Step 3: Click Login.
 Expected Result: System should display invalid login error and user should not be logged in.
+
 TestCase_ID: TC_034 - Verify Login with Unregistered Email
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Enter unregistered email and any password.
 Step 3: Click Login.
 Expected Result: System should display error message and should not allow login.
+
 TestCase_ID: TC_035 - Verify Login with Blank Email and Password
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Leave email and password fields blank.
 Step 3: Click Login.
 Expected Result: System should display mandatory field validation.
+
 TestCase_ID: TC_036 - Verify Login with Invalid Email Format
 Test Steps:
 Step 1: Open Signup/Login page.
@@ -422,18 +454,21 @@ Step 2: Enter invalid email format.
 Step 3: Enter password.
 Step 4: Click Login.
 Expected Result: System should display email format validation.
+
 TestCase_ID: TC_037 - Verify Login Fields Against SQL Injection
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Enter ' OR '1'='1 in email or password field.
 Step 3: Click Login.
 Expected Result: Login should fail and system should not expose database or technical error.
+
 TestCase_ID: TC_038 - Verify Logout Functionality
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Click Logout.
 Step 3: Verify user is redirected to Signup/Login page.
 Expected Result: User should be logged out successfully and protected user session should end.
+
 TestCase_ID: TC_039 - Verify Browser Back Button After Logout
 Test Steps:
 Step 1: Login with valid credentials.
@@ -442,47 +477,55 @@ Step 3: Click browser Back button.
 Expected Result: User should not access logged-in session page after logout.
 
 Cart Management
+
 TestCase_ID: TC_040 - Verify Add Single Product to Cart
 Test Steps:
 Step 1: Open Products page.
 Step 2: Click Add to Cart for one product.
 Step 3: Click View Cart.
 Expected Result: Selected product should be displayed in cart with correct product name, price, quantity, and total.
+
 TestCase_ID: TC_041 - Verify Add Multiple Products to Cart
 Test Steps:
 Step 1: Open Products page.
 Step 2: Add two or more different products to cart.
 Step 3: Open the cart page.
 Expected Result: All selected products should be displayed separately in cart.
+
 TestCase_ID: TC_042 - Verify Cart Total Calculation
 Test Steps:
 Step 1: Add multiple products to cart.
 Step 2: Open cart page.
 Step 3: Verify price, quantity, and total amount for each product.
 Expected Result: Product total should be calculated correctly based on price and quantity.
+
 TestCase_ID: TC_043 - Verify Remove Product from Cart
 Test Steps:
 Step 1: Add any product to cart.
 Step 2: Open cart page.
 Step 3: Click remove/delete icon for the product.
 Expected Result: Product should be removed from the cart successfully.
+
 TestCase_ID: TC_044 - Verify Empty Cart Behavior
 Test Steps:
 Step 1: Open cart page without adding any product.
 Step 2: Verify cart content.
 Expected Result: Cart should show empty state or no product should be listed.
+
 TestCase_ID: TC_045 - Verify Cart Persistence Before Login
 Test Steps:
 Step 1: Add product to cart as guest user.
 Step 2: Open cart page and verify product.
 Step 3: Navigate to another page and come back to cart.
 Expected Result: Cart item should remain available during the same browser session.
+
 TestCase_ID: TC_046 - Verify Cart Persistence After Login
 Test Steps:
 Step 1: Add product to cart as guest user.
 Step 2: Login with valid credentials.
 Step 3: Open cart page.
 Expected Result: Product added before login should remain available in cart.
+
 TestCase_ID: TC_047 - Verify Duplicate Product Add Behavior
 Test Steps:
 Step 1: Add the same product to cart twice.
@@ -490,12 +533,14 @@ Step 2: Open cart page.
 Expected Result: System should either increase quantity or show the product correctly without duplicate calculation issue.
 
 Checkout Flow and Order Placement
+
 TestCase_ID: TC_048 - Verify Checkout Redirect for Guest User
 Test Steps:
 Step 1: Add product to cart as guest user.
 Step 2: Open cart page.
 Step 3: Click Proceed To Checkout.
 Expected Result: System should ask user to register/login before checkout.
+
 TestCase_ID: TC_049 - Verify Checkout for Logged-in User
 Test Steps:
 Step 1: Login with valid credentials.
@@ -503,6 +548,7 @@ Step 2: Add product to cart.
 Step 3: Open cart page.
 Step 4: Click Proceed To Checkout.
 Expected Result: Checkout page should open with address details and order review section.
+
 TestCase_ID: TC_050 - Verify Delivery and Billing Address on Checkout Page
 Test Steps:
 Step 1: Login with registered user.
@@ -510,6 +556,7 @@ Step 2: Add product to cart.
 Step 3: Proceed to checkout.
 Step 4: Verify delivery and billing address.
 Expected Result: Delivery and billing address should match user registration details.
+
 TestCase_ID: TC_051 - Verify Order Review Details on Checkout Page
 Test Steps:
 Step 1: Login with valid user.
@@ -517,30 +564,35 @@ Step 2: Add one or more products to cart.
 Step 3: Proceed to checkout.
 Step 4: Verify product name, quantity, price, and total.
 Expected Result: Order review should display correct cart details.
+
 TestCase_ID: TC_052 - Verify Place Order with Comment
 Test Steps:
 Step 1: Proceed to checkout as logged-in user.
 Step 2: Enter order comment in comment text area.
 Step 3: Click Place Order.
 Expected Result: User should be redirected to payment page.
+
 TestCase_ID: TC_053 - Verify Place Order Without Comment
 Test Steps:
 Step 1: Proceed to checkout as logged-in user.
 Step 2: Leave comment field blank.
 Step 3: Click Place Order.
 Expected Result: System should allow order placement if comment is optional.
+
 TestCase_ID: TC_054 - Verify Payment with Valid Card Details
 Test Steps:
 Step 1: Proceed to payment page.
 Step 2: Enter valid name on card, card number, CVC, expiry month, and expiry year.
 Step 3: Click Pay and Confirm Order.
 Expected Result: Order should be placed successfully and success message should be displayed.
+
 TestCase_ID: TC_055 - Verify Payment with Blank Mandatory Fields
 Test Steps:
 Step 1: Proceed to payment page.
 Step 2: Leave all payment fields blank.
 Step 3: Click Pay and Confirm Order.
 Expected Result: System should not process payment and should show mandatory field validation.
+
 TestCase_ID: TC_056 - Verify Payment with Invalid Card Number
 Test Steps:
 Step 1: Proceed to payment page.
@@ -548,6 +600,7 @@ Step 2: Enter invalid card number.
 Step 3: Fill other fields with valid data.
 Step 4: Click Pay and Confirm Order.
 Expected Result: System should reject invalid card number or show validation error.
+
 TestCase_ID: TC_057 - Verify Payment with Invalid CVC
 Test Steps:
 Step 1: Proceed to payment page.
@@ -555,6 +608,7 @@ Step 2: Enter alphabetic or invalid CVC.
 Step 3: Fill remaining payment fields.
 Step 4: Click Pay and Confirm Order.
 Expected Result: System should validate CVC and should not accept invalid value.
+
 TestCase_ID: TC_058 - Verify Payment with Expired Card Date
 Test Steps:
 Step 1: Proceed to payment page.
@@ -562,12 +616,14 @@ Step 2: Enter expired month and year.
 Step 3: Fill remaining payment fields.
 Step 4: Click Pay and Confirm Order.
 Expected Result: System should reject expired card details.
+
 TestCase_ID: TC_059 - Verify Invoice Download After Successful Order
 Test Steps:
 Step 1: Complete order successfully.
 Step 2: Click Download Invoice.
 Step 3: Verify downloaded invoice file.
 Expected Result: Invoice should download successfully and should contain correct order details.
+
 TestCase_ID: TC_060 - Verify Continue Button After Order Success
 Test Steps:
 Step 1: Complete order successfully.
@@ -575,18 +631,21 @@ Step 2: Click Continue button.
 Expected Result: User should be redirected to expected page without error.
 
 Account Management
+
 TestCase_ID: TC_061 - Verify Delete Account Functionality
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Click Delete Account.
 Step 3: Confirm account deletion if confirmation appears.
 Expected Result: Account should be deleted successfully and confirmation message should be displayed.
+
 TestCase_ID: TC_062 - Verify Login After Account Deletion
 Test Steps:
 Step 1: Delete an existing account.
 Step 2: Go to Signup/Login page.
 Step 3: Try to login with deleted account credentials.
 Expected Result: Login should fail because account no longer exists.
+
 TestCase_ID: TC_063 - Verify Re-registration with Deleted Account Email
 Test Steps:
 Step 1: Delete an existing account.
@@ -595,6 +654,7 @@ Step 3: Complete registration.
 Expected Result: System should allow re-registration if deleted email is released, or display proper business validation message.
 
 Contact Us Form
+
 TestCase_ID: TC_064 - Verify Contact Us Form with Valid Details
 Test Steps:
 Step 1: Click Contact Us from the header menu.
@@ -602,12 +662,14 @@ Step 2: Enter valid name, email, subject, and message.
 Step 3: Upload a valid file if required.
 Step 4: Click Submit.
 Expected Result: Contact form should be submitted successfully and success message should be displayed.
+
 TestCase_ID: TC_065 - Verify Contact Us Form with Blank Mandatory Fields
 Test Steps:
 Step 1: Open Contact Us page.
 Step 2: Leave name, email, subject, and message fields blank.
 Step 3: Click Submit.
 Expected Result: System should show mandatory field validation and should not submit the form.
+
 TestCase_ID: TC_066 - Verify Contact Us Form with Invalid Email Format
 Test Steps:
 Step 1: Open Contact Us page.
@@ -615,6 +677,7 @@ Step 2: Enter valid name, subject, and message.
 Step 3: Enter invalid email format.
 Step 4: Click Submit.
 Expected Result: System should display email validation error.
+
 TestCase_ID: TC_067 - Verify Contact Us Form File Upload
 Test Steps:
 Step 1: Open Contact Us page.
@@ -622,6 +685,7 @@ Step 2: Fill valid form details.
 Step 3: Upload a valid file.
 Step 4: Click Submit.
 Expected Result: Form should submit successfully with uploaded file.
+
 TestCase_ID: TC_068 - Verify Contact Us Form with Unsupported File Type
 Test Steps:
 Step 1: Open Contact Us page.
@@ -629,6 +693,7 @@ Step 2: Fill valid contact form details.
 Step 3: Upload unsupported file type such as .exe.
 Step 4: Click Submit.
 Expected Result: System should reject unsupported file type or show validation message.
+
 TestCase_ID: TC_069 - Verify Contact Us Form Against Script Injection
 Test Steps:
 Step 1: Open Contact Us page.
@@ -637,34 +702,40 @@ Step 3: Submit the form.
 Expected Result: Script should not execute and input should be handled safely.
 
 Session Management
+
 TestCase_ID: TC_070 - Verify User Session Remains Active During Navigation
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Navigate to Home, Products, Cart, and Contact Us pages.
 Step 3: Verify logged-in username remains visible.
 Expected Result: User session should remain active during normal navigation.
+
 TestCase_ID: TC_071 - Verify Session After Browser Refresh
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Refresh the browser page.
 Step 3: Verify login status.
 Expected Result: User should remain logged in if session persistence is supported.
+
 TestCase_ID: TC_072 - Verify Session After Closing and Reopening Browser
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Close the browser.
 Step 3: Reopen browser and open the application.
 Expected Result: System should behave according to session policy. User should not be logged in if persistent session is not supported.
+
 TestCase_ID: TC_073 - Verify Direct Access to Checkout Without Login
 Test Steps:
 Step 1: Logout from the application.
 Step 2: Directly open checkout page URL.
 Expected Result: System should not allow unauthorized checkout access and should redirect user to login/register flow.
+
 TestCase_ID: TC_074 - Verify Cart Access Without Login
 Test Steps:
 Step 1: Logout from the application.
 Step 2: Open cart page directly.
 Expected Result: Cart page may open for guest user, but checkout should remain restricted until login/register.
+
 TestCase_ID: TC_075 - Verify Multiple Tabs Session Behavior
 Test Steps:
 Step 1: Login in one browser tab.
@@ -674,53 +745,62 @@ Step 4: Refresh second tab.
 Expected Result: User should be logged out from all tabs after logout.
 
 Security Validation
+
 TestCase_ID: TC_076 - Verify Unauthorized Access to Logged-in User Features
 Test Steps:
 Step 1: Logout from the application.
 Step 2: Try to access account-specific features directly through URL.
 Expected Result: System should block unauthorized access and redirect user to login/register page.
+
 TestCase_ID: TC_077 - Verify Sensitive Data Is Not Displayed in URL
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Complete checkout and payment flow.
 Step 3: Observe browser URL during login and payment steps.
 Expected Result: Password, card number, CVC, and other sensitive data should not appear in URL.
+
 TestCase_ID: TC_078 - Verify Password Masking on Login and Registration Forms
 Test Steps:
 Step 1: Open Signup/Login page.
 Step 2: Enter password in password field.
 Step 3: Observe the entered value.
 Expected Result: Password should be masked and should not be visible as plain text.
+
 TestCase_ID: TC_079 - Verify Login Form Against XSS Input
 Test Steps:
 Step 1: Open Login page.
 Step 2: Enter <script>alert(1)</script> in email or password field.
 Step 3: Click Login.
 Expected Result: Script should not execute and system should display safe validation/error message.
+
 TestCase_ID: TC_080 - Verify Registration Form Against XSS Input
 Test Steps:
 Step 1: Open Signup page.
 Step 2: Enter script tags in name or address fields.
 Step 3: Submit the registration form.
 Expected Result: Script should not execute and malicious input should be sanitized or rejected.
+
 TestCase_ID: TC_081 - Verify Application Uses Secure HTTPS Connection
 Test Steps:
 Step 1: Open the application URL.
 Step 2: Check browser address bar.
 Step 3: Verify connection security details.
 Expected Result: Application should load over HTTPS and browser should not show insecure warning.
+
 TestCase_ID: TC_082 - Verify Error Messages Do Not Expose Technical Details
 Test Steps:
 Step 1: Perform invalid login.
 Step 2: Submit invalid search input.
 Step 3: Submit invalid contact form data.
 Expected Result: Error messages should be user-friendly and should not expose stack trace, database error, or server details.
+
 TestCase_ID: TC_083 - Verify Payment Page Does Not Store Sensitive Card Data After Refresh
 Test Steps:
 Step 1: Proceed to payment page.
 Step 2: Enter card number and CVC.
 Step 3: Refresh the page.
 Expected Result: Sensitive payment fields should not retain card number or CVC after refresh.
+
 TestCase_ID: TC_084 - Verify Logout Clears Authenticated Session
 Test Steps:
 Step 1: Login with valid credentials.
@@ -729,6 +809,7 @@ Step 3: Try to access checkout or account page directly.
 Expected Result: User should not access authenticated pages after logout.
 
 End-to-End Business Flow
+
 TestCase_ID: TC_085 - Verify Complete E-commerce Journey with New User
 Test Steps:
 Step 1: Open the application.
@@ -745,6 +826,7 @@ Step 11: Confirm order.
 Step 12: Download invoice.
 Step 13: Logout.
 Expected Result: Complete user journey should work successfully without data mismatch or functional error.
+
 TestCase_ID: TC_086 - Verify Complete E-commerce Journey with Existing User
 Test Steps:
 Step 1: Open the application.
@@ -754,12 +836,14 @@ Step 4: Proceed to checkout.
 Step 5: Place order using valid payment details.
 Step 6: Download invoice.
 Expected Result: Existing user should be able to complete order successfully.
+
 TestCase_ID: TC_087 - Verify User Cannot Checkout with Empty Cart
 Test Steps:
 Step 1: Login with valid credentials.
 Step 2: Open cart page without adding products.
 Step 3: Try to proceed to checkout.
 Expected Result: System should not allow checkout with empty cart.
+
 TestCase_ID: TC_088 - Verify Price Consistency Across Product, Cart, Checkout, and Invoice
 Test Steps:
 Step 1: Open product detail page and note product price.
@@ -768,6 +852,7 @@ Step 3: Verify price in cart.
 Step 4: Proceed to checkout and verify price.
 Step 5: Complete order and download invoice.
 Expected Result: Product price should remain consistent across product detail, cart, checkout, and invoice.
+
 TestCase_ID: TC_089 - Verify User Can Delete Account After Order Completion
 Test Steps:
 Step 1: Login with valid user.
@@ -775,6 +860,7 @@ Step 2: Complete an order successfully.
 Step 3: Click Delete Account.
 Step 4: Verify account deletion message.
 Expected Result: User account should be deleted successfully after order completion.
+
 TestCase_ID: TC_090 - Verify Application Handles Page Refresh During Checkout
 Test Steps:
 Step 1: Login with valid credentials.

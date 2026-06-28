@@ -1,302 +1,330 @@
-# Member - Biyas Sen
+# skill.md
 
-# Human Thinking Manual Test Cases
+## Skill Name
 
-## TC_POS_01 View product inventory
+QA Test Case Generator skill documentation
 
-1. Navigate to the Swag Labs inventory page.
-2. Observe all listed products.
-3. Verify product details like name, description , price.
-4. All products should display correctly.
+---
 
-## TC_POS_02 Add single product to cart
+## Description
 
-1. Navigate to inventory page.
-2. Click Add to Cart for one product.
-3. Observe cart icon.
-4. Cart count should increase by 1.
+This skill generates comprehensive positive and negative **functional test cases** for web-based applications using a hybrid approach of **manual QA analysis** and **AI-assisted test generation**.
 
-## TC_POS_03 Add multiple products to cart
+The skill is designed to help QA engineers quickly create structured test cases from application screenshots, workflows, requirements, or user stories while ensuring business-specific validation through human review.
 
-1. Navigate to inventory page.
-2. Add two products to cart.
-3. Open cart page.
-4. Both products should be visible in cart.
+The generated output is suitable for:
 
-## TC_POS_04 Remove product from cart
+* Manual functional testing
+* Regression testing
+* Automation-ready test case preparation
+* QA documentation and review assignments
 
-1. Add products to cart.
-2. Open cart page.
-3. Click Remove for one product.
-4. Selected product should be removed.
+---
 
-## TC_POS_05 Remove all product from cart
+## Role
 
-1. Add products to cart.
-2. Open cart page.
-3. Click Remove for all product.
-4. All product should be remove and should show the rediction icon or button for revisit to the product listing page.
+Act as a **Senior QA Engineer and Functional Test Analyst** with expertise in:
 
+* Functional testing
+* Manual test design
+* Requirement analysis
+* Business workflow validation
+* Negative scenario identification
+* Edge case analysis
+* AI-assisted QA practices
 
-## TC_POS_06 Continue shopping from cart
+---
 
-1. Add product to cart.
-2. Open cart page.
-3. Click Continue Shopping.
-4. User should return to inventory page.
+## Inputs
 
-## TC_POS_07 Proceed to checkout
+The skill accepts one or more of the following inputs:
 
-1. Add products to cart.
-2. Open cart page.
-3. Click Checkout.
-4. Checkout information page should open.
+* **Application URL**
+* **Screenshots / UI screens**
+* **Feature / Module Name**
+* **Business Workflow**
+* **Functional Requirements**
+* ** User Story / Acceptance Criteria**
 
-## TC_POS_08 Enter valid checkout information
+Example Inputs:
 
-1. Open checkout page.
-2. Enter valid First Name.
-3. Enter Last Name and Zip Code.
-4. User should proceed to overview page.
+* E-commerce checkout flow
+* Search functionality
+* Cart management module
+* Telehealth consultation workflow
+* Login / Signup module
 
-## TC_POS_09 Complete order successfully
+---
 
-1. Complete checkout information.
-2. Click Continue.
-3. Click Finish.
-4. Success message should be displayed.
+## Core Responsibilities
 
-## TC_NEG_01 Open cart without products
+### 1. Manual Functional Test Case Creation
 
-1. Login to application.
-2. Click cart icon without adding items.
-3. Observe cart page.
-4. Cart should be empty.
+Generate human-thinking manual test cases based on functional understanding of the application.
 
-## TC_NEG_02 Checkout with empty cart
+Cover:
 
-1. Keep cart empty.
-2. Open cart.
-3. Click Checkout.
-4. Checkout should be blocked or handled properly.
+#### Positive Scenarios
 
-## TC_NEG_03 Submit checkout with empty fields
+* Valid user actions
+* Successful workflow completion
+* Business rule compliant actions
 
-1. Open checkout information page.
-2. Leave all fields empty.
-3. Click Continue.
-4. Validation message should appear.
+#### Negative Scenarios
 
-## TC_NEG_04 Missing first name
+* Invalid inputs
+* Missing mandatory data
+* Validation failures
+* Invalid workflow execution
 
-1. Open checkout page.
-2. Leave first name blank.
-3. Fill other fields and continue.
-4. Error message should display.
+---
 
-## TC_NEG_05 Missing last name
+### 2. AI Prompt Preparation
 
-1. Open checkout page.
-2. Leave last name blank.
-3. Fill other fields and continue.
-4. Error should display.
+Generate optimized prompts for AI-based test case generation.
 
-## TC_NEG_06 Missing zip code
+Prompt should include:
 
-1. Open checkout page.
-2. Leave zip code blank.
-3. Click Continue.
-4. Validation should appear.
+* Application context
+* Scope
+* Functionalities to cover
+* Constraints
+* Required output format
 
-## TC_NEG_07 Invalid zip code
+Example:
 
-1. Open checkout page.
-2. Enter alphabets in zip field.
-3. Click Continue.
-4. Invalid input should be rejected.
+* Generate all positive and negative functional test cases
+* Exclude security and UI test cases
+* Cover all major functionalities
+* Return structured test cases only
 
-## TC_NEG_08 Multiple rapid clicks on Finish
+---
 
-1. Reach overview page.
-2. Click Finish multiple times quickly.
-3. Observe response.
-4. Only one order should be created.
+### 3. AI Generated Test Case Expansion
 
-# Prompt
+Use AI to expand coverage by generating additional scenarios including:
 
-I need you to prepare all positive and negative functional test cases for the following website:
+* Functional happy paths
+* Validation scenarios
+* Negative scenarios
+* Edge cases
+* Workflow interruption cases
 
-**https://www.saucedemo.com/**
+Examples:
 
-## Requirements
+* Empty input validation
+* Invalid search
+* Rapid multiple clicks
+* Refresh during transaction
+* Browser back navigation
 
-1. Only functional test cases — NO security test cases, NO UI test cases
-2. Include BOTH positive and negative test cases
-3. Cover all major functionalities of the application
+---
 
-## Functionalities to cover
+### 4. AI Output Evaluation
 
-* Product inventory listing
-* Product sorting
-* Cart management (add/remove items)
-* Checkout process
-* Checkout form validation
-* Order overview
-* Order completion
-* Any other functional behavior on the page
+Review AI-generated test cases and evaluate:
 
+#### Suitable Cases
 
-### TC_POS_01 [Test Case Title]
+Identify useful scenarios with good coverage.
+
+Evaluate based on:
+
+* Relevance
+* Functional correctness
+* Business alignment
+* Coverage completeness
+
+#### Not Suitable Cases
+
+Identify weak AI output such as:
+
+* Generic scenarios
+* Duplicate cases
+* Assumption-based validations
+* Missing business logic
+
+---
+
+### 5. Final Test Case Consolidation
+
+Merge:
+
+* Manual test cases
+* AI-generated test cases
+* QA-reviewed improvements
+
+Convert into final **automation-ready functional test cases**.
+
+Final cases must include:
+
+* Unique Test Case ID
+* Scenario Name
+* Test Steps
+* Expected Result
+* Classification
+
+Classification:
+
+* Positive
+* Negative
+
+---
+
+## Output Structure
+
+Generate output in four sections:
+
+### 1. Human Thinking Manual Test Cases
+
+Manual test cases created using QA knowledge.
+
+Format:
+
+* TC_POS_01
+* TC_NEG_01
+
+---
+
+### 2. AI Generated Test Cases
+
+Expanded AI-generated functional scenarios.
+
+Format:
+
+* TC_POS_01
+* TC_NEG_01
+
+---
+
+### 3. My Thoughts
+
+Human evaluation of AI output.
+
+Includes:
+
+#### What I felt Suitable
+
+* Strengths of AI-generated cases
+
+#### What I felt Not Suitable
+
+* Limitations of AI-generated cases
+
+---
+
+### 4. Final Combined Test Cases
+
+Optimized final test suite.
+
+Format:
+
+TC_01 Scenario Name
 
 1. Step 1
 2. Step 2
 3. Step 3
 4. Expected Result
 
-### TC_NEG_01 [Test Case Title]
-
-1. Step 1
-2. Step 2
-3. Step 3
-4. Expected Result
-
-# AI Generated Test Cases
-
-## Positive Test Scenarios
-
-| Test Case ID | Scenario | Steps | Expected Result |
-|---|---|---|---|
-| TC_POS_01 | Sort products by Name (A to Z) | 1. Navigate to inventory page.<br>2. Click sort dropdown.<br>3. Select **Name (A to Z)**. | Products should be sorted alphabetically. |
-| TC_POS_02 | Sort products by Name (Z to A) | 1. Navigate to inventory page.<br>2. Click sort dropdown.<br>3. Select **Name (Z to A)**. | Products should be sorted in descending alphabetical order. |
-| TC_POS_03 | Sort products by Price (Low to High) | 1. Navigate to inventory page.<br>2. Select **Price (low to high)**.<br>3. Observe product prices. | Products should be sorted by ascending price. |
-| TC_POS_04 | Sort products by Price (High to Low) | 1. Navigate to inventory page.<br>2. Select **Price (high to low)**.<br>3. Observe prices. | Products should be sorted by descending price. |
-| TC_POS_05 | Add product to cart | 1. Navigate to inventory page.<br>2. Click **Add to Cart** for a product.<br>3. Observe cart badge. | Cart count should increase. |
-| TC_POS_06 | Add multiple products to cart | 1. Add multiple products.<br>2. Open cart page.<br>3. Observe cart items. | All selected products should appear. |
-| TC_POS_07 | Remove product from inventory page | 1. Add product to cart.<br>2. Click **Remove** from inventory page.<br>3. Observe cart badge. | Product should be removed. |
-| TC_POS_08 | View cart items | 1. Add products to cart.<br>2. Click cart icon.<br>3. Observe cart page. | Items, quantity, and price should display correctly. |
-| TC_POS_09 | Checkout with valid information | 1. Add products to cart.<br>2. Click **Checkout**.<br>3. Enter valid details. | User should reach overview page. |
-| TC_POS_10 | View order overview | 1. Complete checkout information.<br>2. Click **Continue**.<br>3. Observe overview page. | Payment, shipping, and total price should display. |
-| TC_POS_11 | Complete order successfully | 1. Reach overview page.<br>2. Click **Finish**.<br>3. Observe confirmation page. | Success message should display. |
-| TC_POS_12 | Return to home page | 1. Complete order.<br>2. Click **Back Home**.<br>3. Observe page. | User should return to inventory page. |
+Classification: Positive / Negative
 
 ---
 
-## Negative Test Scenarios
+## Constraints
 
-| Test Case ID | Scenario | Steps | Expected Result |
-|---|---|---|---|
-| TC_NEG_01 | Open cart without adding products | 1. Login to application.<br>2. Click cart icon.<br>3. Observe cart. | Cart should be empty. |
-| TC_NEG_02 | Remove item from empty cart | 1. Open empty cart.<br>2. Attempt remove action.<br>3. Observe response. | No crash should occur. |
-| TC_NEG_03 | Checkout with empty cart | 1. Keep cart empty.<br>2. Click **Checkout**.<br>3. Observe behavior. | Checkout should be blocked or handled gracefully. |
-| TC_NEG_04 | Submit checkout with empty fields | 1. Open checkout page.<br>2. Leave all fields blank.<br>3. Click **Continue**. | Validation message should display. |
-| TC_NEG_05 | Missing First Name | 1. Leave First Name empty.<br>2. Fill other fields.<br>3. Click **Continue**. | Error should display. |
-| TC_NEG_06 | Missing Last Name | 1. Leave Last Name empty.<br>2. Fill remaining fields.<br>3. Click **Continue**. | Validation should display. |
-| TC_NEG_07 | Missing Zip Code | 1. Leave Zip Code empty.<br>2. Click **Continue**.<br>3. Observe response. | Error message should display. |
-| TC_NEG_08 | Invalid Zip Code format | 1. Enter alphabetic zip code.<br>2. Click **Continue**.<br>3. Observe validation. | Invalid zip code should be rejected. |
-| TC_NEG_09 | Rapid multiple clicks on Add to Cart | 1. Click **Add to Cart** rapidly multiple times.<br>2. Open cart.<br>3. Observe cart items. | Duplicate invalid entries should not occur. |
-| TC_NEG_10 | Rapid multiple clicks on Finish | 1. Reach overview page.<br>2. Click **Finish** repeatedly.<br>3. Observe result. | Only one order should be processed. |
-| TC_NEG_11 | Refresh browser during checkout | 1. Add products to cart.<br>2. Reach checkout page.<br>3. Refresh browser. | Cart state should remain consistent. |
-| TC_NEG_12 | Browser Back during checkout | 1. Reach overview page.<br>2. Click browser back.<br>3. Observe workflow. | Application should handle navigation properly. |
-| TC_NEG_13 | Checkout after removing all items | 1. Add products to cart.<br>2. Remove all products.<br>3. Attempt checkout. | Checkout should not proceed. |
-| TC_NEG_14 | Finish order without completing checkout | 1. Attempt to bypass checkout steps.<br>2. Try accessing finish flow directly.<br>3. Observe response. | Order should not complete without required steps. |
+* Generate **functional test cases only**
+* Do NOT generate:
+
+  * Security test cases
+  * UI test cases
+  * Performance test cases
+  * Accessibility test cases
+* Avoid duplicate scenarios
+* Avoid vague expected results
+* Ensure all steps are executable
+* Maintain professional QA terminology
 
 ---
 
-# My Thoughts
+## Reasoning Guidelines
 
-## What I felt Suitable
+Apply standard QA test design techniques:
 
-* Good coverage of inventory, sorting, cart, and checkout
-* Helpful in quickly generating baseline functional scenarios
-* Covers edge cases like refresh and browser navigation
+* Equivalence Partitioning
+* Boundary Value Analysis
+* Error Guessing
+* Risk-Based Testing
 
-## What I felt Not Suitable
+Consider:
 
-* Some scenarios are generic and need application-specific validation
-* AI missed detailed field validations
-* Some negative scenarios are assumption-based
+### User Perspective
 
-# Final Test Cases (AI + Manual Combined for Automation Ready)
+* Normal workflows
+* Invalid user actions
+* Real-world mistakes
 
-## TC_01 View product inventory
+### QA Perspective
 
-1. Navigate to Swag Labs inventory page
-2. Observe product listing
-3. Verify name, description, and price
-4. All products should display correctly
+* Business rules
+* Failure points
+* State transitions
+* Data consistency
 
-**Classification:** Positive
+### AI Validation Perspective
 
-## TC_02 Sort products alphabetically
+* Detect hallucinated cases
+* Remove invalid assumptions
+* Improve expected results
 
-1. Navigate to inventory page
-2. Select Name (A-Z) sorting
-3. Observe product order
-4. Products should sort alphabetically
+---
 
-**Classification:** Positive
+## Output Expectations
 
-## TC_03 Add single product to cart
+The final output must be:
 
-1. Click Add to Cart for a product
-2. Observe cart badge
-3. Open cart
-4. Product should appear in cart
+* Structured
+* Readable
+* Functional only
+* Comprehensive
+* Automation-ready
+* Business relevant
 
-**Classification:** Positive
+Expected coverage:
 
-## TC_04 Remove product from cart
+* Core workflows
+* Validations
+* Negative scenarios
+* Edge cases
+* End-to-end functional flow
 
-1. Add products to cart
-2. Remove one product
-3. Observe cart
-4. Product should be removed
+---
 
-**Classification:** Positive
+## Example Use Case
 
-## TC_05 Checkout with valid information
+### Input
 
-1. Add products to cart
-2. Click Checkout
-3. Enter valid user information
-4. User should reach overview page
+Swag Labs product purchase workflow screenshots
 
-**Classification:** Positive
+### Output
 
-## TC_06 Complete successful order
+Generate:
 
-1. Reach overview page
-2. Click Finish
-3. Observe confirmation page
-4. Success message should display
+* Inventory test cases
+* Sorting scenarios
+* Cart management scenarios
+* Checkout validation scenarios
+* Order completion scenarios
+* Final AI + Manual optimized test suite
 
-**Classification:** Positive
+---
 
-## TC_07 Submit empty checkout form
+## Goal
 
-1. Open checkout page
-2. Leave all fields empty
-3. Click Continue
-4. Validation error should display
+To accelerate functional test case generation using AI while preserving manual QA accuracy and business validation.
 
-**Classification:** Negative
+This skill enables QA engineers to combine:
 
-## TC_08 Invalid zip code
-
-1. Enter alphabetic zip code
-2. Click Continue
-3. Observe validation
-4. Invalid input should be rejected
-
-**Classification:** Negative
-
-## TC_09 Rapid multiple Finish clicks
-
-1. Reach order overview
-2. Click Finish repeatedly
-3. Observe order creation
-4. Only one order should be processed
-
-**Classification:** Negative
-
-
+* AI speed
+* Manual reasoning
+* Better coverage
+* Automation readiness

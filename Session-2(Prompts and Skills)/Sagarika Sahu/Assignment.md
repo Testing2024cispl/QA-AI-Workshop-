@@ -122,9 +122,9 @@ TestCases_004 – Search Suggestion & Add to Cart
 Verify:
 
 1. Search suggestion popup
-* 
+ 
 2. Bestseller categories
-* 
+
 3. Category image
  
 4. Category name

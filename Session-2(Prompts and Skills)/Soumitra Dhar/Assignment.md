@@ -749,6 +749,93 @@ Test Steps
 5. Navigate back, click 'Notebooks'
 6. Verify products shown
 
+====================================================
+# Session-2
+# QA Testing Skill File
+
+## Skill Name
+
+QA Manual Testing and AI Test Case Generation
+
+## Purpose
+
+This skill helps generate, organize, and manage QA test cases for web
+applications using manual testing approaches and AI-assisted test
+design.
+
+## Input
+
+-   Application URL
+-   Feature/module details
+-   User requirements
+-   Testing scope
+
+## Test Case Structure
+
+Each test case should include: - Test Case ID - Test Case Description -
+Module - Test Type - Preconditions - Test Steps - Expected Result -
+Actual Result - Status - Priority - Execution Date
+
+## Testing Types Covered
+
+-   Functional Testing
+-   Negative Testing
+-   Boundary Value Analysis (BVA)
+-   Exploratory Testing
+-   Regression Testing
+-   Smoke Testing
+-   UI Testing
+-   Usability Testing
+
+## QA Test Design Approach
+
+### Positive Scenarios
+
+Validate that features work correctly with valid inputs.
+
+### Negative Scenarios
+
+Validate error handling with invalid inputs, missing data, and
+unexpected behavior.
+
+### Boundary Testing
+
+Validate minimum, maximum, and edge-case values.
+
+## Common Web Application Modules
+
+-   Registration
+-   Login
+-   Forgot Password
+-   Search
+-   Product Management
+-   Cart
+-   Checkout
+-   Account
+-   Wishlist
+-   Navigation
+
+## AI Test Case Generation Guidelines
+
+Generate test cases by: 1. Understanding the user flow 2. Identifying
+positive and negative scenarios 3. Adding edge cases 4. Covering
+validation rules 5. Including security-related scenarios where required
+
+## Example Test Flow
+
+1.  Open application URL
+2.  Navigate to feature
+3.  Perform user action
+4.  Validate expected behavior
+5.  Record actual result
+6.  Update test status
+
+## QA Documentation Standards
+
+Maintain clear, reusable, and execution-ready test cases suitable for
+manual testing and automation conversion.
+
+
 
 
 

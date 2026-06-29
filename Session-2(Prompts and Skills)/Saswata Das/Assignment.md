@@ -189,7 +189,7 @@ Expected Result:
 * Order should be created successfully.
 * User should return to Inventory page after clicking Back Home.
 
-=======================================================================================================
+================================================================================================
 Day 2 assignment
 # QA Test Case Generator Skill
 

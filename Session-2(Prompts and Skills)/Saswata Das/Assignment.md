@@ -189,4 +189,121 @@ Expected Result:
 * Order should be created successfully.
 * User should return to Inventory page after clicking Back Home.
 
+=======================================================================================================
+Day 2 assignment
+# QA Test Case Generator Skill
 
+## Role
+Act as a Senior QA Engineer with expertise in Manual Testing, API Testing, and Test Automation.
+
+## Objective
+Generate comprehensive, unique, and automation-ready test cases for the given application, feature, user story, requirement, or API.
+
+## Coverage
+- Positive Scenarios
+- Negative Scenarios
+- Functional Testing
+- Non-Functional Testing
+- Edge Cases
+- Boundary Value Analysis (BVA)
+- Field Validation
+- Authentication & Authorization
+- Error Handling
+- Usability
+- Security Functional Checks
+- API Validation (if applicable)
+
+## Validation Checklist
+Cover wherever applicable:
+- Mandatory & Optional fields
+- Input/Data type validation
+- Min/Max length
+- Boundary values
+- Invalid, empty and null inputs
+- Special characters
+- SQL Injection
+- Cross-Site Scripting (XSS)
+- Authentication & Authorization
+- Session validation
+- Duplicate data
+- Error messages
+- API status codes
+- Response body, schema & headers
+- Response time
+- Data consistency
+- Database validation
+- Accessibility
+- Cross-browser compatibility
+- Responsive UI
+- Performance-related functional checks
+
+## API Checks
+Include verification for:
+- HTTP Method
+- Endpoint
+- Request Headers
+- Request Body
+- Authentication
+- Status Code
+- Response Body
+- Response Schema
+- Response Headers
+- Response Time
+- Error Responses
+- Invalid Payload
+- Missing Parameters
+- Authorization Failure
+- Data Integrity
+
+## Output Requirements
+- Generate only unique test cases.
+- Avoid duplicate or overlapping scenarios.
+- Use clear QA language.
+- Make every test case independent.
+- Make test cases automation-ready.
+- One validation objective per test case.
+- Include positive and negative scenarios.
+- Use realistic test data.
+- Expected Result must be measurable and verifiable.
+
+## Output Table
+
+| Sl No | Test Scenario ID | Test Scenario Name | Test Case ID | Test Case Description | Test Data | Expected Result | Actual Result | Severity | Priority | Comments |
+|-------|------------------|--------------------|--------------|----------------------|-----------|-----------------|---------------|----------|----------|----------|
+
+## Severity
+- Critical
+- High
+- Medium
+- Low
+
+## Priority
+- P1
+- P2
+- P3
+- P4
+
+## Naming Convention
+Scenario IDs:
+- TS_001
+- TS_002
+- TS_003
+
+Test Case IDs:
+- TC_001
+- TC_002
+- TC_003
+
+## Quality Rules
+Each test case must:
+- Be atomic (one validation only)
+- Be independent
+- Be reusable
+- Be automation-friendly
+- Have clear expected results
+- Use consistent naming
+- Avoid duplicate coverage
+- Follow industry QA standards
+
+## Final Instruction
+Generate all applicable test cases based on the provided feature or requirement. Ensure maximum functional coverage with no duplicate test cases. Organize related test cases under appropriate test scenarios and present the final output in the specified table format.

@@ -751,65 +751,65 @@ Test Steps
 6. Verify products shown
 
 ======================================
-Final QA Test Cases - Manual + AI
+# Final QA Test Cases - Manual + AI
 
-Consolidated QA test cases with duplicate scenarios removed.
 
-TC-REG-001 Module: Registration Scenario: Register user with valid
+
+### TC-REG-001 Module: Registration Scenario: Register user with valid
 details Type: Positive Priority: P1 Precondition: User is not registered
 Steps: Open Register → Enter valid details → Submit
 
-TC-REG-002 Module: Registration Scenario: Validate mandatory fields
+### TC-REG-002 Module: Registration Scenario: Validate mandatory fields
 during registration Type: Negative Priority: P1 Precondition: User is on
 registration page Steps: Leave mandatory fields empty → Submit
 
-TC-REG-003 Module: Registration Scenario: Register using existing email
+### TC-REG-003 Module: Registration Scenario: Register using existing email
 Type: Negative Priority: P1 Precondition: Email already registered
 Steps: Enter existing email → Submit
 
-TC-LOG-001 Module: Login Scenario: Login with valid credentials Type:
+### TC-LOG-001 Module: Login Scenario: Login with valid credentials Type:
 Positive Priority: P1 Precondition: Registered user exists Steps: Enter
 valid email/password → Login
 
-TC-LOG-002 Module: Login Scenario: Login with invalid password Type:
+### TC-LOG-002 Module: Login Scenario: Login with invalid password Type:
 Negative Priority: P1 Precondition: Registered email exists Steps: Enter
 wrong password → Login
 
-TC-SRC-001 Module: Search Scenario: Search existing product Type:
+### TC-SRC-001 Module: Search Scenario: Search existing product Type:
 Positive Priority: P1 Precondition: User on homepage Steps: Enter
 product keyword → Search
 
-TC-PRD-001 Module: Product Scenario: Product detail page validation
+### TC-PRD-001 Module: Product Scenario: Product detail page validation
 Type: Positive Priority: P1 Precondition: Product available Steps: Open
 product → Verify details
 
-TC-PRD-002 Module: Product Scenario: Add product to cart Type: Positive
+### TC-PRD-002 Module: Product Scenario: Add product to cart Type: Positive
 Priority: P1 Precondition: Product page opened Steps: Click Add to Cart
 
-TC-CART-001 Module: Cart Scenario: View cart with added product Type:
+### TC-CART-001 Module: Cart Scenario: View cart with added product Type:
 Positive Priority: P1 Precondition: Product added Steps: Open cart page
 
 TC-CART-002 Module: Cart Scenario: Update product quantity Type:
 Positive Priority: P2 Precondition: Cart contains product Steps: Change
 quantity → Update cart
 
-TC-CHK-001 Module: Checkout Scenario: Complete guest checkout flow Type:
+### TC-CHK-001 Module: Checkout Scenario: Complete guest checkout flow Type:
 Positive Priority: P1 Precondition: Cart contains item Steps: Checkout →
 Enter details → Confirm order
 
-TC-CHK-002 Module: Checkout Scenario: Complete registered user checkout
+### TC-CHK-002 Module: Checkout Scenario: Complete registered user checkout
 Type: Positive Priority: P1 Precondition: Logged in user with cart item
 Steps: Checkout → Payment → Confirm
 
-TC-ACC-001 Module: Account Scenario: Verify order history Type: Positive
+### TC-ACC-001 Module: Account Scenario: Verify order history Type: Positive
 Priority: P2 Precondition: User has previous order Steps: Open My
 Account → Orders
 
-TC-WSH-001 Module: Wishlist Scenario: Add and view wishlist item Type:
+### TC-WSH-001 Module: Wishlist Scenario: Add and view wishlist item Type:
 Positive Priority: P2 Precondition: User logged in Steps: Add product →
 Open wishlist
 
-TC-NAV-001 Module: Navigation Scenario: Verify homepage categories
+### TC-NAV-001 Module: Navigation Scenario: Verify homepage categories
 navigation Type: Positive Priority: P1 Precondition: Application opened
 Steps: Open homepage → Verify categories
 

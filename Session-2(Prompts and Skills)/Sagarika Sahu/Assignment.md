@@ -25,7 +25,7 @@ This skill focuses on:
 
 2. OTP verification
    
-3.. WhatsApp OTP flow
+3. WhatsApp OTP flow
 
 4. Search functionality
  
@@ -37,11 +37,11 @@ This skill focuses on:
   
 8. Positive Testing
  
-9.Negative Testing
-
-10. AI-assisted Test Case Generation
+9. Negative Testing
+   
+11. AI-assisted Test Case Generation
     
-11. Human validation and enhancement
+12. Human validation and enhancement
 
 ---
 

@@ -750,91 +750,235 @@ Test Steps
 5. Navigate back, click 'Notebooks'
 6. Verify products shown
 
+======================================
+Final QA Test Cases - Manual + AI
+
+Consolidated QA test cases with duplicate scenarios removed.
+
+TC-REG-001 Module: Registration Scenario: Register user with valid
+details Type: Positive Priority: P1 Precondition: User is not registered
+Steps: Open Register → Enter valid details → Submit
+
+TC-REG-002 Module: Registration Scenario: Validate mandatory fields
+during registration Type: Negative Priority: P1 Precondition: User is on
+registration page Steps: Leave mandatory fields empty → Submit
+
+TC-REG-003 Module: Registration Scenario: Register using existing email
+Type: Negative Priority: P1 Precondition: Email already registered
+Steps: Enter existing email → Submit
+
+TC-LOG-001 Module: Login Scenario: Login with valid credentials Type:
+Positive Priority: P1 Precondition: Registered user exists Steps: Enter
+valid email/password → Login
+
+TC-LOG-002 Module: Login Scenario: Login with invalid password Type:
+Negative Priority: P1 Precondition: Registered email exists Steps: Enter
+wrong password → Login
+
+TC-SRC-001 Module: Search Scenario: Search existing product Type:
+Positive Priority: P1 Precondition: User on homepage Steps: Enter
+product keyword → Search
+
+TC-PRD-001 Module: Product Scenario: Product detail page validation
+Type: Positive Priority: P1 Precondition: Product available Steps: Open
+product → Verify details
+
+TC-PRD-002 Module: Product Scenario: Add product to cart Type: Positive
+Priority: P1 Precondition: Product page opened Steps: Click Add to Cart
+
+TC-CART-001 Module: Cart Scenario: View cart with added product Type:
+Positive Priority: P1 Precondition: Product added Steps: Open cart page
+
+TC-CART-002 Module: Cart Scenario: Update product quantity Type:
+Positive Priority: P2 Precondition: Cart contains product Steps: Change
+quantity → Update cart
+
+TC-CHK-001 Module: Checkout Scenario: Complete guest checkout flow Type:
+Positive Priority: P1 Precondition: Cart contains item Steps: Checkout →
+Enter details → Confirm order
+
+TC-CHK-002 Module: Checkout Scenario: Complete registered user checkout
+Type: Positive Priority: P1 Precondition: Logged in user with cart item
+Steps: Checkout → Payment → Confirm
+
+TC-ACC-001 Module: Account Scenario: Verify order history Type: Positive
+Priority: P2 Precondition: User has previous order Steps: Open My
+Account → Orders
+
+TC-WSH-001 Module: Wishlist Scenario: Add and view wishlist item Type:
+Positive Priority: P2 Precondition: User logged in Steps: Add product →
+Open wishlist
+
+TC-NAV-001 Module: Navigation Scenario: Verify homepage categories
+navigation Type: Positive Priority: P1 Precondition: Application opened
+Steps: Open homepage → Verify categories
+
+
 =======================================
 # Session-2
-# QA Testing Skill File
-
-## Skill Name
-
-QA Manual Testing and AI Test Case Generation
+# QA Test Case Skill
 
 ## Purpose
 
-This skill helps generate, organize, and manage QA test cases for web
-applications using manual testing approaches and AI-assisted test
-design.
+This skill contains a consolidated QA test case structure for web
+application testing. Duplicate test scenarios are removed and only
+unique functional, negative, and boundary validation scenarios are
+maintained.
 
-## Input
-
--   Application URL
--   Feature/module details
--   User requirements
--   Testing scope
-
-## Test Case Structure
-
-Each test case should include: - Test Case ID - Test Case Description -
-Module - Test Type - Preconditions - Test Steps - Expected Result -
-Actual Result - Status - Priority - Execution Date
-
-## Testing Types Covered
-
--   Functional Testing
--   Negative Testing
--   Boundary Value Analysis (BVA)
--   Exploratory Testing
--   Regression Testing
--   Smoke Testing
--   UI Testing
--   Usability Testing
-
-## QA Test Design Approach
-
-### Positive Scenarios
-
-Validate that features work correctly with valid inputs.
-
-### Negative Scenarios
-
-Validate error handling with invalid inputs, missing data, and
-unexpected behavior.
-
-### Boundary Testing
-
-Validate minimum, maximum, and edge-case values.
-
-## Common Web Application Modules
+## Application Coverage
 
 -   Registration
 -   Login
--   Forgot Password
 -   Search
--   Product Management
+-   Product
 -   Cart
 -   Checkout
 -   Account
 -   Wishlist
 -   Navigation
 
-## AI Test Case Generation Guidelines
+## Test Case Format
 
-Generate test cases by: 1. Understanding the user flow 2. Identifying
-positive and negative scenarios 3. Adding edge cases 4. Covering
-validation rules 5. Including security-related scenarios where required
+Each test case should contain:
 
-## Example Test Flow
+-   Test Case ID
+-   Module
+-   Test Scenario
+-   Test Type
+-   Priority
+-   Preconditions
+-   Test Steps
 
-1.  Open application URL
-2.  Navigate to feature
-3.  Perform user action
-4.  Validate expected behavior
-5.  Record actual result
-6.  Update test status
+## QA Test Cases
 
-## QA Documentation Standards
+### TC-REG-001
 
-Maintain clear, reusable, and execution-ready test cases suitable for
-manual testing and automation conversion.
+Module: Registration\
+Scenario: Register user with valid details\
+Type: Positive\
+Priority: P1\
+Precondition: User is not registered\
+Steps: 1. Open Register page 2. Enter valid user details 3. Submit
+registration
+
+### TC-REG-002
+
+Module: Registration\
+Scenario: Validate mandatory fields during registration\
+Type: Negative\
+Priority: P1\
+Precondition: User is on registration page\
+Steps: 1. Leave required fields empty 2. Click Submit 3. Verify
+validation message
+
+### TC-LOG-001
+
+Module: Login\
+Scenario: Login with valid credentials\
+Type: Positive\
+Priority: P1\
+Precondition: Registered user exists\
+Steps: 1. Enter valid email and password 2. Click Login 3. Verify
+successful login
+
+### TC-LOG-002
+
+Module: Login\
+Scenario: Login with invalid credentials\
+Type: Negative\
+Priority: P1\
+Precondition: User account exists\
+Steps: 1. Enter incorrect password 2. Click Login 3. Verify error
+message
+
+### TC-SRC-001
+
+Module: Search\
+Scenario: Search existing product\
+Type: Positive\
+Priority: P1\
+Precondition: User is on homepage\
+Steps: 1. Enter product keyword 2. Click Search 3. Verify search results
+
+### TC-PRD-001
+
+Module: Product\
+Scenario: Validate product detail page\
+Type: Positive\
+Priority: P1\
+Precondition: Product is available\
+Steps: 1. Open product page 2. Verify product details
+
+### TC-PRD-002
+
+Module: Product\
+Scenario: Add product to cart\
+Type: Positive\
+Priority: P1\
+Precondition: Product page is opened\
+Steps: 1. Click Add to Cart 2. Verify product added
+
+### TC-CART-001
+
+Module: Cart\
+Scenario: View cart items\
+Type: Positive\
+Priority: P1\
+Precondition: Product added to cart\
+Steps: 1. Open cart 2. Verify item details
+
+### TC-CART-002
+
+Module: Cart\
+Scenario: Update cart quantity\
+Type: Positive\
+Priority: P2\
+Precondition: Cart contains product\
+Steps: 1. Change quantity 2. Update cart 3. Verify updated quantity
+
+### TC-CHK-001
+
+Module: Checkout\
+Scenario: Complete checkout flow\
+Type: Positive\
+Priority: P1\
+Precondition: Cart contains item\
+Steps: 1. Proceed to checkout 2. Enter required details 3. Confirm order
+
+### TC-ACC-001
+
+Module: Account\
+Scenario: Verify order history\
+Type: Positive\
+Priority: P2\
+Precondition: User has previous order\
+Steps: 1. Open My Account 2. Navigate to Orders 3. Verify order history
+
+### TC-WSH-001
+
+Module: Wishlist\
+Scenario: Add and view wishlist item\
+Type: Positive\
+Priority: P2\
+Precondition: User is logged in\
+Steps: 1. Add product to wishlist 2. Open wishlist 3. Verify product
+
+### TC-NAV-001
+
+Module: Navigation\
+Scenario: Verify category navigation\
+Type: Positive\
+Priority: P1\
+Precondition: Application homepage loaded\
+Steps: 1. Open homepage 2. Navigate categories 3. Verify navigation flow
+
+## QA Guidelines
+
+-   Avoid duplicate test scenarios
+-   Maintain positive and negative coverage
+-   Include boundary validations where required
+-   Keep test cases clear and execution-ready
+
 
 
 
